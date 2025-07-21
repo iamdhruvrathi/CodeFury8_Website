@@ -1,0 +1,38 @@
+import React from 'react';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import About from './components/About';
+import PrizePool from './components/PrizePool';
+import Tracks from './components/Tracks';
+import Timeline from './components/Timeline';
+import CodeFuryWall from './components/CodeFuryWall';
+import Game from './components/Game';
+import Sponsors from './components/Sponsors';
+import FAQ from './components/FAQ';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import ParticleBackground from './components/ParticleBackground';
+
+function App() {
+  return (
+    <div className="min-h-screen bg-gray-900 text-white relative overflow-x-hidden">
+      <ParticleBackground />
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <PrizePool />
+        <Tracks />
+        <Timeline />
+        <CodeFuryWall />
+        <Game />
+        <Sponsors />
+        <FAQ />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
