@@ -83,7 +83,7 @@ const Sponsors = () => {
           </div>
 
           {/* Sponsorship CTA */}
-          <div className="glass-card p-8 rounded-2xl text-center">
+          {/* <div className="glass-card p-8 rounded-2xl text-center">
             <Heart className="w-12 h-12 text-red-400 mx-auto mb-4" />
             <h3 className="text-2xl font-bold text-white mb-4">Become a Sponsor</h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
@@ -93,7 +93,7 @@ const Sponsors = () => {
             <button className="glow-button bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-400 hover:to-red-400 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
               Sponsor CodeFury 8.0
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
