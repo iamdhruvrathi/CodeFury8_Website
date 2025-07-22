@@ -1,150 +1,233 @@
-import { useEffect, useRef, useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { Play, RotateCcw, Trophy } from 'lucide-react';
 
-export default function FlappyBirdGame() {
-  const [birdPosition, setBirdPosition] = useState(200);
-  const [velocity, setVelocity] = useState(0);
-  const [pipes, setPipes] = useState([{ x: 400, height: 150 }]);
+const Game = () => {
+  const [gameState, setGameState] = useState<'menu' | 'playing' | 'gameOver'>('menu');
   const [score, setScore] = useState(0);
-  const [gameState, setGameState] = useState<'start' | 'playing' | 'gameover'>('start');
-  const gameContainerRef = useRef<HTMLDivElement>(null);
+  const [highScore, setHighScore] = useState(0);
+  const [birdY, setBirdY] = useState(250);
+  const [birdVelocity, setBirdVelocity] = useState(0);
+  const [obstacles, setObstacles] = useState<Array<{ x: number; gapY: number; scored?: boolean }>>([]);
 
-  const gravity = 0.6;
-  const flapStrength = -10;
-  const birdSize = 40;
-  const pipeWidth = 60;
-  const gap = 150;
-  const gameHeight = 500;
-  const gameWidth = 400;
+  const GRAVITY = 0.5;
+  const JUMP_STRENGTH = -8;
+  const OBSTACLE_WIDTH = 60;
+  const OBSTACLE_GAP = 180; // Easier gap
+  const BIRD_SIZE = 20;
 
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.code === 'Space') flap();
-    };
-
-    const handleTouchStart = () => {
-      flap();
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    window.addEventListener('touchstart', handleTouchStart);
-
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-      window.removeEventListener('touchstart', handleTouchStart);
-    };
-  }, [gameState]);
-
-  const flap = () => {
-    if (gameState === 'start') {
-      setGameState('playing');
-    }
-    if (gameState === 'playing') {
-      setVelocity(flapStrength);
-    }
+  const resetGame = () => {
+    setBirdY(250);
+    setBirdVelocity(0);
+    setObstacles([{ x: 400, gapY: 200 }]);
+    setScore(0);
+    setGameState('playing');
   };
 
-  useEffect(() => {
-    let interval: number;
+  const jump = useCallback(() => {
     if (gameState === 'playing') {
-      interval = window.setInterval(() => {
-        setBirdPosition((prev) => prev + velocity);
-        setVelocity((prev) => prev + gravity);
-        setPipes((prev) =>
-          prev.map((pipe) => ({ ...pipe, x: pipe.x - 4 }))
-        );
-      }, 30);
+      setBirdVelocity(JUMP_STRENGTH);
     }
-    return () => clearInterval(interval);
-  }, [velocity, gameState]);
+  }, [gameState]);
+
+  useEffect(() => {
+    const savedHighScore = localStorage.getItem('codefury-game-highscore');
+    if (savedHighScore) {
+      setHighScore(parseInt(savedHighScore));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (score > highScore) {
+      setHighScore(score);
+      localStorage.setItem('codefury-game-highscore', score.toString());
+    }
+  }, [score, highScore]);
+
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (e.code === 'Space') {
+        e.preventDefault();
+        jump();
+      }
+    };
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [jump]);
 
   useEffect(() => {
     if (gameState !== 'playing') return;
-    const lastPipe = pipes[pipes.length - 1];
-    if (lastPipe.x < gameWidth - 200) {
-      const topHeight = Math.floor(Math.random() * (gameHeight - gap));
-      setPipes([...pipes, { x: gameWidth, height: topHeight }]);
-    }
 
-    const hitPipe = pipes.some((pipe) => {
-      const inXRange = pipe.x < 80 && pipe.x + pipeWidth > 40;
-      const inYRange =
-        birdPosition < pipe.height || birdPosition > pipe.height + gap;
-      return inXRange && inYRange;
-    });
+    const gameLoop = setInterval(() => {
+      // Bird physics
+      setBirdY(prevY => {
+        const newY = prevY + birdVelocity;
+        if (newY < 0 || newY > 480) {
+          setGameState('gameOver');
+          return prevY;
+        }
+        return newY;
+      });
+      setBirdVelocity(prev => prev + GRAVITY);
 
-    if (birdPosition < 0 || birdPosition + birdSize > gameHeight || hitPipe) {
-      setGameState('gameover');
-    }
-  }, [birdPosition, pipes, gameState]);
+      setObstacles(prev => {
+        let newObstacles = prev.map(obs => ({ ...obs, x: obs.x - 2.5 })); // Slower pipes
+
+        // Remove off-screen pipes
+        newObstacles = newObstacles.filter(obs => obs.x > -OBSTACLE_WIDTH);
+
+        // Add new pipe
+        if (newObstacles.length === 0 || newObstacles[newObstacles.length - 1].x < 200) {
+          newObstacles.push({
+            x: 500,
+            gapY: 150 + Math.random() * 150,
+          });
+        }
+
+        // Check collisions and score
+        const bird = { x: 80, y: birdY, size: BIRD_SIZE };
+        for (let i = 0; i < newObstacles.length; i++) {
+          const obs = newObstacles[i];
+
+          const passedPipe = obs.x + OBSTACLE_WIDTH < bird.x && !obs.scored;
+          if (passedPipe) {
+            setScore(prevScore => prevScore + 1);
+            newObstacles[i].scored = true;
+          }
+
+          const collided =
+            bird.x < obs.x + OBSTACLE_WIDTH &&
+            bird.x + bird.size > obs.x &&
+            (bird.y < obs.gapY || bird.y + bird.size > obs.gapY + OBSTACLE_GAP);
+
+          if (collided) {
+            setGameState('gameOver');
+            return prev;
+          }
+        }
+
+        return newObstacles;
+      });
+    }, 16);
+
+    return () => clearInterval(gameLoop);
+  }, [gameState, birdVelocity, birdY]);
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gradient-to-b from-gray-800 to-black">
-      <div
-        ref={gameContainerRef}
-        className="relative w-[400px] h-[500px] bg-gradient-to-b from-blue-600 to-blue-800 border-4 border-white rounded-lg overflow-hidden shadow-2xl"
-      >
-        {gameState === 'start' && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 text-white text-xl font-bold z-10">
-            <p>Touch or press Space to start</p>
+    <section id="game" className="py-20 relative">
+      <div className="container mx-auto px-6">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+          <span className="text-green-400 glow-text">CodeFury</span> MiniGame
+        </h2>
+
+        <div className="max-w-2xl mx-auto">
+          <div className="glass-card p-8 rounded-2xl">
+            <div className="relative w-full h-96 bg-gradient-to-b from-blue-900 to-blue-800 rounded-lg overflow-hidden border-2 border-cyan-500/30">
+              {/* Menu */}
+              {gameState === 'menu' && (
+                <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold text-white mb-4">Code Bird</h3>
+                    <p className="text-gray-300 mb-6">Navigate through the obstacles!</p>
+                    <button
+                      onClick={resetGame}
+                      className="glow-button bg-gradient-to-r from-green-500 to-cyan-500 text-white font-bold py-3 px-6 rounded-full flex items-center space-x-2 mx-auto"
+                    >
+                      <Play className="w-5 h-5" />
+                      <span>Start Game</span>
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* Game Over */}
+              {gameState === 'gameOver' && (
+                <div className="absolute inset-0 flex items-center justify-center bg-black/70">
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold text-red-400 mb-2">Game Over!</h3>
+                    <p className="text-white mb-2">Score: {score}</p>
+                    <p className="text-cyan-400 mb-6">High Score: {highScore}</p>
+                    <button
+                      onClick={resetGame}
+                      className="glow-button bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-bold py-3 px-6 rounded-full flex items-center space-x-2 mx-auto"
+                    >
+                      <RotateCcw className="w-5 h-5" />
+                      <span>Try Again</span>
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* Bird */}
+              <div
+                className="absolute w-6 h-6 bg-yellow-400 rounded-full border-2 border-yellow-300 transition-all duration-75"
+                style={{
+                  left: '80px',
+                  top: `${birdY}px`,
+                  transform: `rotate(${Math.min(Math.max(birdVelocity * 3, -30), 30)}deg)`,
+                }}
+              >
+                <div className="absolute top-1 left-1 w-2 h-2 bg-black rounded-full" />
+              </div>
+
+              {/* Obstacles */}
+              {obstacles.map((obstacle, index) => (
+                <div key={index}>
+                  {/* Top */}
+                  <div
+                    className="absolute bg-green-500 border-2 border-green-400"
+                    style={{
+                      left: `${obstacle.x}px`,
+                      top: '0px',
+                      width: `${OBSTACLE_WIDTH}px`,
+                      height: `${obstacle.gapY}px`,
+                    }}
+                  />
+                  {/* Bottom */}
+                  <div
+                    className="absolute bg-green-500 border-2 border-green-400"
+                    style={{
+                      left: `${obstacle.x}px`,
+                      top: `${obstacle.gapY + OBSTACLE_GAP}px`,
+                      width: `${OBSTACLE_WIDTH}px`,
+                      height: `${400 - obstacle.gapY - OBSTACLE_GAP}px`,
+                    }}
+                  />
+                </div>
+              ))}
+
+              {/* Tap Zone */}
+              {gameState === 'playing' && (
+                <button
+                  onClick={jump}
+                  className="absolute inset-0 w-full h-full bg-transparent focus:outline-none"
+                  aria-label="Jump"
+                />
+              )}
+            </div>
+
+            {/* Stats */}
+            <div className="flex justify-between items-center mt-4 text-center">
+              <div>
+                <div className="text-2xl font-bold text-cyan-400">{score}</div>
+                <div className="text-sm text-gray-400">Score</div>
+              </div>
+              <div className="flex items-center space-x-2 text-yellow-400">
+                <Trophy className="w-5 h-5" />
+                <div>
+                  <div className="text-2xl font-bold">{highScore}</div>
+                  <div className="text-sm text-gray-400">Best</div>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-center text-gray-400 mt-4 text-sm">
+              Press SPACEBAR or tap to jump • Avoid the pipes!
+            </p>
           </div>
-        )}
-
-        {gameState === 'gameover' && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 text-white text-xl font-bold z-10">
-            <p className="mb-2">Game Over</p>
-            <p>Score: {score}</p>
-            <button
-              className="mt-4 px-4 py-2 bg-white text-black rounded hover:bg-gray-200"
-              onClick={() => {
-                setBirdPosition(200);
-                setVelocity(0);
-                setPipes([{ x: 400, height: 150 }]);
-                setScore(0);
-                setGameState('start');
-              }}
-            >
-              Restart
-            </button>
-          </div>
-        )}
-
-        <div
-          className="absolute bg-yellow-400 rounded-full"
-          style={{
-            top: birdPosition,
-            left: 40,
-            width: birdSize,
-            height: birdSize,
-          }}
-        />
-
-        {pipes.map((pipe, index) => (
-          <div key={index}>
-            <div
-              className="absolute bg-green-600"
-              style={{
-                top: 0,
-                left: pipe.x,
-                width: pipeWidth,
-                height: pipe.height,
-              }}
-            />
-            <div
-              className="absolute bg-green-600"
-              style={{
-                top: pipe.height + gap,
-                left: pipe.x,
-                width: pipeWidth,
-                height: gameHeight - pipe.height - gap,
-              }}
-            />
-          </div>
-        ))}
-
-        <div className="absolute top-2 left-2 text-white font-bold text-xl">
-          {gameState === 'playing' && <p>Score: {score}</p>}
         </div>
       </div>
-    </div>
+    </section>
   );
-}
+};
+
+export default Game;
