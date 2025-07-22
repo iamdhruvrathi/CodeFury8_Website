@@ -1,81 +1,53 @@
-import { ExternalLink, Heart, Code } from 'lucide-react';
+import { Instagram, Facebook, Mail } from 'lucide-react';
 
 const Footer = () => {
-  const quickLinks = [
-    { name: 'IEEE UVCE Website', url: 'https://ieeeuvcecs.com' },
-    { name: 'Computer Society SIG LinkedIn', url: 'https://linkedin.com/company/ieee-uvce-cs' },
-    { name: 'Computer Society SIG GitHub', url: 'https://github.com/ieee-uvce-cs' }
-  ];
-
   return (
-    <footer className="bg-gray-900/50 border-t border-gray-700/50 py-12 relative">
+    <footer className="bg-gray-900/50 border-t border-gray-700/50 py-12 relative text-white">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
-          {/* Logo & Description */}
-          <div>
-            <div className="text-2xl font-bold mb-4">
-              <span className="text-cyan-400 glow-text">Code</span>
-              <span className="text-purple-400 glow-text">Fury</span>
-              <span className="text-cyan-400 text-lg ml-2">8.0</span>
-            </div>
-            <p className="text-gray-400 leading-relaxed">
-              India's most exciting 24-hour online hackathon, bringing together the brightest coding minds 
-              to innovate, create, and compete.
-            </p>
-            <div className="flex items-center mt-4 text-cyan-400">
-              <Code className="w-5 h-5 mr-2" />
-              <span className="text-sm">August 23-24, 2025</span>
-            </div>
+        {/* Contacts Header */}
+        <h2 className="text-3xl font-bold mb-8 text-white text-center">For More queries, Contact:</h2>
+
+        {/* Contact Cards */}
+        <div className="flex flex-wrap justify-center gap-6 mb-12">
+          {/* Girish */}
+          <div className="w-full sm:w-72 border border-gray-700 rounded-lg p-6 text-center">
+            <h3 className="text-cyan-400 font-bold text-lg mb-2">Girish Bharadwaj</h3>
+            <p className="text-gray-300 mb-1">Chairperson, Computer Society, IEEE UVCE</p>
+            <p className="text-gray-400 text-sm">Phone: +91 74065 43569</p>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-bold text-white mb-4">Quick Links</h3>
-            <div className="space-y-3">
-              {quickLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-gray-400 hover:text-cyan-400 transition-colors duration-300"
-                >
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  {link.name}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-bold text-white mb-4">Organized By</h3>
-            <div className="space-y-2 text-gray-400">
-              <p>IEEE UVCE Student Branch</p>
-              <p>Computer Society Special Interest Group</p>
-              <p className="text-cyan-400 font-medium">University Visvesvaraya College of Engineering</p>
-              <p>Bangalore, Karnataka, India</p>
-            </div>
+          {/* Samyuktha */}
+          <div className="w-full sm:w-72 border border-gray-700 rounded-lg p-6 text-center">
+            <h3 className="text-cyan-400 font-bold text-lg mb-2">Samyuktha Sridhar</h3>
+            <p className="text-gray-300 mb-1">Vice Chairperson, Computer Society, IEEE UVCE</p>
+            <p className="text-gray-400 text-sm">Phone: +91 91085 62257</p>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-gray-700/50 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="flex items-center space-x-2 text-gray-400">
-              <span>Designed & Developed with</span>
-              <Heart className="w-4 h-4 text-red-400" />
-              <span>by CodeFury OC</span>
-            </div>
-            
-            <div className="text-gray-400 text-sm">
-              © 2025 IEEE UVCE & Computer Society SIG. All rights reserved.
-            </div>
-          </div>
-          
-          <div className="text-center mt-4 text-xs text-gray-500">
-            This website is for educational and promotional purposes only. All trademarks belong to their respective owners.
-          </div>
+        {/* Social Links */}
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-10 text-sm text-gray-400">
+          <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-cyan-400">
+            <Instagram className="w-4 h-4" />
+            <span>ieee.uvce.cs</span>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-cyan-400">
+            <Facebook className="w-4 h-4" />
+            <span>IEEE UVCE COMPUTER SOCIETY</span>
+          </a>
+          <a href="mailto:cs.ieee.uvce@gmail.com" className="flex items-center gap-2 hover:text-cyan-400">
+            <Mail className="w-4 h-4" />
+            <span>cs.ieee.uvce@gmail.com</span>
+          </a>
+        </div>
+
+        {/* Developer Credits */}
+        <div className="border-t border-gray-700/50 pt-6 text-center text-sm text-gray-400">
+          <p>
+            <span className="text-cyan-400 font-semibold">Dhruv Rathi</span>, Software Development SIG &nbsp;|&nbsp;
+            <span className="text-cyan-400 font-semibold">Lahari Priya N</span>, Software Development SIG &nbsp;|&nbsp;
+            <span className="text-cyan-400 font-semibold">Rahita H Puthran</span>, Software Development SIG
+          </p>
+          <p className="mt-2">Developed by Software Development SIG, IEEE UVCE</p>
         </div>
       </div>
     </footer>
