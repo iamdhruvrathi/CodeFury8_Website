@@ -40,12 +40,22 @@ const Game: React.FC = () => {
   };
 
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.code === 'Space') flap();
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [gameState]);
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (e.code === 'Space') flap();
+  };
+
+  const handleTouchStart = () => {
+    flap();
+  };
+
+  window.addEventListener('keydown', handleKeyDown);
+  window.addEventListener('touchstart', handleTouchStart);
+
+  return () => {
+    window.removeEventListener('keydown', handleKeyDown);
+    window.removeEventListener('touchstart', handleTouchStart);
+  };
+}, [gameState]);
 
   useEffect(() => {
     if (gameState !== 'playing') return;
