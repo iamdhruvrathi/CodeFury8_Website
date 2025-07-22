@@ -1,4 +1,3 @@
-import React from 'react';
 import { ExternalLink, Heart, Code } from 'lucide-react';
 
 const Footer = () => {

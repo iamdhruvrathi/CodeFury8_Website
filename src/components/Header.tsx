@@ -72,20 +72,21 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-gray-900/95 backdrop-blur-md border-b border-gray-700/50">
-            <div className="px-4 py-4 space-y-2">
-              {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left py-2 hover:text-cyan-400 transition-colors duration-300"
-                >
-                  {item.name}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
+  <div className="md:hidden fixed top-16 left-0 right-0 z-40 bg-gray-900/95 backdrop-blur-md border-b border-gray-700/50">
+    <div className="px-4 py-4 space-y-2">
+      {navItems.map((item) => (
+        <button
+          key={item.name}
+          onClick={() => scrollToSection(item.href)}
+          className="block w-full text-left py-2 hover:text-cyan-400 transition-colors duration-300"
+        >
+          {item.name}
+        </button>
+      ))}
+    </div>
+  </div>
+)}
+
       </nav>
     </header>
   );
