@@ -158,7 +158,10 @@ const Contact = () => {
   );
 };
 
-export default Contact; */
+export default Contact; 
+*/
+
+
 
 import React from 'react';
 import { Phone, Mail, MessageCircle, Instagram, Linkedin, Github, Users } from 'lucide-react';
