@@ -333,14 +333,14 @@ const Game = () => {
             {gameState === 'menu' && (
               <div className="absolute inset-0 flex items-center justify-center bg-black/50 z-10">
                 <div className="text-center px-3 w-full">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">Code Jumper</h3>
-                  <p className="text-gray-300 mb-6 text-sm">Jump through firewalls & debug the code!</p>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">MiniGame</h3>
+                  <p className="text-gray-300 mb-6 text-sm">Jump between walls to score</p>
                   <button
                     onClick={resetGame}
                     className="glow-button bg-gradient-to-r from-green-500 to-cyan-500 text-white font-bold py-3 px-6 rounded-full flex items-center space-x-2 mx-auto"
                   >
                     <Play className="w-5 h-5" />
-                    <span>Start Debugging</span>
+                    <span>Start!</span>
                   </button>
                 </div>
               </div>
@@ -349,7 +349,7 @@ const Game = () => {
             {gameState === 'gameOver' && (
               <div className="absolute inset-0 flex items-center justify-center bg-black/70 z-10">
                 <div className="text-center px-3 w-full">
-                  <h3 className="text-xl sm:text-2xl font-bold text-red-400 mb-2">Oops! Bug Encountered</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold text-red-400 mb-2">Oops! Game Over</h3>
                   <p className="text-white mb-2 text-base">Score: <b>{score}</b></p>
                   <p className="text-cyan-400 mb-6 text-base">High Score: {highScore}</p>
                   <button
