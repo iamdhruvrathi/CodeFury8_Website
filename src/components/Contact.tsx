@@ -56,7 +56,7 @@ const Contact = () => {
 
         <div className="max-w-6xl mx-auto">
           {/* Contact Persons */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+        /*  <div className="grid md:grid-cols-3 gap-8 mb-16">
             {contacts.map((contact, index) => (
               <div
                 key={index}
