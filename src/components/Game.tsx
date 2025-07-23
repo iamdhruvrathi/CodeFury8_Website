@@ -296,9 +296,9 @@ const Game = () => {
 
   return (
     <section id="game" className="py-8 sm:py-16 relative">
-      <div className="container mx-auto px-2 sm:px-6 max-w-screen-md">
+      <div className="container mx-auto px-4 max-w-screen-md">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-7 mt-6">
-          <span className="text-green-400 glow-text">CodeFury</span> MiniGame
+          <span className="text-green-400">CodeFury</span> MiniGame
         </h2>
 
         <div className="flex flex-col items-center">
@@ -306,14 +306,22 @@ const Game = () => {
           <div
             className="glass-card relative overflow-hidden rounded-xl border-4 border-purple-400 shadow-lg mx-auto"
             style={{
-              width: `${containerWidth}px`,
-              height: `${containerWidth / ASPECT_RATIO}px`,
-              background: 'linear-gradient(135deg, #1e293b 0%, #6366f1 100%)',
-              boxShadow: '0 8px 40px 0 rgba(80,30,180,0.3)',
-              maxWidth: '100vw',
-              transition: 'width 150ms, height 150ms',
-              touchAction: 'manipulation',
-            }}
+  width: "100%",
+  maxWidth: `${containerWidth}px`, // containerWidth is max width, can vary by window size
+  aspectRatio: `${BASE_WIDTH} / ${BASE_HEIGHT}`, // Maintains correct ratio responsively
+  background: "linear-gradient(135deg, #1e293b 0%, #6366f1 100%)",
+  boxShadow: "0 8px 40px 0 rgba(80,30,180,0.3)",
+  borderRadius: "1rem",
+  overflow: "hidden",
+  borderWidth: "4px",
+  borderColor: "#7c3aed",
+  borderStyle: "solid",
+  transition: "width 150ms, height 150ms",
+  touchAction: "manipulation",
+  margin: "0 auto", // center horizontally
+  position: "relative",
+}}
+
             onClick={gameState === 'playing' ? jump : resetGame}
             role="button"
             tabIndex={0}
