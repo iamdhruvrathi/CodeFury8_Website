@@ -72,7 +72,7 @@ const Sponsors = () => {
                   rel="noopener noreferrer"
                   className="text-cyan-300 underline text-sm hover:text-cyan-200 transition"
                 >
-                  Dive into their world →
+                  website link→
                 </a>
               </div>
             </div>
