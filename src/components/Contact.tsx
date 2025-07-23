@@ -100,7 +100,7 @@ const Contact = () => {
             ))}
           </div>
 
-          {/* Community Links */}
+       /*   {/* Community Links */}
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {/* WhatsApp Group */}
             <div className="glass-card p-6 rounded-2xl text-center">
@@ -117,7 +117,7 @@ const Contact = () => {
               </a>
             </div>
 
-            {/* Telegram Group */}
+          /*  {/* Telegram Group */}
             <div className="glass-card p-6 rounded-2xl text-center">
               <MessageCircle className="w-12 h-12 text-blue-400 mx-auto mb-4" />
               <h3 className="text-xl font-bold text-white mb-2">Telegram Channel</h3>
@@ -133,7 +133,7 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Social Media */}
+        /*  {/* Social Media */}
           <div className="glass-card p-8 rounded-2xl text-center">
             <h3 className="text-2xl font-bold text-white mb-6">Follow Us</h3>
             <div className="flex justify-center space-x-8">
