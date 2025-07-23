@@ -1,85 +1,72 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { Play, RotateCcw, Trophy } from 'lucide-react';
 
-// Define the shape of an obstacle for better type safety and to track if it's been passed
+// --- Types ---
 interface Obstacle {
-  id: number; // Unique ID for each obstacle for React keys
+  id: number;
   x: number;
-  gapY: number; // Y position of the gap's top edge
-  passed: boolean; // To track if the student has passed this obstacle for scoring
+  gapY: number;
+  passed: boolean;
 }
 
-// --- Constants (moved outside component to prevent re-declaration on each render) ---
+// --- Constants ---
 const GAME_WIDTH = 500;
-const GAME_HEIGHT = 400; // Matches the h-96 class (96 * 4px = 384px) - adjust if needed
-const STUDENT_SIZE = 30; // Slightly larger for emoji visibility
-const STUDENT_X_POSITION = 80; // The fixed horizontal position of the student
-
+const GAME_HEIGHT = 400;
+const STUDENT_SIZE = 30;
+const STUDENT_X_POSITION = 80;
 const GRAVITY = 0.4;
 const JUMP_STRENGTH = -7;
 const OBSTACLE_WIDTH = 60;
-const OBSTACLE_GAP = 200; // Increased gap size for easier passing
-const OBSTACLE_SPEED = 2.5; // How many pixels obstacles move per frame
-const OBSTACLE_SPAWN_DISTANCE = 250; // Distance between obstacles
+const OBSTACLE_GAP = 200;
+const OBSTACLE_SPEED = 2.5;
+const OBSTACLE_SPAWN_DISTANCE = 250;
 
 const Game = () => {
+  // --- State ---
   const [gameState, setGameState] = useState<'menu' | 'playing' | 'gameOver'>('menu');
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
-
-  // Renamed for a "CodeFury" theme
   const [studentY, setStudentY] = useState(GAME_HEIGHT / 2);
   const [studentVelocity, setStudentVelocity] = useState(0);
   const [obstacles, setObstacles] = useState<Obstacle[]>([]);
 
-  // --- Refs to fix stale state in the game loop ---
-  // The game loop (setInterval) creates a closure. Without refs, it would only
-  // see the state values from when it was first created. Refs provide a "box"
-  // that we can update with the latest state and read from inside the loop.
+  // --- Refs for game loop ---
   const studentYRef = useRef(studentY);
   const studentVelocityRef = useRef(studentVelocity);
   const obstaclesRef = useRef(obstacles);
   const scoreRef = useRef(score);
 
-  // Keep refs in sync with the state
   useEffect(() => { studentYRef.current = studentY; }, [studentY]);
   useEffect(() => { studentVelocityRef.current = studentVelocity; }, [studentVelocity]);
   useEffect(() => { obstaclesRef.current = obstacles; }, [obstacles]);
   useEffect(() => { scoreRef.current = score; }, [score]);
 
-
-  // --- Game State Management ---
-
+  // --- Reset Game ---
   const resetGame = useCallback(() => {
     setGameState('playing');
     setScore(0);
     setStudentY(GAME_HEIGHT / 2);
     setStudentVelocity(0);
-    // Initialize with a fresh obstacle off-screen
     setObstacles([
-      { id: Date.now(), x: GAME_WIDTH, gapY: 150 + Math.random() * (GAME_HEIGHT - OBSTACLE_GAP - 200), passed: false },
+      {
+        id: Date.now(),
+        x: GAME_WIDTH,
+        gapY: 150 + Math.random() * (GAME_HEIGHT - OBSTACLE_GAP - 200),
+        passed: false
+      },
     ]);
   }, []);
 
+  // --- Jump ---
   const jump = useCallback(() => {
-    // We only allow jumping when the game is actively being played
-    if (gameState === 'playing') {
-      setStudentVelocity(JUMP_STRENGTH);
-    }
+    if (gameState === 'playing') setStudentVelocity(JUMP_STRENGTH);
   }, [gameState]);
 
-
   // --- High Score Persistence ---
-
-  // Load high score from local storage on initial component mount
   useEffect(() => {
     const savedHighScore = localStorage.getItem('codefury-game-highscore');
-    if (savedHighScore) {
-      setHighScore(parseInt(savedHighScore, 10)); // Use radix 10 for safety
-    }
+    if (savedHighScore) setHighScore(parseInt(savedHighScore, 10));
   }, []);
-
-  // Update high score when game ends
   const updateHighScore = useCallback(() => {
     if (scoreRef.current > highScore) {
       setHighScore(scoreRef.current);
@@ -87,68 +74,54 @@ const Game = () => {
     }
   }, [highScore]);
 
-
-  // --- Input Handling ---
-
+  // --- Keyboard Input ---
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
-      // Allow jump on Spacebar press, but also start the game from the menu
       if (e.code === 'Space') {
-        e.preventDefault(); // Prevents page scrolling
-        if (gameState === 'playing') {
-          jump();
-        } else if (gameState === 'menu' || gameState === 'gameOver') {
-          resetGame();
-        }
+        e.preventDefault();
+        if (gameState === 'playing') jump();
+        else if (gameState === 'menu' || gameState === 'gameOver') resetGame();
       }
     };
-
     window.addEventListener('keydown', handleKeyPress);
-    return () => window.removeEventListener('keydown', handleKeyPress); // Cleanup
+    return () => window.removeEventListener('keydown', handleKeyPress);
   }, [gameState, jump, resetGame]);
 
-
   // --- Main Game Loop ---
-
   useEffect(() => {
-    // Only run the loop if the game is in the 'playing' state
     if (gameState !== 'playing') {
-      if (gameState === 'gameOver') {
-          updateHighScore();
-      }
+      if (gameState === 'gameOver') updateHighScore();
       return;
     }
-
     const gameLoop = setInterval(() => {
-      // 1. Apply gravity to velocity
+      // Gravity
       const newVelocity = studentVelocityRef.current + GRAVITY;
       setStudentVelocity(newVelocity);
 
-      // 2. Update student position
+      // Move player
       const newY = studentYRef.current + newVelocity;
       setStudentY(newY);
-      
-      // 3. Update obstacles' positions and handle scoring
+
+      // Obstacles & scoring
       let scoreIncreased = false;
       const newObstacles = obstaclesRef.current
         .map(obs => ({ ...obs, x: obs.x - OBSTACLE_SPEED }))
         .map(obs => {
-          // **ROBUST SCORING LOGIC**
-          // Check if the obstacle has been passed and hasn't been scored yet
           if (!obs.passed && obs.x + OBSTACLE_WIDTH < STUDENT_X_POSITION) {
             scoreIncreased = true;
             return { ...obs, passed: true };
           }
           return obs;
         })
-        .filter(obs => obs.x > -OBSTACLE_WIDTH); // Remove obstacles that are off-screen
+        .filter(obs => obs.x > -OBSTACLE_WIDTH);
 
-      if (scoreIncreased) {
-          setScore(prev => prev + 1);
-      }
+      if (scoreIncreased) setScore(prev => prev + 1);
 
-      // 4. Spawn new obstacles
-      if (newObstacles.length > 0 && newObstacles[newObstacles.length - 1].x < GAME_WIDTH - OBSTACLE_SPAWN_DISTANCE) {
+      // Spawn new obstacle
+      if (
+        newObstacles.length > 0 &&
+        newObstacles[newObstacles.length - 1].x < GAME_WIDTH - OBSTACLE_SPAWN_DISTANCE
+      ) {
         newObstacles.push({
           id: Date.now(),
           x: GAME_WIDTH,
@@ -158,37 +131,61 @@ const Game = () => {
       }
       setObstacles(newObstacles);
 
-      // 5. Check for collisions
-      const studentRect = { x: STUDENT_X_POSITION, y: newY, width: STUDENT_SIZE, height: STUDENT_SIZE };
-      
-      // Ground/Ceiling collision
+      // Collision detection
+      const studentRect = {
+        x: STUDENT_X_POSITION,
+        y: newY,
+        width: STUDENT_SIZE,
+        height: STUDENT_SIZE,
+      };
       if (studentRect.y < 0 || studentRect.y + studentRect.height > GAME_HEIGHT) {
         setGameState('gameOver');
       }
-
-      // Obstacle collision
       for (const obs of newObstacles) {
-        const topPipeRect = { x: obs.x, y: 0, width: OBSTACLE_WIDTH, height: obs.gapY };
-        const bottomPipeRect = { x: obs.x, y: obs.gapY + OBSTACLE_GAP, width: OBSTACLE_WIDTH, height: GAME_HEIGHT };
-
-        const collidesWithTop = studentRect.x + studentRect.width > topPipeRect.x && studentRect.x < topPipeRect.x + topPipeRect.width && studentRect.y < topPipeRect.y + topPipeRect.height;
-        const collidesWithBottom = studentRect.x + studentRect.width > bottomPipeRect.x && studentRect.x < bottomPipeRect.x + bottomPipeRect.width && studentRect.y + studentRect.height > bottomPipeRect.y;
-
+        const topPipeRect = {
+          x: obs.x,
+          y: 0,
+          width: OBSTACLE_WIDTH,
+          height: obs.gapY,
+        };
+        const bottomPipeRect = {
+          x: obs.x,
+          y: obs.gapY + OBSTACLE_GAP,
+          width: OBSTACLE_WIDTH,
+          height: GAME_HEIGHT,
+        };
+        const collidesWithTop =
+          studentRect.x + studentRect.width > topPipeRect.x &&
+          studentRect.x < topPipeRect.x + topPipeRect.width &&
+          studentRect.y < topPipeRect.y + topPipeRect.height;
+        const collidesWithBottom =
+          studentRect.x + studentRect.width > bottomPipeRect.x &&
+          studentRect.x < bottomPipeRect.x + bottomPipeRect.width &&
+          studentRect.y + studentRect.height > bottomPipeRect.y;
         if (collidesWithTop || collidesWithBottom) {
           setGameState('gameOver');
-          break; // Exit loop on first collision
+          break;
         }
       }
-
-    }, 16); // ~60 frames per second
-
-    // Cleanup: clear the interval when the component unmounts or gameState changes
+    }, 16);
     return () => clearInterval(gameLoop);
-    // **CORRECT DEPENDENCY ARRAY**
-    // The loop should only be set up/torn down when the gameState changes.
-    // The logic inside uses refs to get the latest values, avoiding stale state.
   }, [gameState, updateHighScore]);
 
+  // --- Background Pattern SVG (coding theme) ---
+  const codePattern = (
+    <svg width="100%" height="100%" className="absolute inset-0 z-0 pointer-events-none select-none" style={{ opacity: 0.08 }}>
+      <defs>
+        <pattern id="codePattern" width="40" height="40" patternUnits="userSpaceOnUse">
+          <text x="0" y="20" fontSize="16" fill="#fff" fontFamily="monospace">{'{'}</text>
+          <text x="20" y="35" fontSize="16" fill="#fff" fontFamily="monospace">{';'}</text>
+          <text x="10" y="10" fontSize="14" fill="#fff" fontFamily="monospace">{'<'}</text>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#codePattern)" />
+    </svg>
+  );
+
+  // --- Render ---
   return (
     <section id="game" className="py-20 relative">
       <div className="container mx-auto px-6">
@@ -198,11 +195,21 @@ const Game = () => {
 
         <div className="max-w-2xl mx-auto">
           <div className="glass-card p-4 sm:p-8 rounded-2xl">
+
+            {/* --- Game Area --- */}
             <div
-              className="relative overflow-hidden rounded-lg border-2 border-cyan-500/30 bg-gradient-to-b from-blue-900 to-blue-800"
-              style={{ width: `${GAME_WIDTH}px`, height: `${GAME_HEIGHT}px` }}
-              onClick={() => gameState === 'playing' ? jump() : resetGame()} // Click to jump or restart
+              className="relative overflow-hidden rounded-xl border-4 border-purple-400 shadow-lg"
+              style={{
+                width: `${GAME_WIDTH}px`,
+                height: `${GAME_HEIGHT}px`,
+                background: 'linear-gradient(135deg, #1e293b 0%, #6366f1 100%)',
+                boxShadow: '0 8px 40px 0 rgba(80,30,180,0.3)',
+              }}
+              onClick={() => gameState === 'playing' ? jump() : resetGame()}
             >
+              {/* Animated Coding Pattern Overlay */}
+              {codePattern}
+
               {/* Menu Overlay */}
               {gameState === 'menu' && (
                 <div className="absolute inset-0 flex items-center justify-center bg-black/50 z-10">
@@ -238,7 +245,7 @@ const Game = () => {
                 </div>
               )}
 
-              {/* Student Character (Emoji) */}
+              {/* --- Player (Changed to 🧑‍💻) --- */}
               <div
                 className="absolute text-4xl"
                 style={{
@@ -249,37 +256,46 @@ const Game = () => {
                   transform: `rotate(${Math.min(Math.max(studentVelocity * 3, -30), 30)}deg)`,
                   transition: 'transform 150ms linear',
                   lineHeight: '1',
+                  filter: 'drop-shadow(0 2px 6px #0ff8)'
                 }}
               >
-                🎓
+                🧑‍💻
               </div>
 
-              {/* Obstacles (Pillars) */}
+              {/* --- Obstacles (Pillars) --- */}
               {obstacles.map(obstacle => (
-                <div key={obstacle.id}> {/* Use unique ID for key */}
+                <div key={obstacle.id}>
+                  {/* Top Pillar */}
                   <div
-                    className="absolute bg-gray-700 border-2 border-gray-600 rounded-b-md"
+                    className="absolute rounded-b-lg border-2"
                     style={{
                       left: `${obstacle.x}px`,
-                      top: '0px',
+                      top: 0,
                       width: `${OBSTACLE_WIDTH}px`,
-                      height: `${obstacle.gapY}px`
+                      height: `${obstacle.gapY}px`,
+                      background: 'linear-gradient(180deg, #e0e7ff 0%, #c026d3 100%)',
+                      borderColor: '#a21caf',
+                      boxShadow: '0 4px 12px 2px #c026d366',
                     }}
                   />
+                  {/* Bottom Pillar */}
                   <div
-                    className="absolute bg-gray-700 border-2 border-gray-600 rounded-t-md"
+                    className="absolute rounded-t-lg border-2"
                     style={{
                       left: `${obstacle.x}px`,
                       top: `${obstacle.gapY + OBSTACLE_GAP}px`,
                       width: `${OBSTACLE_WIDTH}px`,
-                      height: `${GAME_HEIGHT - (obstacle.gapY + OBSTACLE_GAP)}px`
+                      height: `${GAME_HEIGHT - (obstacle.gapY + OBSTACLE_GAP)}px`,
+                      background: 'linear-gradient(0deg, #e0e7ff 0%, #c026d3 100%)',
+                      borderColor: '#a21caf',
+                      boxShadow: '0 -4px 12px 2px #c026d366',
                     }}
                   />
                 </div>
               ))}
             </div>
 
-            {/* Game Stats Display */}
+            {/* --- Game Stats --- */}
             <div className="flex justify-between items-center mt-4 text-center">
               <div>
                 <div className="text-2xl font-bold text-cyan-400">{score}</div>
@@ -293,9 +309,8 @@ const Game = () => {
                 </div>
               </div>
             </div>
-
             <p className="text-center text-gray-400 mt-4 text-sm">
-              Press **SPACEBAR** or **tap the screen** to jump.
+              Press <strong>SPACEBAR</strong> or <strong>tap the screen</strong> to jump.
             </p>
           </div>
         </div>
