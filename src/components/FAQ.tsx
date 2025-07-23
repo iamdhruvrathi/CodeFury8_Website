@@ -321,20 +321,7 @@ const FAQ = () => {
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <p className="text-gray-400 mb-4">Still have questions?</p>
-            <button
-              onClick={() => {
-                const contactSection = document.querySelector('#contact');
-                if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }}
-              className="glow-button bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105"
-            >
-              Contact Us
-            </button>
-          </div>
+          
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ExternalLink, Github, Award } from 'lucide-react';
 
 const CodeFuryWall = () => {
@@ -46,35 +46,58 @@ const CodeFuryWall = () => {
     'https://images.pexels.com/photos/1181289/pexels-photo-1181289.jpeg',
   ];
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % highlightImages.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
+
+  const getIndices = (index: number) => {
+    const center = index % highlightImages.length;
+    const left = (index - 1 + highlightImages.length) % highlightImages.length;
+    const right = (index + 1) % highlightImages.length;
+    return { left, center, right };
+  };
+
+  const { left, center, right } = getIndices(currentIndex);
+
   return (
     <section id="wall" className="py-20 relative">
       <div className="container mx-auto px-4 sm:px-6">
-        {/* Title */}
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-12">
           <span className="text-purple-400 glow-text">CodeFury</span> Wall
         </h2>
 
-        {/* Infinite Scroll Image Carousel */}
-        <div className="overflow-hidden w-full mb-16">
-          <div
-            className="flex gap-4 animate-scroll-infinite w-max"
-            onTouchStart={(e) => e.currentTarget.classList.add('paused')}
-            onTouchEnd={(e) => e.currentTarget.classList.remove('paused')}
-            onMouseEnter={(e) => e.currentTarget.classList.add('paused')}
-            onMouseLeave={(e) => e.currentTarget.classList.remove('paused')}
-          >
-            {[...highlightImages, ...highlightImages].map((src, index) => (
-              <img
-                key={index}
-                src={src}
-                alt={`Highlight ${index + 1}`}
-                className="w-48 h-32 md:w-60 md:h-40 object-cover rounded-xl flex-shrink-0"
-              />
-            ))}
+        {/* Sliding Gallery */}
+        <div className="relative h-56 sm:h-72 md:h-96 w-full mb-20 overflow-hidden">
+          <div className="flex justify-center items-center h-full relative transition-all duration-1000 ease-in-out">
+            {/* Left Image */}
+            <img
+              src={highlightImages[left]}
+              alt="Left"
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 w-40 sm:w-52 md:w-64 h-auto object-cover opacity-40 blur-sm scale-90 rounded-xl shadow-inner z-10 transition-all duration-1000 ease-in-out"
+              style={{ transform: 'translateY(-50%) translateX(-50%)' }}
+            />
+            {/* Center Image */}
+            <img
+              src={highlightImages[center]}
+              alt="Center"
+              className="relative w-56 sm:w-72 md:w-96 h-auto object-cover rounded-2xl shadow-xl z-20 transition-all duration-1000 ease-in-out"
+            />
+            {/* Right Image */}
+            <img
+              src={highlightImages[right]}
+              alt="Right"
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 w-40 sm:w-52 md:w-64 h-auto object-cover opacity-40 blur-sm scale-90 rounded-xl shadow-inner z-10 transition-all duration-1000 ease-in-out"
+              style={{ transform: 'translateY(-50%) translateX(50%)' }}
+            />
           </div>
         </div>
 
-        {/* Past Winners Section */}
+        {/* Past Winners (Unchanged) */}
         <div className="mb-10">
           <h3 className="text-2xl font-bold text-center mb-10 text-cyan-400">
             <Award className="w-6 h-6 inline mr-2" />
@@ -141,20 +164,6 @@ const CodeFuryWall = () => {
           </div>
         </div>
       </div>
-
-      {/* Tailwind Custom Animation */}
-      <style>{`
-        @keyframes scroll-infinite {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-scroll-infinite {
-          animation: scroll-infinite 50s linear infinite;
-        }
-        .paused {
-          animation-play-state: paused !important;
-        }
-      `}</style>
     </section>
   );
 };
