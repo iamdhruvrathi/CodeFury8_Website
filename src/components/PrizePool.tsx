@@ -148,7 +148,7 @@ const PrizePool = () => {
               <div className="p-4 bg-green-500/10 rounded-lg border border-green-500/30">
                 <div className="text-lg font-semibold text-green-400 mb-2">Consolation Prize</div>
                 <p className="text-gray-400 text-sm">
-                  Cash prize of ₹2,000
+                  {/* Cash prize of ₹2,000 */}
                 </p>
               </div>
             </div>
