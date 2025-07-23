@@ -1,5 +1,4 @@
-import React from 'react';
-import { Calendar, Users, Trophy, Flag, Lightbulb, ClipboardList, Upload, Award } from 'lucide-react';
+import { Calendar, Users, Trophy, Flag, Lightbulb, ListTodo, Upload, Award } from 'lucide-react';
 
 const Timeline = () => {
   const timelineEvents = [
@@ -23,7 +22,7 @@ const Timeline = () => {
       title: 'Mini Challenge',
       date: '',
       description: 'A surprise mini challenge to stir up the excitement!',
-      icon: ClipboardList, // Represents a challenge or task
+      icon: ListTodo, // Represents a challenge or task
       color: 'text-green-400',
       bg: 'bg-green-500/20'
     },
