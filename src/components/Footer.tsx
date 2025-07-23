@@ -6,11 +6,12 @@ const Footer = () => {
       {/* Developer Credits */}
       <div className="border-t border-gray-700/50 pt-6 text-center text-sm text-gray-400">
         <p>
-          <span className="text-cyan-400 font-semibold">Dhruv Rathi</span>, Software Development SIG &nbsp;|&nbsp;
-          <span className="text-cyan-400 font-semibold">Lahari Priya N</span>, Software Development SIG &nbsp;|&nbsp;
-          <span className="text-cyan-400 font-semibold">Rahita H Puthran</span>, Software Development SIG
+          Developed by&nbsp;
+          <span className="text-cyan-400 font-semibold">Dhruv Rathi</span> |&nbsp;
+          <span className="text-cyan-400 font-semibold">Lahari Priya N</span> |&nbsp;
+          <span className="text-cyan-400 font-semibold">Rahita H Puthran</span>
         </p>
-        <p className="mt-2">Developed by Software Development SIG, IEEE UVCE</p>
+        <p className="mt-2">Software Development SIG, IEEE UVCE</p>
       </div>
     </footer>
   );
