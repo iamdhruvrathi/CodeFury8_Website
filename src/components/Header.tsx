@@ -1,19 +1,20 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import handle from '../assets/handle.png'; 
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '#hero' },
+    //{ name: 'Home', href: '#hero' },
     { name: 'About', href: '#about' },
-    { name: 'Prizes', href: '#prizes' },
+    //{ name: 'Prizes', href: '#prizes' },
     { name: 'Tracks', href: '#tracks' },
     { name: 'Timeline', href: '#timeline' },
-    { name: 'Wall', href: '#wall' },
-    { name: 'Game', href: '#game' },
-    { name: 'FAQ', href: '#faq' },
+    //{ name: 'Wall', href: '#wall' },
+    //{ name: 'Game', href: '#game' },
+    //{ name: 'FAQ', href: '#faq' },
     { name: 'Contact', href: '#contact' }
   ];
 
@@ -49,11 +50,11 @@ const Header = () => {
     >
       <nav className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-xl sm:text-2xl font-bold">
-            <span className="text-cyan-400 drop-shadow-sm">Code</span>
-            <span className="text-purple-400 drop-shadow-sm">Fury</span>
-            <span className="text-cyan-400 text-base sm:text-lg ml-2">8.0</span>
-          </div>
+          <img
+            src={handle}
+            alt="CodeFury Logo"
+            className="h-10 sm:h-10 object-contain drop-shadow-md"
+          />
 
           {/* Desktop Nav */}
           <div className="hidden md:flex flex-wrap gap-4 lg:gap-6">

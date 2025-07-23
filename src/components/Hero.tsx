@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Calendar, Users, Zap } from 'lucide-react';
+import cslogo from '../assets/cs-logo.png';
+import ieeelogo from '../assets/ieee-logo.png'; 
+
 
 const Hero = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -90,26 +93,31 @@ const Hero = () => {
         </div>
 
         {/* Organizer Logos */}
-<div className="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-12">
-  <div className="text-center">
+<div className="flex flex-col sm:flex-row items-center justify-center space-y-6 sm:space-y-0 sm:space-x-12">
+  <div className="flex items-center justify-center gap-6 sm:gap-12 text-center">
+  {/* IEEE UVCE */}
+  <div>
     <img
-      src="/assets/ieee-logo.jpg"
+      src={ieeelogo}
       alt="IEEE UVCE Logo"
-      className="w-16 h-16 object-contain mx-auto mb-2"
+      className="w-16 h-16 object-contain mx-auto mb-1"
     />
-    <p className="text-sm text-gray-400">IEEE UVCE</p>
+    <p className="text-xs sm:text-sm text-gray-400 font-medium">IEEE UVCE</p>
   </div>
 
-  <div className="text-gray-500 text-2xl">×</div>
+  {/* Divider */}
+  <div className="text-gray-500 text-xl sm:text-2xl font-semibold">×</div>
 
-  <div className="text-center">
+  {/* Computer Society SIG */}
+  <div>
     <img
-      src="assets\cs-logo.jpg"
+      src={cslogo}
       alt="Computer Society Logo"
-      className="w-16 h-16 object-contain mx-auto mb-2"
+      className="w-21 h-16 object-contain mx-auto mb-1"
     />
-    <p className="text-sm text-gray-400">Computer Society SIG</p>
+    <p className="text-xs sm:text-sm text-gray-400 font-medium">Computer Society SIG</p>
   </div>
+</div>
 </div>
 
       </div>
