@@ -258,6 +258,39 @@ const Contact = () => {
             ))}
           </div>
 
+          {/* Community Links */}
+          {/* <div className="grid md:grid-cols-2 gap-8 mb-12"> */}
+            {/* WhatsApp Group */}
+            {/* <div className="glass-card p-6 rounded-2xl text-center">
+              <MessageCircle className="w-12 h-12 text-green-400 mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-white mb-2">WhatsApp Group</h3>
+              <p className="text-gray-300 mb-4">Join our official WhatsApp group for updates and discussions</p>
+              <a
+                href="https://chat.whatsapp.com/codefury8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glow-button bg-green-600 hover:bg-green-500 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105"
+              >
+                Join Group
+              </a>
+            </div> */}
+
+            {/* Telegram Group */}
+            {/* <div className="glass-card p-6 rounded-2xl text-center">
+              <MessageCircle className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-white mb-2">Telegram Channel</h3>
+              <p className="text-gray-300 mb-4">Follow our Telegram channel for important announcements</p>
+              <a
+                href="https://t.me/codefury8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glow-button bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105"
+              >
+                Follow Channel
+              </a>
+            </div> */}
+          {/* </div> */}
+
           {/* Social Media */}
           <div className="glass-card p-8 rounded-2xl text-center">
             <h3 className="text-2xl font-bold text-white mb-6">Follow Us</h3>
