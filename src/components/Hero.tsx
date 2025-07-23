@@ -46,11 +46,12 @@ const Hero = () => {
       <div className="container mx-auto px-6 text-center">
         {/* Main Title */}
         <div className="mb-8 animate-fade-in">
-          <h1 className="text-6xl md:text-8xl font-bold mb-4">
+          <h1 className="text-6xl md:text-8xl font-orbitron font-bold mb-4">
             <span className="text-cyan-400 glow-text">Code</span>
-            <span className="text-cyan-400 glow-text">Fury</span>
+            <span className="text-fuchsia-500 glow-text">Fury </span>
+            <span className="text-white mb-6">8.0</span>
           </h1>
-          <div className="text-4xl md:text-6xl font-bold text-white mb-6">8.0</div>
+          {/* <div className="text-4xl md:text-6xl font-bold text-white mb-6">8.0</div> */}
           <p className="text-xl md:text-2xl text-purple-300 max-w-4xl mx-auto leading-relaxed">
             Annual National-Level Hackathon
           </p>
