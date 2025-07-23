@@ -37,44 +37,35 @@ const sponsors = [
 
 const Sponsors = () => {
   return (
-    <section
-      id="sponsors"
-      className="pt-20 pb-10 relative text-white"
-    >
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+    <section id="sponsors" className="pt-12 pb-6 relative text-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
           <span className="text-cyan-400 glow-text">Our</span> Sponsors
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-6">
           {sponsors.map((sponsor, index) => (
-            <div key={index} className="space-y-4">
-              <h3
-                className={`text-2xl md:text-3xl font-bold ${sponsor.tierColor}`}
-              >
+            <div key={index} className="w-[260px] space-y-2">
+              <h3 className={`text-xl md:text-2xl font-bold ${sponsor.tierColor} text-center`}>
                 {sponsor.tier}
               </h3>
 
-              <div
-                className="glass-card rounded-2xl p-6 flex items-center justify-between shadow-xl hover:scale-105 transition-all duration-300 group border border-white/10 backdrop-blur-md bg-white/5"
-                style={{ opacity: 0.85 }}
-              >
-                <div className="flex items-center space-x-4">
+              <div className="glass-card rounded-xl p-4 flex flex-col items-center text-center shadow-lg border border-white/10 backdrop-blur-md bg-white/5 transition-all duration-300 group hover:scale-105">
+                {/* Logo and Name side by side */}
+                <div className="flex items-center justify-center space-x-3 mb-2">
                   <div
-                    className={`w-20 h-20 rounded-full bg-gradient-to-r ${sponsor.color} flex items-center justify-center shadow-lg transform transition-transform duration-300 group-hover:scale-110`}
+                    className={`w-14 h-14 rounded-full bg-gradient-to-r ${sponsor.color} flex items-center justify-center shadow-md transform transition-transform duration-300 group-hover:scale-110`}
                   >
                     <img
                       src={sponsor.logo}
                       alt={sponsor.name}
-                      className="w-12 h-12 object-contain"
+                      className="w-9 h-9 object-contain"
                     />
                   </div>
-
-                  <p className="text-2xl font-semibold text-white">
-                    {sponsor.name}
-                  </p>
+                  <p className="text-base font-semibold text-white">{sponsor.name}</p>
                 </div>
 
+                {/* Link below the row */}
                 <a
                   href={sponsor.link}
                   target="_blank"
