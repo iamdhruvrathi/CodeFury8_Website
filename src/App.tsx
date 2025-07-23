@@ -15,6 +15,7 @@ import BackToTopButton from './components/BackToTopButton';
 
 function App() {
   return (
+    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
       <ParticleBackground />
       <Header />
       <main>
