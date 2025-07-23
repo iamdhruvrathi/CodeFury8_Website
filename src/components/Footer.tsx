@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900/50 border-t border-gray-700/50 py-12 relative text-white">
       <div className="container mx-auto px-6">
-      ```  {/* Contacts Header */}
+      /* {/* Contacts Header */}
         <h2 className="text-3xl font-bold mb-8 text-white text-center">For More queries, Contact:</h2>
 
         {/* Contact Cards */}
@@ -39,7 +39,7 @@ const Footer = () => {
             <span>cs.ieee.uvce@gmail.com</span>
           </a>
         </div>
-```
+*/
 
         {/* Developer Credits */}
         <div className="border-t border-gray-700/50 pt-6 text-center text-sm text-gray-400">
