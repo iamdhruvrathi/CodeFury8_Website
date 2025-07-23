@@ -1,4 +1,4 @@
-/* import React from 'react';
+``` import React from 'react';
 import { Phone, Mail, MessageCircle, Instagram, Linkedin, Github, Users } from 'lucide-react';
 
 const Contact = () => {
@@ -159,7 +159,7 @@ const Contact = () => {
 };
 
 export default Contact; 
-*/
+```
 
 
 
