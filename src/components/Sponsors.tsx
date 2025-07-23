@@ -39,14 +39,14 @@ const Sponsors = () => {
   return (
     <section
       id="sponsors"
-      className="py-20 bg-gradient-to-br from-black via-gray-900 to-black text-white"
+      className="pt-20 pb-10 relative text-white"
     >
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="container mx-auto px-6">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
           <span className="text-cyan-400 glow-text">Our</span> Sponsors
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {sponsors.map((sponsor, index) => (
             <div key={index} className="space-y-4">
               <h3
@@ -56,7 +56,7 @@ const Sponsors = () => {
               </h3>
 
               <div
-                className="bg-white/5 backdrop-blur-md rounded-2xl p-6 flex items-center justify-between shadow-xl hover:scale-105 transition-all duration-300 group"
+                className="glass-card rounded-2xl p-6 flex items-center justify-between shadow-xl hover:scale-105 transition-all duration-300 group border border-white/10 backdrop-blur-md bg-white/5"
                 style={{ opacity: 0.85 }}
               >
                 <div className="flex items-center space-x-4">
