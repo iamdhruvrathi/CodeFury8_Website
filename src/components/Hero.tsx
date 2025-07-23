@@ -47,42 +47,43 @@ const Hero = () => {
         {/* Main Title */}
         <div className="mb-8 animate-fade-in">
           <h1 className="text-6xl md:text-8xl font-bold mb-4">
-            <span className="text-cyan-400 ">Code</span>
-            <span className="text-purple-400 ">Fury</span>
+            <span className="text-cyan-400 glow-text">Code</span>
+            <span className="text-cyan-400 glow-text">Fury</span>
           </h1>
           <div className="text-4xl md:text-6xl font-bold text-white mb-6">8.0</div>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-purple-300 max-w-4xl mx-auto leading-relaxed">
             Annual National-Level Hackathon
           </p>
           <div className="flex items-center justify-center space-x-4 mt-4 text-cyan-400">
             <Calendar className="w-6 h-6" />
             <span className="text-lg font-semibold">22nd, 23rd & 24th August 2025</span>
-          </div>
+          </div>          
         </div>
 
         {/* Countdown Timer */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mb-12">
           {Object.entries(timeLeft).map(([unit, value]) => (
-            <div key={unit} className="glass-card p-4 text-center">
-              <div className="text-3xl md:text-4xl font-bold text-cyan-400">
-                {value.toString().padStart(2, '0')}
-              </div>
-              <div className="text-sm uppercase text-gray-400 mt-1">
-                {unit}
-              </div>
-            </div>
+            <div key={unit} className="glass-card p-4 text-center hover:scale-105 transition">
+  <div className="text-3xl md:text-4xl font-bold text-neonCyan">
+    {value.toString().padStart(2, '0')}
+  </div>
+  <div className="text-sm uppercase text-gray-400 mt-1 tracking-wider">
+    {unit}
+  </div>
+</div>
+
           ))}
         </div>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
           <button
-            onClick={() => window.location.href = 'https://example.com'}
-            className="glow-button bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
-          >
-            <Zap className="w-5 h-5 inline mr-2" />
-            Register Now
-          </button>
+  className="glow-button bg-gradient-to-r from-neonCyan to-neonPurple hover:from-cyan-300 hover:to-pink-400 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+>
+  <Zap className="w-5 h-5 inline mr-2" />
+  Register Now
+</button>
+
           <button
             onClick={() => scrollToSection('#tracks')}
             className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-gray-900 font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"

@@ -28,10 +28,10 @@ const ParticleBackground = () => {
       char?: string;
     }> = [];
 
-    const codeChars = ['0', '1', '{', '}', '<', '>', '/', '\\', '(', ')', '[', ']', ';', '=', '+', '-'];
+    const codeChars = ['0', '1', '0', '1', '0', '1', '{', '}', '<', '>', '/', '\\', '(', ')', '[', ']', ';', '=', '+', '-'];
 
     // Create particles
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 120; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -65,12 +65,12 @@ const ParticleBackground = () => {
 
         if (particle.char) {
           // Draw code character
-          ctx.fillStyle = '#00D4FF';
+          ctx.fillStyle = '#FFFFFF';
           ctx.font = `${particle.size * 8}px monospace`;
           ctx.fillText(particle.char, particle.x, particle.y);
         } else {
           // Draw dot
-          ctx.fillStyle = '#8B5CF6';
+          ctx.fillStyle = '#FFFFFF';
           ctx.beginPath();
           ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
           ctx.fill();
@@ -88,7 +88,7 @@ const ParticleBackground = () => {
           if (distance < 100) {
             ctx.save();
             ctx.globalAlpha = (1 - distance / 100) * 0.2;
-            ctx.strokeStyle = '#00D4FF';
+            ctx.strokeStyle = '#FFFFFF';
             ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
@@ -114,7 +114,7 @@ const ParticleBackground = () => {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.3 }}
+      style={{ opacity: 0.4 }}
     />
   );
 };
