@@ -12,6 +12,7 @@ import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ParticleBackground from './components/ParticleBackground';
+import BackToTopButton from './components/BackToTopButton';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <FAQ />
         <Contact />
       </main>
+      <BackToTopButton />
       <Footer />
     </div>
   );
