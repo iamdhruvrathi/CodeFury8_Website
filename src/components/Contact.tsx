@@ -103,7 +103,7 @@ const Contact = () => {
          {/* Community Links */}
          /* <div className="grid md:grid-cols-2 gap-8 mb-12">
             {/* WhatsApp Group */}
-            <div className="glass-card p-6 rounded-2xl text-center">
+           /* <div className="glass-card p-6 rounded-2xl text-center">
               <MessageCircle className="w-12 h-12 text-green-400 mx-auto mb-4" />
               <h3 className="text-xl font-bold text-white mb-2">WhatsApp Group</h3>
               <p className="text-gray-300 mb-4">Join our official WhatsApp group for updates and discussions</p>
