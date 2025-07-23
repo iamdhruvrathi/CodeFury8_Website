@@ -1,41 +1,57 @@
 import React from 'react';
-import { Calendar, Users, Trophy, Flag, Upload, Award } from 'lucide-react';
+import { Calendar, Users, Trophy, Flag, Lightbulb, ClipboardList, Upload, Award } from 'lucide-react';
 
 const Timeline = () => {
   const timelineEvents = [
     {
-      title: 'Registration Open',
+      title: 'Registration Opens',
       date: 'August 1, 2025',
-      description: 'Sign up and form your teams',
-      icon: Calendar,
+      description: 'Kickstart your CodeFury journey – form your dream team and register!',
+      icon: Users, // Better represents team-based registration
       color: 'text-green-400',
       bg: 'bg-green-500/20'
     },
     {
-      title: 'Registration Close',
-      date: 'August 20, 2025',
-      description: 'Last day to register for the hackathon',
-      icon: Users,
+      title: 'Workshop',
+      date: 'August 8, 2025',
+      description: 'Offline hands-on workshop to get you hackathon-ready.',
+      icon: Lightbulb, // Represents learning and idea generation
+      color: 'text-green-400',
+      bg: 'bg-green-500/20'
+    },
+    {
+      title: 'Mini Challenge',
+      date: '',
+      description: 'A surprise mini challenge to stir up the excitement!',
+      icon: ClipboardList, // Represents a challenge or task
+      color: 'text-green-400',
+      bg: 'bg-green-500/20'
+    },
+    {
+      title: 'Registration Closes',
+      date: 'August 19, 2025',
+      description: 'Final call! Register before the portal closes.',
+      icon: Calendar, // Denotes deadline well
       color: 'text-yellow-400',
       bg: 'bg-yellow-500/20'
     },
     {
-      title: 'Prelims (Online)',
-      date: 'August 21, 2025',
-      description: 'Online preliminary round to select finalists',
-      icon: Trophy,
+      title: 'CodeFury Round 1',
+      date: 'August 22-23, 2025',
+      description: 'The 24-hour coding showdown begins!',
+      icon: Trophy, // Perfect for competition
       color: 'text-purple-400',
       bg: 'bg-purple-500/20'
     },
     {
-      title: 'Final 24-Hour Hackathon',
-      date: 'August 23-24, 2025',
-      description: 'The main event begins! 24 hours of non-stop coding',
-      icon: Flag,
+      title: 'CodeFury Round 2',
+      date: 'August 24, 2025',
+      description: 'Top teams present their innovations to the jury.',
+      icon: Flag, // Represents final stage or goal
       color: 'text-cyan-400',
       bg: 'bg-cyan-500/20'
     },
-    {
+    /*{
       title: 'Submission Deadline',
       date: 'August 24, 2025 - 11:59 PM',
       description: 'Final submissions and presentations',
@@ -50,7 +66,7 @@ const Timeline = () => {
       icon: Award,
       color: 'text-pink-400',
       bg: 'bg-pink-500/20'
-    }
+    }*/
   ];
 
   return (
