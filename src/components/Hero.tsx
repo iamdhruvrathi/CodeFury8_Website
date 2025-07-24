@@ -68,12 +68,12 @@ const Hero = () => {
   {/* Hero Title */}
   <h1 className="text-6xl md:text-8xl font-orbitron font-extrabold mb-3 tracking-wide">
     <span className="text-cyan-400 glow-text">Code</span>
-    <span className="text-fuchsia-500 glow-text">Fury </span>
+    <span className="text-fuchsia-500 glow-text">Fury</span>
     <span className="text-white ml-2">8.0</span>
   </h1>
 
   {/* Tagline */}
-  <p className="text-lg md:text-lg text-purple-300 font-poppins mb-2">
+  <p className="italic text-lg md:text-lg text-purple-300 font-poppins mb-2">
     Fury in Code, Ready to Explode
   </p>
 <br></br>
