@@ -73,12 +73,12 @@ const Hero = () => {
   </h1>
 
   {/* Tagline */}
-  <p className="italic text-lg md:text-lg text-purple-300 font-orbitron mb-2">
+  <p className="italic text-xl md:text-lg text-purple-300 font-poppins mt-1 mb-2">
     Fury in Code, Ready to Explode
   </p>
 <br></br>
   {/* Annual Hackathon */}
-  <p className="font-bold text-xl md:text-xl text-purple-000 font-poppins">
+  <p className="font-bold text-2xl md:text-xl text-purple-000 font-poppins">
     Annual National-Level Hackathon
   </p>
 
