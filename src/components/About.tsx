@@ -1,3 +1,96 @@
+import React from 'react';
+import { Users, Target, Award, Globe } from 'lucide-react';
+
+const About = () => {
+  return (
+    <section id="about" className="py-20 relative">
+      <div className="container mx-auto px-6">
+        {/* Title */}
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 font-orbitron">
+          <span className="text-cyan-400 glow-text">About</span>{' '}
+          <span className="text-white">Us</span>
+        </h2>
+
+        {/* Content Grid */}
+        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* IEEE UVCE & Computer Society SIG */}
+          <div className="glass-card p-8 rounded-2xl shadow-lg hover:shadow-cyan-400/20 transition-shadow duration-300">
+            <div className="flex items-center mb-6">
+              <Users className="w-8 h-8 text-purple-400 mr-4" />
+              <h3 className="text-2xl font-bold text-white">
+                IEEE UVCE & Computer Society SIG
+              </h3>
+            </div>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              IEEE UVCE Student Branch, established in 2009, is one of the most
+              active technical communities at University Visvesvaraya College of
+              Engineering. We foster innovation, technical excellence, and
+              professional development among students.
+            </p>
+            <p className="text-gray-300 leading-relaxed">
+              The <span className="text-cyan-400">IEEE UVCE Computer Society</span> is a
+              distinguished technical society within IEEE UVCE, hosting regular
+              coding competitions, hackathons, and events that create a positive
+              impact and inspire innovation.
+            </p>
+            <div className="flex items-center space-x-6 mt-6">
+              <div className="flex items-center">
+                <Globe className="w-5 h-5 text-cyan-400 mr-2" />
+                <span className="text-cyan-400 font-semibold">500+ Members</span>
+              </div>
+              <div className="flex items-center">
+                <Award className="w-5 h-5 text-purple-400 mr-2" />
+                <span className="text-purple-400 font-semibold">15+ Years</span>
+              </div>
+            </div>
+          </div>
+
+          {/* About CodeFury */}
+          <div className="glass-card p-8 rounded-2xl shadow-lg hover:shadow-fuchsia-400/20 transition-shadow duration-300">
+            <div className="flex items-center mb-6">
+              <Target className="w-8 h-8 text-cyan-400 mr-4" />
+              <h3 className="text-2xl font-bold text-white">About CodeFury</h3>
+            </div>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              CodeFury is our flagship annual hackathon that brings together the
+              brightest minds in programming and innovation. This 24-hour
+              intensive coding marathon challenges participants to build
+              revolutionary solutions to real-world problems.
+            </p>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              Open to students from all colleges and universities, CodeFury has
+              grown to become one of the most prestigious hackathons in the
+              region, attracting participants from across the country.
+            </p>
+
+            {/* Stats */}
+            <div className="grid grid-cols-2 gap-4 mt-6">
+              {[
+                { value: '500+', label: 'Participants', color: 'text-cyan-400' },
+                { value: '24hrs', label: 'Non-stop', color: 'text-purple-400' },
+                { value: '₹60K+', label: 'Prize Pool', color: 'text-green-400' },
+                { value: '100%', label: 'Online', color: 'text-yellow-400' }
+              ].map((stat, index) => (
+                <div
+                  key={index}
+                  className="text-center p-4 bg-gray-800/50 rounded-lg hover:bg-gray-800/70 transition-all"
+                >
+                  <div className={`text-2xl font-bold ${stat.color}`}>
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-gray-400">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;
+
 // import { Users, Target, Award, Globe, School } from 'lucide-react';
 
 // const About = () => {
@@ -107,82 +200,5 @@
 // };
 
 // export default About;
-import React from 'react';
-import { Users, Target, Award, Globe } from 'lucide-react';
 
-const About = () => {
-  return (
-    <section id="about" className="py-20 relative">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-          <span className="text-cyan-400 glow-text">About</span> Us
-        </h2>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* IEEE UVCE & Computer Society SIG */}
-          <div className="glass-card p-8 rounded-2xl">
-            <div className="flex items-center mb-6">
-              <Users className="w-8 h-8 text-purple-400 mr-4" />
-              <h3 className="text-2xl font-bold text-white">IEEE UVCE & Computer Society SIG</h3>
-            </div>
-            <p className="text-gray-300 leading-relaxed mb-4">
-              IEEE UVCE Student Branch, established in 2009, is one of the most active technical communities 
-              at University Visvesvaraya College of Engineering. We foster innovation, technical excellence, 
-              and professional development among students.
-            </p>
-            <p className="text-gray-300 leading-relaxed">
-            The 'IEEE UVCE Computer Society' is a distinguished technical society within IEEE UVCE. It is dedicated to hosting regular technical events like coding competitions and hackathons that tackle current societal issues and create a positive impact. The main goal is to foster a dynamic and skilled student community by encouraging technical excellence and innovation.
-            </p>
-            <div className="flex items-center space-x-4 mt-6">
-              <div className="flex items-center">
-                <Globe className="w-5 h-5 text-cyan-400 mr-2" />
-                <span className="text-cyan-400">500+ Members</span>
-              </div>
-              <div className="flex items-center">
-                <Award className="w-5 h-5 text-purple-400 mr-2" />
-                <span className="text-purple-400">15+ Years</span>
-              </div>
-            </div>
-          </div>
-
-          {/* About CodeFury */}
-          <div className="glass-card p-8 rounded-2xl">
-            <div className="flex items-center mb-6">
-              <Target className="w-8 h-8 text-cyan-400 mr-4" />
-              <h3 className="text-2xl font-bold text-white">About CodeFury</h3>
-            </div>
-            <p className="text-gray-300 leading-relaxed mb-4">
-              CodeFury is our flagship annual hackathon that brings together the brightest minds in 
-              programming and innovation. This 24-hour intensive coding marathon challenges participants 
-              to build revolutionary solutions to real-world problems.
-            </p>
-            <p className="text-gray-300 leading-relaxed mb-4">
-              Open to students from all colleges and universities, CodeFury has grown to become one of 
-              the most prestigious hackathons in the region, attracting participants from across the country.
-            </p>
-            <div className="grid grid-cols-2 gap-4 mt-6">
-              <div className="text-center p-4 bg-gray-800/50 rounded-lg">
-                <div className="text-2xl font-bold text-cyan-400">500+</div>
-                <div className="text-sm text-gray-400">Participants</div>
-              </div>
-              <div className="text-center p-4 bg-gray-800/50 rounded-lg">
-                <div className="text-2xl font-bold text-purple-400">24hrs</div>
-                <div className="text-sm text-gray-400">Non-stop</div>
-              </div>
-              <div className="text-center p-4 bg-gray-800/50 rounded-lg">
-                <div className="text-2xl font-bold text-green-400">₹60K+</div>
-                <div className="text-sm text-gray-400">Prize Pool</div>
-              </div>
-              <div className="text-center p-4 bg-gray-800/50 rounded-lg">
-                <div className="text-2xl font-bold text-yellow-400">100%</div>
-                <div className="text-sm text-gray-400">Online</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default About;
