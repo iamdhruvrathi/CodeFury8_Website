@@ -78,7 +78,7 @@ const Hero = () => {
 
 <br></br>
     {/* Annual Hackathon */}
-    <p className="font-semibold text-md sm:text-xl md:text-2xl lg:text-2xl text-purple-000 font-poppins text-center">
+    <p className="font-semibold text-md sm:text-xl md:text-xl lg:text-2xl text-purple-000 font-poppins text-center">
       Annual National-Level Hackathon
     </p>
 
@@ -97,8 +97,8 @@ const Hero = () => {
         {/* Countdown Timer */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mb-12">
           {Object.entries(timeLeft).map(([unit, value]) => (
-            <div key={unit} className="glass-card p-4 text-center hover:scale-105 transition">
-              <div className="text-3xl md:text-4xl font-bold text-neonCyan">
+            <div key={unit} className=" glow-button glass-card p-4 text-center hover:scale-105 transition">
+              <div className=" text-3xl md:text-4xl font-bold text-neonCyan">
                 {value.toString().padStart(2, '0')}
               </div>
               <div className="text-sm uppercase text-gray-400 mt-1 tracking-wider">
