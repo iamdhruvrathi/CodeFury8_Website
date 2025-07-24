@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 const ParticleBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -28,10 +28,21 @@ const ParticleBackground = () => {
       char?: string;
     }> = [];
 
-    const codeChars = ['0', '1', '0', '1', '0', '1', '{', '}', '<', '>', '/', '\\', '(', ')', '[', ']', ';', '=', '+', '-'];
+    const mouse = { x: 0, y: 0 };
+
+    function mouseMoveHandler(e: MouseEvent) {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    }
+    window.addEventListener('mousemove', mouseMoveHandler);
+
+    const codeChars = [
+      '0', '1', '0', '1', '0', '1', '{', '}', '<', '>', '/',
+      '\\', '(', ')', '[', ']', ';', '=', '+', '-'
+    ];
 
     // Create particles
-    for (let i = 0; i < 120; i++) {
+    for (let i = 0; i < 150; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -53,6 +64,16 @@ const ParticleBackground = () => {
         particle.x += particle.vx;
         particle.y += particle.vy;
 
+        // Apply slight attraction to mouse
+        const dx = particle.x - mouse.x;
+        const dy = particle.y - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < 150) {
+          particle.vx -= dx / 5000;
+          particle.vy -= dy / 5000;
+        }
+
         // Wrap around edges
         if (particle.x < 0) particle.x = canvas.width;
         if (particle.x > canvas.width) particle.x = 0;
@@ -63,9 +84,16 @@ const ParticleBackground = () => {
         ctx.save();
         ctx.globalAlpha = particle.opacity;
 
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = '#00f6ff'; // neon glow
+
         if (particle.char) {
           // Draw code character
-          ctx.fillStyle = '#FFFFFF';
+          const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+          gradient.addColorStop(0, '#00f6ff');
+          gradient.addColorStop(1, '#ff00f7');
+          ctx.fillStyle = gradient;
+
           ctx.font = `${particle.size * 8}px monospace`;
           ctx.fillText(particle.char, particle.x, particle.y);
         } else {
@@ -106,6 +134,7 @@ const ParticleBackground = () => {
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener('mousemove', mouseMoveHandler); // Cleanup mouse event
       cancelAnimationFrame(animationId);
     };
   }, []);
@@ -114,7 +143,7 @@ const ParticleBackground = () => {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.4 }}
+      style={{ opacity: 0.3 }}
     />
   );
 };
