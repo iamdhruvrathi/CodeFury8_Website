@@ -81,7 +81,7 @@ section {
   }
   
   .glow-text {
-    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+    text-shadow: 0 0 00px currentColor, 0 0 5px currentColor, 0 0 00px currentColor;
   }
 }
 
