@@ -1,5 +1,12 @@
 import React from 'react';
-import { Calendar, Users, Trophy, Flag, Lightbulb, ListTodo, Upload, Award } from 'lucide-react';
+import {
+  Calendar,
+  Users,
+  Trophy,
+  Flag,
+  Lightbulb,
+  ListTodo,
+} from 'lucide-react';
 
 const Timeline = () => {
   const timelineEvents = [
@@ -50,79 +57,56 @@ const Timeline = () => {
       icon: Flag,
       color: 'text-cyan-400',
       bg: 'bg-cyan-500/20'
-    },
-    /*{
-      title: 'Submission Deadline',
-      date: 'August 24, 2025 - 11:59 PM',
-      description: 'Final submissions and presentations',
-      icon: Upload,
-      color: 'text-orange-400',
-      bg: 'bg-orange-500/20'
-    },
-    {
-      title: 'Result Announcement',
-      date: 'August 25, 2025',
-      description: 'Winners declared and prizes distributed',
-      icon: Award,
-      color: 'text-pink-400',
-      bg: 'bg-pink-500/20'
-    }*/
+    }
   ];
 
   return (
-    <section id="timeline" className="py-20 relative">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+    <section id="timeline" className="py-20 bg-black text-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-20">
           <span className="text-cyan-400 glow-text">Event</span> Timeline
         </h2>
 
-        <div className="max-w-4xl mx-auto">
-          {/* Desktop Timeline */}
-          <div className="hidden md:block relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-cyan-500 via-purple-500 to-pink-500"></div>
+        <div className="relative max-w-6xl mx-auto">
+          {/* Decorative curved path */}
+          <div className="absolute inset-0 flex justify-center pointer-events-none">
+            <svg width="4" height="100%" viewBox="0 0 4 100%" preserveAspectRatio="none">
+              <path d="M2 0 Q4 20 2 40 Q0 60 2 80 Q4 100 2 120" stroke="url(#gradient)" strokeWidth="4" fill="none" />
+              <defs>
+                <linearGradient id="gradient" gradientTransform="rotate(90)">
+                  <stop offset="0%" stopColor="#06b6d4" />
+                  <stop offset="50%" stopColor="#8b5cf6" />
+                  <stop offset="100%" stopColor="#ec4899" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
 
+          <div className="grid gap-20">
             {timelineEvents.map((event, index) => {
               const Icon = event.icon;
+              const isEven = index % 2 === 0;
+
               return (
                 <div
                   key={index}
-                  className={`flex items-center mb-12 ${
-                    index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-                  }`}
+                  className={`relative flex flex-col items-center md:flex-row ${isEven ? 'md:flex-row-reverse' : ''}`}
                 >
-                  <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
-                    <div className={`glass-card p-6 rounded-2xl ${event.bg} border border-gray-700/50 transform hover:scale-105 transition-all duration-300`}>
-                      <h3 className="text-xl font-bold text-white mb-2">{event.title}</h3>
-                      <p className={`text-lg font-semibold ${event.color} mb-2`}>{event.date}</p>
-                      <p className="text-gray-400">{event.description}</p>
+                  {/* Icon */}
+                  <div className="z-10 mb-4 md:mb-0">
+                    <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-full ${event.bg} border-4 border-gray-800 flex items-center justify-center shadow-lg`}>
+                      <Icon className={`w-6 h-6 sm:w-8 sm:h-8 ${event.color}`} />
                     </div>
                   </div>
 
-                  <div className="relative z-10">
-                    <div className={`w-16 h-16 rounded-full ${event.bg} border-4 border-gray-800 flex items-center justify-center`}>
-                      <Icon className={`w-8 h-8 ${event.color}`} />
-                    </div>
-                  </div>
+                  {/* Optional line connector (desktop only) */}
+                  <div className="hidden md:block absolute top-8 w-full h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
 
-                  <div className="w-1/2"></div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Mobile Timeline */}
-          <div className="md:hidden space-y-8">
-            {timelineEvents.map((event, index) => {
-              const Icon = event.icon;
-              return (
-                <div key={index} className="flex items-start space-x-4">
-                  <div className={`flex-shrink-0 w-12 h-12 rounded-full ${event.bg} border-2 border-gray-700 flex items-center justify-center`}>
-                    <Icon className={`w-6 h-6 ${event.color}`} />
-                  </div>
-                  <div className="glass-card p-4 rounded-xl flex-1">
-                    <h3 className="text-lg font-bold text-white mb-1">{event.title}</h3>
-                    <p className={`text-sm font-semibold ${event.color} mb-2`}>{event.date}</p>
-                    <p className="text-gray-400 text-sm">{event.description}</p>
+                  {/* Card */}
+                  <div className={`w-full md:w-[48%] max-w-xl glass-card bg-white/5 backdrop-blur-md border border-gray-700/40 p-5 sm:p-6 rounded-2xl ${isEven ? 'md:mr-6' : 'md:ml-6'}`}>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{event.title}</h3>
+                    <p className={`text-sm sm:text-md font-semibold ${event.color} mb-2`}>{event.date}</p>
+                    <p className="text-gray-400 text-sm sm:text-base">{event.description}</p>
                   </div>
                 </div>
               );
