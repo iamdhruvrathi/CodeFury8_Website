@@ -62,34 +62,35 @@ const Hero = () => {
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative pt-20">
-      <div className="container mx-auto px-6 text-center">
-      {/* Main Title */}
-<div className="mb-12 animate-fade-in text-center">
-  {/* Hero Title */}
-  <h1 className="text-6xl md:text-8xl font-orbitron font-extrabold mb-3 tracking-wide">
-    <span className="text-cyan-400 glow-text">Code</span>
-    <span className="text-fuchsia-500 glow-text">Fury</span>
-    <span className="text-white ml-2">8.0</span>
-  </h1>
+      <div className="container mx-auto px-4 text-center">
+  <div className="mb-10 animate-fade-in relative">
+    {/* Hero Title */}
+    <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-orbitron font-extrabold mb-2 tracking-tight leading-tight whitespace-nowrap text-center">
+      <span className="text-cyan-400 glow-text">Code</span>
+      <span className="text-fuchsia-500 glow-text">Fury</span>
+      <span className="text-white ml-2">8.0</span>
+    </h1>
 
-  {/* Tagline */}
-  <p className="italic text-xl md:text-lg text-purple-300 font-poppins mt-1 mb-2">
-    Fury in Code, Ready to Explode
-  </p>
+    {/* Tagline - left aligned */}
+    <p className="italic text-base sm:text-lg md:text-xl text-purple-300 font-poppins mt-0 mb-3 text-left md:ml-8 lg:ml-16">
+  Fury in Code, Ready to Explode
+</p>
+
 <br></br>
-  {/* Annual Hackathon */}
-  <p className="font-bold text-2xl md:text-xl text-purple-000 font-poppins">
-    Annual National-Level Hackathon
-  </p>
+    {/* Annual Hackathon */}
+    <p className="font-semibold text-md sm:text-xl md:text-2xl lg:text-2xl text-purple-000 font-poppins text-center">
+      Annual National-Level Hackathon
+    </p>
 
-  {/* Event Date */}
-  <div className="flex items-center justify-center space-x-3 mt-5 text-cyan-400 font-poppins">
-    <Calendar className="w-6 h-6" />
-    <span className="text-lg md:text-xl font-medium">
-      22nd, 23rd & 24th August 2025
-    </span>
+    {/* Event Date */}
+    <div className="flex items-center justify-center space-x-2 sm:space-x-3 mt-4 text-cyan-400 font-poppins">
+      <Calendar className="w-4 h-4 sm:w-6 sm:h-6" />
+      <span className="text-sm sm:text-lg md:text-xl font-medium">
+        22nd, 23rd & 24th August 2025
+      </span>
+    </div>
   </div>
-</div>
+
 
 
 
