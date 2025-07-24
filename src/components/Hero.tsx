@@ -78,7 +78,7 @@ const Hero = () => {
   </p>
 <br></br>
   {/* Annual Hackathon */}
-  <p className="text-xl md:text-xl text-purple-000 font-poppins">
+  <p className="bold text-xl md:text-xl text-purple-000 font-poppins">
     Annual National-Level Hackathon
   </p>
 
