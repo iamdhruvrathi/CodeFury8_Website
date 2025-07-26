@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Calendar, Users, Zap } from 'lucide-react';
+import { Calendar, Zap } from 'lucide-react';
 import cslogo from '../assets/image.png';
 import ieeelogo from '../assets/ieee-logo.png';
 
@@ -36,60 +36,46 @@ const Hero = () => {
   }, []);
 
   useEffect(() => {
-    const checkRegistrationTime = () => {
-      const now = new Date();
-      const closingTime = new Date('2025-08-20T13:00:00');
-      if (now >= closingTime) {
-        setIsClosed(true);
-      }
-    };
-
-    checkRegistrationTime();
-    const interval = setInterval(checkRegistrationTime, 60000);
+    const now = new Date();
+    const closingTime = new Date('2025-08-20T13:00:00');
+    if (now >= closingTime) setIsClosed(true);
+    const interval = setInterval(() => {
+      if (new Date() >= closingTime) setIsClosed(true);
+    }, 60000);
     return () => clearInterval(interval);
   }, []);
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
-
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative pt-20">
-      <div className="container mx-auto px-4 text-center">
-        <div className="mb-10 animate-fade-in relative">
-          {/* Hero Title */}
-          <div className="relative inline-block">
-            <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-8xl xl:text-[10rem] font-orbitron font-extrabold mb-2 mt-12 tracking-tight leading-tight whitespace-nowrap text-center">
+    <section id="hero" className="min-h-screen flex items-center justify-center relative pt-20 px-4">
+      <div className="container mx-auto text-center">
+        {/* Title */}
+        <div className="mb-10 animate-fade-in">
+          <div className="relative inline-block w-full">
+            <h1 className="text-[2.5rem] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[10rem] font-orbitron font-extrabold tracking-tight leading-tight text-center">
               <span className="text-cyan-400 glow-text">Code</span>
               <span className="text-fuchsia-500 glow-text">Fury</span>
               <span className="text-white ml-2">8.0</span>
             </h1>
-            {/* Tagline aligned below "D" to "R" */}
-            <p className="absolute left-[12%] w-[60%] italic text-sm sm:text-lg md:text-xl text-purple-300 font-poppins mt-0  text-center">
+            <p className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-[80%] sm:w-[60%] text-xs sm:text-sm md:text-lg italic text-purple-300 font-poppins text-center">
               Fury in Code, Ready to Explode
             </p>
           </div>
 
-          <br />
-
-          {/* Annual Hackathon */}
-          <p className="font-semibold  text-md sm:text-xl md:text-xl lg:text-2xl text-purple-000 font-poppins text-center mt-20">
+          {/* Tagline */}
+          <p className="font-semibold text-base sm:text-xl lg:text-2xl text-purple-100 font-poppins mt-20">
             Annual National-Level Hackathon
           </p>
 
           {/* Event Date */}
-          <div className="flex items-center justify-center space-x-2 sm:space-x-3 mt-4 text-cyan-400 font-poppins">
-            <Calendar className="w-4 h-4 sm:w-6 sm:h-6" />
+          <div className="flex items-center justify-center space-x-2 mt-4 text-cyan-400 font-poppins">
+            <Calendar className="w-5 h-5 sm:w-6 sm:h-6" />
             <span className="text-sm sm:text-lg md:text-xl font-medium">
               22nd, 23rd & 24th August 2025
             </span>
           </div>
         </div>
 
-        {/* Countdown Timer */}
+        {/* Countdown */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mb-12">
           {Object.entries(timeLeft).map(([unit, value]) => (
             <div
@@ -106,50 +92,38 @@ const Hero = () => {
           ))}
         </div>
 
-        {/* CTA Buttons */}
-        {isClosed ? (
-          <div className="w-full mb-12">
-            <div className="flex items-center justify-center space-x-4 mb-6">
-              <div className="flex-1 border-t border-gray-500" />
-              <button
-                disabled
-                className="border-2 glow-button text-white bg-gray-600 px-6 py-3 rounded-full font-semibold text-lg tracking-wide cursor-not-allowed"
-              >
-                Registration Closed
-              </button>
-              <div className="flex-1 border-t border-gray-500" />
-            </div>
-          </div>
-        ) : (
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
+        {/* CTA Button */}
+        <div className="flex justify-center mb-12">
+          {isClosed ? (
+            <button
+              disabled
+              className="border-2 glow-button text-white bg-gray-600 px-6 py-3 rounded-full font-semibold text-lg tracking-wide cursor-not-allowed"
+            >
+              Registration Closed
+            </button>
+          ) : (
             <button
               className="glow-button bg-gradient-to-r from-neonCyan to-neonPurple text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:bg-cyan-400"
             >
               <Zap className="w-5 h-5 inline mr-2" />
               Register Now
             </button>
-          </div>
-        )}
+          )}
+        </div>
 
-        {/* Organizer Logos */}
-        <div className="w-full flex justify-center">
-          <div className="flex flex-col sm:flex-row items-center sm:items-center justify-center gap-6 sm:gap-12 text-center">
-            <div className="flex justify-center items-center">
-              <img
-                src={ieeelogo}
-                alt="IEEE UVCE Logo"
-                className="w-[100px] h-[100px] object-contain justify-center"
-              />
-            </div>
-            <div className="text-gray-500 text-4xl font-semibold justify-center self-center">×</div>
-            <div className="flex justify-center items-center">
-              <img
-                src={cslogo}
-                alt="Computer Society Logo"
-                className="w-[350px] h-[350px] object-contain"
-              />
-            </div>
-          </div>
+        {/* Logos */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
+          <img
+            src={ieeelogo}
+            alt="IEEE Logo"
+            className="w-24 sm:w-28 md:w-32 h-auto object-contain"
+          />
+          <div className="text-gray-500 text-3xl sm:text-4xl font-semibold">×</div>
+          <img
+            src={cslogo}
+            alt="CS Logo"
+            className="w-40 sm:w-56 md:w-72 h-auto object-contain"
+          />
         </div>
       </div>
     </section>
