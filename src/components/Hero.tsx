@@ -51,7 +51,7 @@ const Hero = () => {
         {/* Title */}
         <div className="mb-10 animate-fade-in">
           <div className="relative inline-block w-full">
-            <h1 className="text-[2.5rem] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[10rem] font-orbitron font-extrabold tracking-tight leading-tight text-center">
+            <h1 className="text-[2.5rem] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[9rem] font-orbitron font-extrabold tracking-tight leading-tight text-center">
               <span className="text-cyan-400 glow-text">Code</span>
               <span className="text-fuchsia-500 glow-text">Fury</span>
               <span className="text-white ml-2">8.0</span>
@@ -76,21 +76,22 @@ const Hero = () => {
         </div>
 
         {/* Countdown */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mb-12">
-          {Object.entries(timeLeft).map(([unit, value]) => (
-            <div
-              key={unit}
-              className="p-4 text-center hover:scale-105 transition rounded-xl border-4 border-blue-300 bg-[#0f172a]/50 backdrop-blur-md shadow-lg"
-            >
-              <div className="text-3xl md:text-4xl font-bold text-neonCyan">
-                {value.toString().padStart(2, '0')}
-              </div>
-              <div className="text-sm uppercase text-gray-400 mt-1 tracking-wider">
-                {unit}
-              </div>
-            </div>
-          ))}
-        </div>
+<div className="grid grid-cols-4 md:grid-cols-4 gap-2 sm:gap-4 max-w-2xl mx-auto mb-8 sm:mb-12">
+  {Object.entries(timeLeft).map(([unit, value]) => (
+    <div
+      key={unit}
+      className="p-2 sm:p-3 md:p-4 text-center hover:scale-105 transition rounded-lg sm:rounded-xl md:rounded-2xl glass-card shadow-lg"
+    >
+      <div className="text-xl sm:text-2xl md:text-2xl font-bold text-neonCyan">
+        {value.toString().padStart(2, '0')}
+      </div>
+      <div className="text-[0.65rem] sm:text-xs md:text-sm uppercase text-gray-400 mt-1 tracking-wider">
+        {unit}
+      </div>
+    </div>
+  ))}
+</div>
+
 
         {/* CTA Button */}
         <div className="flex justify-center mb-12">
