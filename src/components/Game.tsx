@@ -303,30 +303,27 @@ const Game = () => {
 
         <div className="flex flex-col items-center">
           {/* Responsive Board */}
-          <div
-            className="glass-card relative overflow-hidden rounded-xl border-4 border-purple-400 shadow-lg mx-auto"
-            style={{
-  width: "100%",
-  maxWidth: `${containerWidth}px`, // containerWidth is max width, can vary by window size
-  aspectRatio: `${BASE_WIDTH} / ${BASE_HEIGHT}`, // Maintains correct ratio responsively
-  background: "linear-gradient(135deg, #1e293b 0%, #6366f1 100%)",
-  boxShadow: "0 8px 40px 0 rgba(80,30,180,0.3)",
-  borderRadius: "1rem",
-  overflow: "hidden",
-  borderWidth: "4px",
-  borderColor: "#7c3aed",
-  borderStyle: "solid",
-  transition: "width 150ms, height 150ms",
-  touchAction: "manipulation",
-  margin: "0 auto", // center horizontally
-  position: "relative",
-}}
+<div
+  className="glass-card relative overflow-hidden rounded-xl shadow-lg mx-auto p-[4px] bg-gradient-to-r from-cyan-400 to-fuchsia-500"
+  style={{
+    width: "100%",
+    maxWidth: `${containerWidth}px`, // containerWidth is max width, can vary by window size
+    aspectRatio: `${BASE_WIDTH} / ${BASE_HEIGHT}`, // Maintains correct ratio responsively
+    background: "linear-gradient(135deg, #1e293b 0%, #6366f1 100%)",
+    boxShadow: "0 8px 40px 0 rgba(80,30,180,0.3)",
+    borderRadius: "1rem",
+    overflow: "hidden",
+    transition: "width 150ms, height 150ms",
+    touchAction: "manipulation",
+    margin: "0 auto", // center horizontally
+    position: "relative",
+  }}
+  onClick={gameState === 'playing' ? jump : resetGame}
+  role="button"
+  tabIndex={0}
+  aria-label={gameState === 'playing' ? 'Tap or click to jump' : 'Start'}
+>
 
-            onClick={gameState === 'playing' ? jump : resetGame}
-            role="button"
-            tabIndex={0}
-            aria-label={gameState === 'playing' ? 'Tap or click to jump' : 'Start'}
-          >
 
             {codePattern}
 

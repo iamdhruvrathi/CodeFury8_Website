@@ -50,7 +50,7 @@ const Sponsors = () => {
                 {sponsor.tier}
               </h3>
 
-              <div className="glass-card rounded-xl p-4 flex flex-col items-center text-center shadow-lg border border-white/10 backdrop-blur-md bg-white/5 transition-all duration-300 group hover:scale-105">
+              <div className="glass-card-no-border rounded-xl p-4 flex flex-col items-center text-center shadow-lg border border-white/10 backdrop-blur-md bg-white/5 transition-all duration-300 group hover:scale-105">
                 {/* Logo and Name side by side */}
                 <div className="flex items-center justify-center space-x-3 mb-2">
                   <div
