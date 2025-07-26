@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Calendar, Users, Zap } from 'lucide-react';
-import cslogo from '../assets/cs-logo.png';
+import cslogo from '../assets/image.png';
 import ieeelogo from '../assets/ieee-logo.png';
 
 const Hero = () => {
@@ -93,19 +93,23 @@ const Hero = () => {
 
 
 
-        {/* Countdown Timer */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mb-12">
-          {Object.entries(timeLeft).map(([unit, value]) => (
-            <div key={unit} className="glass-card p-4 text-center hover:scale-105 transition">
-              <div className="text-3xl md:text-4xl font-bold text-neonCyan">
-                {value.toString().padStart(2, '0')}
-              </div>
-              <div className="text-sm uppercase text-gray-400 mt-1 tracking-wider">
-                {unit}
-              </div>
-            </div>
-          ))}
-        </div>
+       {/* Countdown Timer */}
+<div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mb-12">
+  {Object.entries(timeLeft).map(([unit, value]) => (
+    <div
+      key={unit}
+      className="p-4 text-center hover:scale-105 transition rounded-xl border-4 border-blue-300 bg-[#0f172a]/50 backdrop-blur-md shadow-lg"
+    >
+      <div className="text-3xl md:text-4xl font-bold text-neonCyan">
+        {value.toString().padStart(2, '0')}
+      </div>
+      <div className="text-sm uppercase text-gray-400 mt-1 tracking-wider">
+        {unit}
+      </div>
+    </div>
+  ))}
+</div>
+
 
         {/* CTA Buttons */}
         {isClosed ? (
@@ -149,33 +153,33 @@ const Hero = () => {
           </div>
         )}
 
-        {/* Organizer Logos */}
-        <div className="flex flex-col sm:flex-row items-center justify-center space-y-6 sm:space-y-0 sm:space-x-12">
-          <div className="flex items-center justify-center gap-6 sm:gap-12 text-center">
-            {/* IEEE UVCE */}
-            <div>
-              <img
-                src={ieeelogo}
-                alt="IEEE UVCE Logo"
-                className="w-16 h-16 object-contain mx-auto mb-1"
-              />
-              <p className="text-xs sm:text-sm text-gray-400 font-medium">IEEE UVCE</p>
-            </div>
+       {/* Organizer Logos */}
+<div className="w-full flex justify-center">
+  <div className="flex flex-col sm:flex-row items-center sm:items-center justify-center gap-6 sm:gap-12 text-center">
+    
+    {/* IEEE UVCE */}
+    <div className="flex justify-center items-center">
+      <img
+        src={ieeelogo}
+        alt="IEEE UVCE Logo"
+        className="w-[100px] h-[100px] object-contain justify-center"
+      />
+    </div>
 
-            {/* Divider */}
-            <div className="text-gray-500 text-xl sm:text-2xl font-semibold">×</div>
+    {/* Divider */}
+    <div className="text-gray-500 text-4xl font-semibold justify-center self-center">×</div>
 
-            {/* Computer Society SIG */}
-            <div>
-              <img
-                src={cslogo}
-                alt="Computer Society Logo"
-                className="w-21 h-16 object-contain mx-auto mb-1"
-              />
-              <p className="text-xs sm:text-sm text-gray-400 font-medium">Computer Society SIG</p>
-            </div>
-          </div>
-        </div>
+    {/* Computer Society SIG */}
+    <div className="flex justify-center items-center">
+      <img
+        src={cslogo}
+        alt="Computer Society Logo"
+        className="w-[350px] h-[350px] object-contain"
+      />
+    </div>
+  </div>
+</div>
+
       </div>
     </section>
   );
