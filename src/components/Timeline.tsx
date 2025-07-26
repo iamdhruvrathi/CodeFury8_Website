@@ -68,20 +68,6 @@ const Timeline = () => {
         </h2>
 
         <div className="relative max-w-6xl mx-auto">
-          {/* Decorative curved path */}
-          <div className="absolute inset-0 flex justify-center pointer-events-none">
-            <svg width="4" height="100%" viewBox="0 0 4 100%" preserveAspectRatio="none">
-              <path d="M2 0 Q4 20 2 40 Q0 60 2 80 Q4 100 2 120" stroke="url(#gradient)" strokeWidth="4" fill="none" />
-              <defs>
-                <linearGradient id="gradient" gradientTransform="rotate(90)">
-                  <stop offset="0%" stopColor="#06b6d4" />
-                  <stop offset="50%" stopColor="#8b5cf6" />
-                  <stop offset="100%" stopColor="#ec4899" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-
           <div className="grid gap-20">
             {timelineEvents.map((event, index) => {
               const Icon = event.icon;
