@@ -51,7 +51,7 @@ const Hero = () => {
         {/* Title */}
         <div className="mb-10 animate-fade-in">
           <div className="relative inline-block w-full">
-            <h1 className="text-[2.5rem] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[9rem] font-orbitron font-extrabold tracking-tight leading-tight text-center">
+            <h1 className="text-[2rem] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[9rem] font-orbitron font-extrabold tracking-tight leading-tight text-center">
               <span className="text-cyan-400 glow-text">Code</span>
               <span className="text-fuchsia-500 glow-text">Fury</span>
               <span className="text-white ml-2">8.0</span>

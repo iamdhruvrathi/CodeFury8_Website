@@ -2,9 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-
+/* Base Styles */
 body {
   margin: 0;
   padding: 0;
@@ -12,12 +13,16 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Glassmorphism effect */
+section {
+  scroll-margin-top: 100px;
+}
+
+/* Glassmorphism Cards */
 .glass-card {
   position: relative;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(5px);
-  border-radius: 30px;
+  border-radius: 20px;
   box-shadow: 0 0 10px rgba(236, 72, 153, 0.3);
   overflow: hidden;
 }
@@ -41,13 +46,11 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-
-/* Glow text effect */
+/* Glow Effects */
 .glow-text {
-  text-shadow: 0 0 00px currentColor, 0 0 5px currentColor, 0 0 00px currentColor;
+  text-shadow: 0 0 0px currentColor, 0 0 5px currentColor, 0 0 0px currentColor;
 }
 
-/* Glow button effect */
 .glow-button {
   box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
   transition: all 0.3s ease;
@@ -58,7 +61,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* Animation classes */
+/* Animations */
 .animate-fade-in {
   animation: fadeIn 1.5s ease-in-out;
 }
@@ -74,7 +77,23 @@ body {
   }
 }
 
-/* Custom scrollbar */
+.loading-dots {
+  display: inline-block;
+}
+
+.loading-dots:after {
+  content: '';
+  animation: dots 2s infinite;
+}
+
+@keyframes dots {
+  0%, 20% { content: ''; }
+  40% { content: '.'; }
+  60% { content: '..'; }
+  80%, 100% { content: '...'; }
+}
+
+/* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -92,37 +111,7 @@ body {
   background: #0EA5E9;
 }
 
-/* Section spacing */
-section {
-  scroll-margin-top: 100px;
-}
-
-/* Responsive design improvements */
-@media (max-width: 768px) {
-  .glass-card {
-    background: rgba(255, 255, 255, 0.08);
-  }
-  
-  .glow-text {
-    text-shadow: 0 0 00px currentColor, 0 0 5px currentColor, 0 0 00px currentColor;
-  }
-}
-
-/* Particle animation */
-.particle {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-/* Game specific styles */
-.game-canvas {
-  image-rendering: pixelated;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: crisp-edges;
-}
-
-/* Timeline specific animations */
+/* Timeline Animations */
 .timeline-item {
   opacity: 0;
   transform: translateX(50px);
@@ -134,7 +123,7 @@ section {
   transform: translateX(0);
 }
 
-/* Hover effects for cards */
+/* Hover Tilt Effect */
 .hover-tilt {
   transition: transform 0.3s ease;
 }
@@ -143,38 +132,45 @@ section {
   transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
 }
 
-/* Loading animation */
-.loading-dots {
-  display: inline-block;
+/* Particle Animation */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
 }
 
-.loading-dots:after {
-  content: '';
-  animation: dots 2s infinite;
+/* Game Specific */
+.game-canvas {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
 }
 
-@keyframes dots {
-  0%, 20% { content: ''; }
-  40% { content: '.'; }
-  60% { content: '..'; }
-  80%, 100% { content: '...'; }
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.08);
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 0px currentColor, 0 0 5px currentColor, 0 0 0px currentColor;
+  }
 }
 
-/* Enhanced mobile responsiveness */
 @media (max-width: 640px) {
   .glass-card {
     padding: 1rem;
   }
-  
+
   .glow-button {
     padding: 0.75rem 1.5rem;
     font-size: 0.875rem;
   }
-  
+
   h1 {
     font-size: 3rem !important;
   }
-  
+
   h2 {
     font-size: 2rem !important;
   }
