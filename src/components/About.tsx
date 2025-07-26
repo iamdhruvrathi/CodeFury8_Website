@@ -107,7 +107,7 @@
 // };
 
 // export default About;
-import React from 'react';
+
 import { Users, Target, Award, Globe } from 'lucide-react';
 
 const About = () => {

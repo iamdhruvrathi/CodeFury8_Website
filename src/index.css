@@ -14,10 +14,27 @@ body {
 
 /* Glassmorphism effect */
 .glass-card {
+  position: relative;
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(236, 72, 153, 0.3);
+  overflow: hidden;
 }
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 0.5px;
+  border-radius: inherit;
+  background: linear-gradient(to bottom, cyan, fuchsia);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
 
 /* Glow text effect */
 .glow-text {

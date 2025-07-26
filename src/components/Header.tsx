@@ -20,9 +20,12 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
-    return () => (document.body.style.overflow = 'auto');
-  }, [isMenuOpen]);
+  document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
+  return () => {
+    document.body.style.overflow = 'auto';
+  };
+}, [isMenuOpen]);
+
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -40,10 +43,12 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <img
-            src={handle}
-            alt="CodeFury Logo"
-            className="h-10 sm:h-10 object-contain drop-shadow-[0_0_10px_#00f6ff]"
-          />
+  src={handle}
+  onClick={() => scrollToSection("#hero")}
+  alt="CodeFury Logo"
+  className="h-10 sm:h-10 object-contain drop-shadow-[0_0_10px_#00f6ff] cursor-pointer hover:drop-shadow-[0_0_15px_#00f6ff] transition-transform duration-300"
+/>
+
 
           {/* Desktop Nav */}
           <div className="hidden md:flex flex-wrap gap-4 lg:gap-6">
