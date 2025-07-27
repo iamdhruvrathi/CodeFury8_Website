@@ -232,8 +232,11 @@ const FAQ = () => {
   const faqs = [
     {
       question: 'Who can participate in CodeFury 8.0?',
-      answer:
-        'Any student from any college or university can participate. Both undergraduate and postgraduate students are welcome. Professionals and working individuals are not eligible.'
+      answer: (
+        <>
+          <span className="text-purple-400 font-semibold">Any student from any college or university</span> can participate. Both undergraduate and postgraduate students are welcome. Professionals and working individuals are not eligible.
+        </>
+      )
     },
     {
       question: 'What is the team size limit?',
@@ -245,8 +248,11 @@ const FAQ = () => {
     },
     {
       question: 'Is there any registration fee?',
-      answer:
-        'No, CodeFury 8.0 is completely free to participate. There are no hidden charges or registration fees.'
+      answer: (
+        <>
+          <span className="text-purple-400 font-semibold">No, CodeFury 8.0 is completely free to participate.</span> There are no hidden charges or registration fees.
+        </>
+      )
     },
     {
       question: 'What are the available tracks?',
@@ -255,18 +261,27 @@ const FAQ = () => {
     },
     {
       question: 'Are first-year students allowed to participate?',
-      answer:
-        'Yes! First-year students are absolutely welcome. CodeFury is open to students from all years and all branches of engineering.'
+      answer: (
+        <>
+          <span className="text-purple-400 font-semibold">Yes! First-year students are absolutely welcome.</span> CodeFury is open to students from all years and all branches of engineering.
+        </>
+      )
     },
     {
       question: 'How do I submit my project?',
-      answer:
-        "Project submission details will be shared with qualified participants after the preliminary round. Typically, you'll need to submit your code repository, demo video, and project documentation."
+      answer: (
+        <>
+          <span className="text-purple-400 font-semibold">Project submission details will be shared with qualified participants after the preliminary round.</span> Typically, you'll need to submit your code repository, demo video, and project documentation.
+        </>
+      )
     },
     {
       question: 'Is this completely an online hackathon?',
-      answer:
-        'Yes, CodeFury 8.0 is a fully online hackathon. You can participate from anywhere in the world. All interactions, presentations, and judging will happen virtually.'
+      answer: (
+        <>
+          <span className="text-purple-400 font-semibold">Yes, CodeFury 8.0 is a fully online hackathon.</span> You can participate from anywhere in the world. All interactions, presentations, and judging will happen virtually.
+        </>
+      )
     },
     {
       question: 'What happens after the 24-hour coding period?',
@@ -314,17 +329,13 @@ const FAQ = () => {
                 {openFAQ === index && (
                   <div className="px-6 pb-4">
                     <div className="border-t border-gray-700/50 pt-4">
-                      <p className="text-gray-300 leading-relaxed">
-                        {faq.answer}
-                      </p>
+                      <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
                     </div>
                   </div>
                 )}
               </div>
             ))}
           </div>
-
-          
         </div>
       </div>
     </section>
