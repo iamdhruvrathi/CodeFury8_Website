@@ -237,8 +237,11 @@ const FAQ = () => {
     },
     {
       question: 'What is the team size limit?',
-      answer:
-        'Teams can have 1-4 members. You can participate individually or form a team of up to 4 people. All team members must be students.'
+      answer: (
+        <>
+          Teams can have <span className="text-purple-400 font-semibold">1-4 members</span>. You can participate individually or form a team of up to 4 people. All team members must be students.
+        </>
+      )
     },
     {
       question: 'Is there any registration fee?',
