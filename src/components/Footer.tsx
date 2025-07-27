@@ -9,7 +9,10 @@ const Footer = () => {
         <p className="text-cyan-400 font-semibold">
           Dhruv Rathi &nbsp;| Lahari Priya N &nbsp;| Rahita H Puthran
         </p>
-        <p className="text-gray-400">Software Development SIG, IEEE UVCE</p>
+        <p className="text-gray-400">
+          Software Development SIG, IEEE UVCE&nbsp;
+        </p>
+        <div className="h-2" /> {/* Creates a small line break */}
       </div>
     </footer>
   );
