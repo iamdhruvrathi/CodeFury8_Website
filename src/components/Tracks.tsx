@@ -4,13 +4,15 @@ const Tracks = () => {
   const tracks = [
     {
       title: 'Web Development',
-      description: 'Build modern, scalable websites and web applications for real-world problems. Use cutting-edge technologies like React, Vue, Angular, or explore emerging frameworks.',
+      description:
+        'Build modern, scalable websites and web applications for real-world problems. Use cutting-edge technologies like React, Vue, Angular, or explore emerging frameworks.',
       icon: Globe,
       color: 'text-cyan-400',
       bg: 'from-cyan-500/20 to-blue-500/20',
       border: 'border-cyan-500/50',
-      technologies: ['React', 'Next.js', 'Vue', 'Angular', 'Node.js', 'Express']
+      technologies: ['React', 'Next.js', 'Vue', 'Angular', 'Node.js', 'Express'],
     },
+    // Uncomment below to add more tracks:
     // {
     //   title: 'App Development',
     //   description: 'Create innovative mobile applications using Flutter or Android Studio. Develop cross-platform or native apps that solve everyday challenges.',
@@ -18,15 +20,15 @@ const Tracks = () => {
     //   color: 'text-purple-400',
     //   bg: 'from-purple-500/20 to-pink-500/20',
     //   border: 'border-purple-500/50',
-    //   technologies: ['Flutter', 'Dart', 'Android Studio', 'Java', 'Kotlin', 'Firebase']
-    // }
+    //   technologies: ['Flutter', 'Dart', 'Android Studio', 'Java', 'Kotlin', 'Firebase'],
+    // },
   ];
 
   return (
     <section id="tracks" className="py-20 relative">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-          <span className="text-purple-400">Tracks</span> 
+          <span className="text-purple-400">Tracks</span>
         </h2>
 
         <div className="grid md:grid-cols-1 gap-12 max-w-6xl mx-auto">
@@ -36,11 +38,13 @@ const Tracks = () => {
               className={`glass-card p-8 rounded-2xl bg-gradient-to-br ${track.bg} border ${track.border} transform hover:scale-105 transition-all duration-300 group cursor-pointer`}
             >
               <div className="text-center mb-6">
-                <div className={`inline-flex p-4 rounded-full bg-gray-800/50 mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                <div
+                  className={`inline-flex p-4 rounded-full bg-gray-800/50 mb-4 group-hover:scale-110 transition-transform duration-300`}
+                >
                   <track.icon className={`w-12 h-12 ${track.color}`} />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">{track.title}</h3>
-                <p className="text-gray-300 leading-relaxed">{track.description}</p>
+                <p className="text-gray-300 leading-relaxed text-justify">{track.description}</p>
               </div>
 
               <div className="space-y-4">
@@ -63,12 +67,10 @@ const Tracks = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-xl text-gray-400 mb-4">Choose your track and start building the future!</p>
-          {/* <div className="inline-flex items-center space-x-2 text-cyan-400">
-            <Code className="w-5 h-5" />
-            <span>Team Size: 1-4 members</span>
-          </div> */}
+        <div className="text-center mt-12 ">
+          <p className="text-xl text-gray-400 mb-4 text-center max-w-3xl mx-auto">
+            Choose your track and start building the future!
+          </p>
         </div>
       </div>
     </section>
