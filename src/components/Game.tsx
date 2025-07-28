@@ -15,20 +15,20 @@ const BASE_HEIGHT = 400;
 const STUDENT_SIZE = 30;
 const STUDENT_X_POSITION = 80;
 
-const BASE_SPEED = 2.5;
-const BASE_GRAVITY = 0.40;
+const BASE_SPEED = 5;
+const BASE_GRAVITY = 0.50;
 const BASE_GAP = 150;
 const OBSTACLE_WIDTH = 60;
 const OBSTACLE_SPAWN_DISTANCE = 250;
 
-const MIN_GAP = 95;
-const MAX_SPEED = 7.0;
+const MIN_GAP = 55;
+const MAX_SPEED = 9.0;
 const MAX_GRAVITY = 0.75;
 const MIN_DIST = 100;
 
 const JUMP_STRENGTH = -7;
 
-const RAMP_UP_OBSTACLES = 5; // e.g. keep first 5 obstacles easy
+const RAMP_UP_OBSTACLES = 0; //keep first 3 obstacles easy
 
 
 const LOCALSTORAGE_HS = 'codefury-game-highscore';
@@ -88,10 +88,10 @@ const Game = () => {
 
   // Difficulty increases as score increases!
   useEffect(() => {
-    setObstacleSpeed(Math.min(BASE_SPEED + score * 0.08, MAX_SPEED));
-    setGravity(Math.min(BASE_GRAVITY + score * 0.01, MAX_GRAVITY));
-    setCurrentGap(Math.max(BASE_GAP - score * 1.5, MIN_GAP));
-    setObstacleDistance(Math.max(OBSTACLE_SPAWN_DISTANCE - score * 3, MIN_DIST));
+    setObstacleSpeed(Math.min(BASE_SPEED + score * 0.15, MAX_SPEED));
+    setGravity(Math.min(BASE_GRAVITY + score * 0.03, MAX_GRAVITY));
+    setCurrentGap(Math.max(BASE_GAP - score * 1.75, MIN_GAP));
+    setObstacleDistance(Math.max(OBSTACLE_SPAWN_DISTANCE - score * 4, MIN_DIST));
   }, [score]);
 
   // Game reset
