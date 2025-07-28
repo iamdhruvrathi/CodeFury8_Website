@@ -296,13 +296,13 @@ const FAQ = () => {
 
   return (
     <section id="faq" className="pt-10 pb-8 relative">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 font-heading">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
           <span className="text-purple-400 glow-text">Frequently</span> Asked Questions
         </h2>
 
         <div className="max-w-4xl mx-auto">
-          <div className="flex items-center justify-center mb-12">
+          <div className="flex items-center justify-center mb-12 font-heading">
             <HelpCircle className="w-12 h-12 text-cyan-400 mr-4" />
             <p className="text-xl text-gray-300">Got questions? We've got answers!</p>
           </div>
