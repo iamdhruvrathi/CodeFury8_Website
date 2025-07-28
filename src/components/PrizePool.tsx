@@ -186,7 +186,7 @@ const PrizePool = () => {
   return (
     <section id="prizes" className="py-20 relative">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 font-heading">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
           <span className="text-yellow-400">Prize</span> Pool
         </h2>
 
@@ -204,7 +204,7 @@ const PrizePool = () => {
                   <div className={`text-4xl font-bold ${prize.color} mb-2`}>
                     {prize.amount}
                   </div>
-                  <p className="text-gray-400 font-content">Cash Prize</p>
+                  <p className="text-gray-400">Cash Prize</p>
                 </div>
               </div>
             ))}
@@ -220,15 +220,15 @@ const PrizePool = () => {
 
             <div className="grid md:grid-cols-2 gap-6 text-justify">
               <div className="p-4 bg-purple-500/10 rounded-lg border border-purple-500/30">
-                <div className="text-lg font-semibold text-purple-400 mb-2 font-heading">Certificates</div>
-                <p className="text-gray-400 text-sm font-content">
+                <div className="text-lg font-semibold text-purple-400 mb-2">Certificates</div>
+                <p className="text-gray-400 text-sm">
                   Official participation certificates for everyone who competes.
                 </p>
               </div>
 
               <div className="p-4 bg-green-500/10 rounded-lg border border-green-500/30">
-                <div className="text-lg font-semibold text-green-400 mb-2 font-heading">Consolation Prize</div>
-                <p className="text-gray-400 text-sm font-content">
+                <div className="text-lg font-semibold text-green-400 mb-2">Consolation Prize</div>
+                <p className="text-gray-400 text-sm">
                   A token of appreciation and recognition for outstanding effort beyond the top winners.
                 </p>
               </div>

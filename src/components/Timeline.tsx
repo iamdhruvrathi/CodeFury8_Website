@@ -6,7 +6,6 @@ import {
   Flag,
   Lightbulb,
   ListTodo,
-  Heading,
 } from 'lucide-react';
 
 const Timeline = () => {
@@ -64,7 +63,7 @@ const Timeline = () => {
   return (
     <section id="timeline" className="py-20 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-20 font-heading">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-20">
           <span className="text-cyan-400 glow-text">Event</span> Timeline
         </h2>
 
