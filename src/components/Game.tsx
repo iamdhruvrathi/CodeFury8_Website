@@ -13,7 +13,7 @@ const BASE_WIDTH = 500;
 const BASE_HEIGHT = 400;
 
 const STUDENT_SIZE = 30;
-const STUDENT_X_POSITION = 80;
+const STUDENT_X_POSITION = 80; 
 
 const BASE_SPEED = 3;
 const BASE_GRAVITY = 0.4  ;
@@ -301,43 +301,64 @@ const Game = () => {
           <span className="text-purple-400 glow-text">CodeFury</span> MiniGame
         </h2>
 
+        <div className="text-sm sm:text-base text-gray-300 text-center max-w-2xl mx-auto mb-8 font-nunito leading-relaxed px-2 sm:px-4">
+  <p className="mb-2 text-fuchsia-400 font-bold uppercase font-pop ">🔥 Flappy Dev Challenge — CodeFury 8.0 Special!</p>
+  <p className="mb-4">
+    Flappy Dev is a web-based mini-game where you, as a pixel developer, navigate through blocks. Jump, dodge, and prove your reflexes like a true techie!
+  </p>
+
+  <p className="mb-4 font-semibold text-cyan-400">🏆 INDIVIDUAL OFFER – Rules to avail:</p>
+  <ul className="list-disc text-left pl-6 space-y-2 text-sm sm:text-base">
+    <li>Avail this offer before <b>19th August 2025</b>.</li>
+    <li>
+      Once you beat the Flappy Dev challenge, share your <b>high score on your Instagram story</b> and DM it to <code>@ieee.uvce.cs</code> (multiple attempts allowed).
+    </li>
+    <li>
+      Tag <code>@ieee.uvce.cs</code> and use hashtags <code>#FlappyDev</code> and <code>#CodeFury8.0</code> on your story.
+    </li>
+    <li>
+      Top 10 scorers will get a <b className="text-yellow-400">30% discount</b> on their CodeFury 8.0 hackathon ticket!
+    </li>
+  </ul>
+</div>
+
+
         <div className="flex flex-col items-center font-nunito">
           {/* Responsive Board */}
-<div
-  className="glass-card relative overflow-hidden rounded-xl shadow-lg mx-auto p-[4px] bg-gradient-to-r from-cyan-400 to-fuchsia-500"
-  style={{
-    width: "100%",
-    maxWidth: `${containerWidth}px`, // containerWidth is max width, can vary by window size
-    aspectRatio: `${BASE_WIDTH} / ${BASE_HEIGHT}`, // Maintains correct ratio responsively
-    background: "linear-gradient(135deg, #1e293b 0%, #6366f1 100%)",
-    boxShadow: "0 8px 40px 0 rgba(80,30,180,0.6)",
-    borderRadius: "1rem",
-    overflow: "hidden",
-    transition: "width 150ms, height 150ms",
-    touchAction: "manipulation",
-    margin: "0 auto", // center horizontally
-    position: "relative",
-  }}  
-  onClick={gameState === 'playing' ? jump : resetGame}
-  role="button"
-  tabIndex={0}
-  aria-label={gameState === 'playing' ? 'Tap or click to jump' : 'Start'}
->
-
+          <div
+            className="glass-card relative overflow-hidden rounded-xl shadow-lg mx-auto p-[4px] bg-gradient-to-r from-cyan-400 to-fuchsia-500"
+            style={{
+              width: "100%",
+              maxWidth: `${containerWidth}px`, // containerWidth is max width, can vary by window size
+              aspectRatio: `${BASE_WIDTH} / ${BASE_HEIGHT}`, // Maintains correct ratio responsively
+              background: "linear-gradient(135deg, #1e293b 0%, #6366f1 100%)",
+              boxShadow: "0 8px 40px 0 rgba(80,30,180,0.6)",
+              borderRadius: "1rem",
+              overflow: "hidden",
+              transition: "width 150ms, height 150ms",
+              touchAction: "manipulation",
+              margin: "0 auto", // center horizontally
+              position: "relative",
+            }}  
+            onClick={gameState === 'playing' ? jump : resetGame}
+            role="button"
+            tabIndex={0}
+            aria-label={gameState === 'playing' ? 'Tap or click to jump' : 'Start'}
+            >
 
             {codePattern}
 
             {gameState === 'menu' && (
-              <div className="absolute inset-0 flex items-center justify-center bg-black/50 z-10">
+              <div className="absolute inset-0 flex items-center justify-center bg-black/50 z-10 font-sharetech">
                 <div className="text-center px-3 w-full">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">MiniGame</h3>
-                  <p className="text-gray-300 mb-6 text-sm">Jump between walls to score</p>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">🚀 Flappy Dev</h3>
+                  <p className="text-gray-300 mb-6 text-sm">Jump through blocks. Push to survive.</p>
                   <button
                     onClick={resetGame}
                     className="glow-button bg-gradient-to-r from-green-500 to-cyan-500 text-white font-bold py-3 px-6 rounded-full flex items-center space-x-2 mx-auto"
                   >
                     <Play className="w-5 h-5" />
-                    <span>Start!</span>
+                    <span>Fly!</span>
                   </button>
                 </div>
               </div>
@@ -345,10 +366,10 @@ const Game = () => {
 
             {gameState === 'gameOver' && (
               <div className="absolute inset-0 flex items-center justify-center bg-black/70 z-10">
-                <div className="text-center px-3 w-full">
-                  <h3 className="text-xl sm:text-2xl font-bold text-red-400 mb-2">Oops! Game Over</h3>
-                  <p className="text-white mb-2 text-base">Score: <b>{score}</b></p>
-                  <p className="text-cyan-400 mb-6 text-base">High Score: {highScore}</p>
+                <div className="text-center px-3 w-full font-sharetech">
+                  <h3 className="text-xl sm:text-2xl font-bold text-red-400 mb-2">Game Over</h3>
+                  <p className="text-white mb-2 text-base">Commits this run: <b>{score}</b></p>
+                  <p className="text-cyan-400 mb-6 text-base">Best Streak: {highScore}</p>
                   <button
                     onClick={resetGame}
                     className="glow-button bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-bold py-3 px-6 rounded-full flex items-center space-x-2 mx-auto"
@@ -412,23 +433,30 @@ const Game = () => {
             ))}
           </div>
 
-          <div className="w-full flex flex-row justify-between items-center mt-4 px-2 sm:px-4 max-w-full">
-            <div className="text-center">
-              <div className="text-xl sm:text-2xl font-bold text-cyan-400">{score}</div>
-              <div className="text-xs sm:text-sm text-gray-400">Score</div>
-            </div>
-            <div className="text-center flex items-center gap-2 text-yellow-400">
-              <Trophy className="w-5 h-5" />
-              <div>
-                <div className="text-xl sm:text-2xl font-bold">{highScore}</div>
-                <div className="text-xs sm:text-sm text-gray-400">Best</div>
+          <div className="w-full flex flex-col items-center mt-4 px-2 sm:px-4 max-w-full">
+            <div className="w-full flex flex-row justify-between items-center mt-4 px-2 sm:px-4 max-w-full">
+                {/* Score - Left */}
+                <div className="text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-cyan-400">{score}</div>
+                  <div className="text-xs sm:text-sm text-gray-400">Score</div>
+                </div>
+
+                {/* Tip - Center */}
+                <p className="text-center text-gray-400 text-xs sm:text-sm px-2 max-w-xs">
+                  Press <b>SPACEBAR</b> or <b>tap</b> to jump.
+                </p>
+
+                {/* Best Score - Right */}
+                <div className="text-center flex items-center gap-2 text-yellow-400">
+                  <Trophy className="w-5 h-5" />
+                  <div>
+                    <div className="text-xl sm:text-2xl font-bold">{highScore}</div>
+                    <div className="text-xs sm:text-sm text-gray-400">Best</div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          <p className="text-center text-gray-400 mt-3 mb-2 text-xs sm:text-sm px-2 max-w-xs">
-            Press <b>SPACEBAR</b> or <b>tap</b> to jump.
-          </p>
         </div>
       </div>
     </section>
