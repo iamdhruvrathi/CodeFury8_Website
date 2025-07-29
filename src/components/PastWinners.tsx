@@ -44,12 +44,12 @@ const pastWinners = [
 const PastWinners = () => {
   return (
     <section id="past" className="py-10">
-      <div className="container mx-auto px-4">
+      <div className="container font-nunito mx-auto px-4">
         <h2 className="text-3xl md:text-5xl font-audiowide text-center mb-12">
           <span className="text-purple-400 glow-text">Past</span> Winners
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto px-2">
+        <div className="grid font-nunito grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto px-2">
           {pastWinners.map((winner, index) => (
             <div
               key={index}
@@ -62,7 +62,7 @@ const PastWinners = () => {
                 <Award className="w-5 h-5 text-yellow-400" />
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-bold font-poppins text-white mb-1">
+              <h3 className="text-xl sm:text-2xl font-bold font-nunito text-white mb-1">
                 {winner.project}
               </h3>
               <p className="text-purple-400 font-medium text-sm sm:text-base mb-2">
