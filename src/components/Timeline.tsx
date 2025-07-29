@@ -22,8 +22,8 @@ const Timeline = () => {
       date: 'August 8, 2025',
       description: 'Offline hands-on workshop to get you hackathon-ready.',
       icon: Lightbulb,
-      color: 'text-purple-400',
-      bg: 'bg-purple-500/20'
+      color: 'text-yellow-400',
+      bg: 'bg-yellow-500/20'
     },
     {
       title: 'Mini Challenge',
@@ -46,16 +46,16 @@ const Timeline = () => {
       date: 'August 22-23, 2025',
       description: 'The 24-hour coding showdown begins!',
       icon: Trophy,
-      color: 'text-purple-400',
-      bg: 'bg-purple-500/20'
+      color: 'text-fuchsia-500',
+      bg: 'bg-fuchsia-500/20'
     },
     {
       title: 'CodeFury Round 2',
       date: 'August 24, 2025',
       description: 'Top teams present their innovations to the jury.',
       icon: Flag,
-      color: 'text-cyan-400',
-      bg: 'bg-cyan-500/20'
+      color: 'text-fuchsia-500',
+      bg: 'bg-fuchsia-500/20'
     }
   ];
 
@@ -63,7 +63,7 @@ const Timeline = () => {
     <section id="timeline" className="py-20 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl md:text-5xl font-audiowide text-center mb-20">
-          <span className="text-cyan-400 glow-text">Event</span> Timeline
+          <span className="text-fuchsia-500 glow-text">Event</span> Timeline
         </h2>
 
         <div className="relative max-w-6xl mx-auto font-nunito">

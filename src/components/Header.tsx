@@ -8,7 +8,7 @@ const Header = () => {
 
   // For the main navigation visible on desktop
   const mainNav = [
-    { name: 'About', href: '#about' },
+    { name: 'About Us', href: '#about' },
     { name: 'Tracks', href: '#tracks' },
     { name: 'Timeline', href: '#timeline' },
     { name: 'Contact', href: '#contact' }
@@ -16,14 +16,14 @@ const Header = () => {
 
   // For the dropdown menu in your specified order
   const dropdownNav = [
-    { name: 'About', href: '#about' },
+    { name: 'About Us', href: '#about' },
     { name: 'Tracks', href: '#tracks' },
     { name: 'Prize Pool', href: '#prizes' },
     { name: 'Timeline', href: '#timeline' },
     { name: 'CodeFury Wall', href: '#wall' },
     { name: 'Past Winners', href: '#past' },
     { name: 'Our Sponsors', href: '#sponsors' },
-    { name: 'Minigame', href: '#game' },
+    { name: 'MiniGame', href: '#game' },
     { name: 'FAQs', href: '#faq' },
     { name: 'Contact', href: '#contact' }
   ];
@@ -88,7 +88,7 @@ const Header = () => {
             {/* Menu icon (always visible) */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-gray-300 hover:text-cyan-400 transition-colors"
+              className="p-2 text-cyan-300 hover:text-cyan-400 transition-colors"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -114,6 +114,7 @@ const Header = () => {
             </div>
           </div>
         )}
+
       </nav>
     </header>
   );

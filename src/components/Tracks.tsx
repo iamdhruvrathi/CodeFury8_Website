@@ -1,4 +1,3 @@
-// Tracks.tsx
 import React, { useState } from 'react';
 import { Globe, ChevronDown } from 'lucide-react';
 
@@ -9,7 +8,7 @@ const Tracks = () => {
     <section id="tracks" className="py-20 relative">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl md:text-5xl text-center mb-16 font-audiowide">
-          <span className="text-purple-400 glow-text">Tracks</span>
+          <span className="text-fuchsia-500 glow-text">Tracks</span>
         </h2>
 
         <div className="glass-card bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/50 p-8 rounded-2xl max-w-5xl mx-auto transform hover:scale-105 transition-all duration-300 group cursor-pointer">
@@ -26,17 +25,17 @@ const Tracks = () => {
                   md:max-h-full md:overflow-visible`}
               >
                 Participants will be presented with{' '}
-                <span className="text-purple-400 font-semibold">three distinct themes</span>, each accompanied by a unique problem statement.
+                <span className="text-green-400 font-semibold">three distinct themes</span>, each accompanied by a unique problem statement.
                 These themes and their respective challenges will be officially announced on the{' '}
-                <span className="text-yellow-300 font-semibold">first day of the event</span>.
+                <span className="text-green-300 font-semibold">first day of the event</span>.
 
                 <br />
                 <br />
 
                 Teams are required to select one theme and develop a solution based on the provided problem statement.
                 Participants may opt to build either a{' '}
-                <span className="text-green-400 font-semibold">web application</span> or a{' '}
-                <span className="text-blue-400 font-semibold">mobile application</span>, depending on their area of expertise and preference.
+                <span className="text-yellow-400 font-semibold">web application</span> or a{' '}
+                <span className="text-yellow-400 font-semibold">mobile application</span>, depending on their area of expertise and preference.
                 There are no restrictions on the technology stack — teams are free to use tools and platforms of their choice.
 
                 <br />
@@ -60,12 +59,17 @@ const Tracks = () => {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-6">
-            <div className="px-4 py-2 bg-gray-800/50 border border-gray-700 text-cyan-400 rounded-full text-sm font-medium">
-              Team Size: 1 - 4 Members
-            </div>
-            <div className="px-4 py-2 bg-gray-800/50 border border-gray-700 text-green-400 rounded-full text-sm font-medium">
-              Registration Fee: ₹50 per Head
+          <div className="mt-6">
+            <h2 className="text-center text-xl font-semibold text-white mb-4">Quick Info</h2>
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+              <div className="w-full sm:w-64 text-center p-4 bg-gray-800/50 rounded-lg">
+                <div className="text-lg sm:text-xl font-bold text-green-400">Team Size</div>
+                <div className="text-md text-gray-400">1–4 members</div>
+              </div>
+              <div className="w-full sm:w-64 text-center p-4 bg-gray-800/50 rounded-lg">
+                <div className="text-lg sm:text-xl font-bold text-yellow-400">Registration Fees</div>
+                <div className="text-md text-gray-400">₹120 per head</div>
+              </div>
             </div>
           </div>
         </div>
