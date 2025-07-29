@@ -60,7 +60,6 @@ const Tracks = () => {
           </div>
 
           <div className="mt-6">
-            <h2 className="text-center text-xl font-semibold text-white mb-4">Quick Info</h2>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
               <div className="w-full sm:w-64 text-center p-4 bg-gray-800/50 rounded-lg">
                 <div className="text-lg sm:text-xl font-bold text-green-400">Team Size</div>
