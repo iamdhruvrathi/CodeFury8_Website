@@ -5,31 +5,39 @@ import { ExternalLink, Github, Award } from 'lucide-react';
 const pastWinners = [
   {
     track: 'Web Dev Track - Winners',
-    project: 'EcoTracker Pro',
-    team: 'Green Coders',
-    description: 'AI-powered carbon footprint tracking app with gamification',
-    tech: ['React', 'Node.js', 'ML'],
+    project: 'Astero',
+    team: 'Goofy Gophers',
+    description: 'NMAM Institute of Technology',
+    tech: ['Next.js', 'Google Maps API', 'MongoDB'],
+    github: 'https://github.com/Team-Goofy-Gophers/website',
+    live: 'https://astero-rho.vercel.app/',
   },
   {
     track: 'Web Dev Track - Runners',
-    project: 'HealthBridge',
-    team: 'MedTech Warriors',
-    description: 'Telemedicine platform connecting rural areas to urban healthcare',
-    tech: ['Flutter', 'Firebase', 'WebRTC'],
+    project: 'Relief Compass',
+    team: 'Team POV',
+    description: 'Dr. Ambedhkar Institute of Technology',
+    tech: ['React.js', 'Tailwind', 'Firebase'],
+    github: 'https://github.com/Karthikeyan1508/crisis-connect',
+    live: 'https://code-fury-submission.vercel.app/',
   },
   {
     track: 'App Dev Track - Winners',
-    project: 'StudySync',
-    team: 'EduInnovators',
-    description: 'Collaborative learning platform with real-time study rooms',
-    tech: ['Vue.js', 'Socket.io', 'MongoDB'],
+    project: 'Rescue Ring',
+    team: 'Night Owls',
+    description: 'Dayanand Sagar Institute of Technology',
+    tech: ['Flutter', 'Dart', 'Firebase'],
+    github: 'https://github.com/chetanr250/disaster-ready',
+    live: '',
   },
   {
     track: 'App Dev Track - Runners',
-    project: 'FoodRescue',
-    team: 'Zero Waste',
-    description: 'App connecting surplus food from restaurants to NGOs',
-    tech: ['React Native', 'Express', 'PostgreSQL'],
+    project: 'ResQAids',
+    team: 'Widget Wizards',
+    description: 'Ambedhkar Institute of Technology',
+    tech: ['Flutter', 'Dart', 'Google API'],
+    github: 'https://github.com/aryanmajhi75/Widget-Wizards---Codefury-Hackathon',
+    live: '',
   },
 ];
 
@@ -77,17 +85,19 @@ const PastWinners = () => {
               </div>
 
               <div className="flex space-x-3">
+                {winner.live && (
+                  <a
+                    href={winner.live}
+                    className="flex items-center space-x-1 text-green-400 hover:text-green-300 transition-colors text-sm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    <span>Live Demo</span>
+                  </a>
+                )}
                 <a
-                  href="https://example.com"
-                  className="flex items-center space-x-1 text-green-400 hover:text-green-300 transition-colors text-sm"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  <span>Live Demo</span>
-                </a>
-                <a
-                  href="https://github.com/example"
+                  href={winner.github}
                   className="flex items-center space-x-1 text-gray-400 hover:text-gray-300 transition-colors text-sm"
                   target="_blank"
                   rel="noopener noreferrer"
