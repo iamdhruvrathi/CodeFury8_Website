@@ -161,79 +161,180 @@
 
 // export default PrizePool;
 
-import { Trophy, Medal, Gift, Star } from 'lucide-react';
+// import { Trophy, Medal, Gift, Star } from 'lucide-react';
+
+// const PrizePool = () => {
+//   const prizes = [
+//     {
+//       position: '1st Place',
+//       amount: '₹10,000',
+//       icon: Trophy,
+//       color: 'text-yellow-400',
+//       bg: 'from-yellow-500/20 to-orange-500/20',
+//       border: 'border-yellow-500/50',
+//     },
+//     {
+//       position: '2nd Place',
+//       amount: '₹5,000',
+//       icon: Medal,
+//       color: 'text-gray-300',
+//       bg: 'from-gray-400/20 to-gray-600/20',
+//       border: 'border-gray-500/50',
+//     },
+//   ];
+
+//   return (
+//     <section id="prizes" className="py-20 relative">
+//       <div className="container mx-auto px-6">
+//         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+//           <span className="text-yellow-400">Prize</span> Pool
+//         </h2>
+
+//         <div className="max-w-4xl mx-auto">
+//           {/* Main Prizes */}
+//           <div className="grid md:grid-cols-2 gap-8 mb-12">
+//             {prizes.map((prize, index) => (
+//               <div
+//                 key={index}
+//                 className={`glass-card p-8 rounded-2xl bg-gradient-to-br ${prize.bg} border ${prize.border} transform hover:scale-105 transition-all duration-300`}
+//               >
+//                 <div className="text-center">
+//                   <prize.icon className={`w-16 h-16 ${prize.color} mx-auto mb-4`} />
+//                   <h3 className="text-2xl font-bold text-white mb-2">{prize.position}</h3>
+//                   <div className={`text-4xl font-bold ${prize.color} mb-2`}>
+//                     {prize.amount}
+//                   </div>
+//                   <p className="text-gray-400">Cash Prize</p>
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+
+//           {/* Consolation Prizes */}
+//           <div className="glass-card p-8 rounded-2xl text-center">
+//             <div className="flex items-center justify-center mb-6">
+//               <Gift className="w-8 h-8 text-purple-400 mr-3" />
+//               <Star className="w-8 h-8 text-cyan-400 mr-3" />
+//               <Gift className="w-8 h-8 text-green-400" />
+//             </div>
+
+//             <div className="grid md:grid-cols-2 gap-6 text-justify">
+//               <div className="p-4 bg-purple-500/10 rounded-lg border border-purple-500/30">
+//                 <div className="text-lg font-semibold text-purple-400 mb-2">Certificates</div>
+//                 <p className="text-gray-400 text-sm">
+//                   Official participation certificates for everyone who competes.
+//                 </p>
+//               </div>
+
+//               <div className="p-4 bg-green-500/10 rounded-lg border border-green-500/30">
+//                 <div className="text-lg font-semibold text-green-400 mb-2">Consolation Prize</div>
+//                 <p className="text-gray-400 text-sm">
+//                   A token of appreciation and recognition for outstanding effort beyond the top winners.
+//                 </p>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default PrizePool;
+
+import { Trophy, Medal, Gift, Star, BadgeDollarSign } from 'lucide-react';
 
 const PrizePool = () => {
   const prizes = [
     {
-      position: '1st Place',
-      amount: '₹10,000',
+      position: '1st PRIZE',
+      amount: '₹25,000',
       icon: Trophy,
       color: 'text-yellow-400',
       bg: 'from-yellow-500/20 to-orange-500/20',
       border: 'border-yellow-500/50',
+      benefits: [
+        'Cash prize',
+        'Internship opportunities',
+        'Premium tech gadgets',
+        'Fast-track job interviews',
+      ],
     },
     {
-      position: '2nd Place',
-      amount: '₹5,000',
+      position: '2nd PRIZE',
+      amount: '₹15,000',
       icon: Medal,
       color: 'text-gray-300',
       bg: 'from-gray-400/20 to-gray-600/20',
       border: 'border-gray-500/50',
+      benefits: [
+        'Cash prize',
+        'Tech workshop access',
+        'Development kits',
+        'Mentorship sessions',
+      ],
+    },
+    {
+      position: 'CONSOLATION PRIZE',
+      amount: '₹2,000',
+      icon: BadgeDollarSign,
+      color: 'text-orange-400',
+      bg: 'from-orange-500/20 to-red-500/20',
+      border: 'border-orange-500/50',
+      benefits: [
+        'Cash prize',
+        'Software licenses',
+        'Development tools',
+        'Cloud credits',
+      ],
     },
   ];
 
   return (
-    <section id="prizes" className="py-20 relative">
+    <section id="prizes" className="pt-12 pb-20 relative font-[Poppins]">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-          <span className="text-yellow-400">Prize</span> Pool
+        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-4 tracking-wide text-white">
+          PRIZE POOL
         </h2>
 
-        <div className="max-w-4xl mx-auto">
-          {/* Main Prizes */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {prizes.map((prize, index) => (
-              <div
-                key={index}
-                className={`glass-card p-8 rounded-2xl bg-gradient-to-br ${prize.bg} border ${prize.border} transform hover:scale-105 transition-all duration-300`}
-              >
-                <div className="text-center">
-                  <prize.icon className={`w-16 h-16 ${prize.color} mx-auto mb-4`} />
-                  <h3 className="text-2xl font-bold text-white mb-2">{prize.position}</h3>
-                  <div className={`text-4xl font-bold ${prize.color} mb-2`}>
-                    {prize.amount}
-                  </div>
-                  <p className="text-gray-400">Cash Prize</p>
+        <div className="text-center mb-8">
+          <h3 className="text-pink-400 text-2xl md:text-3xl font-bold mb-2">
+            ₹50,000+ TOTAL PRIZE POOL
+          </h3>
+          <p className="text-gray-400 text-sm md:text-base">
+            Compete for cash prizes, tech gadgets, internship opportunities, and more!
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8 mb-8 max-w-6xl mx-auto">
+          {prizes.map((prize, index) => (
+            <div
+              key={index}
+              className={`glass-card p-8 rounded-2xl bg-gradient-to-br ${prize.bg} border ${prize.border} hover:scale-105 transform transition-all duration-300`}
+            >
+              <div className="text-center mb-4">
+                <prize.icon className={`w-12 h-12 mx-auto mb-3 ${prize.color}`} />
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-1 tracking-wide">
+                  {prize.position}
+                </h3>
+                <div className={`text-3xl md:text-4xl font-extrabold ${prize.color}`}>
+                  {prize.amount}
                 </div>
               </div>
-            ))}
-          </div>
-
-          {/* Consolation Prizes */}
-          <div className="glass-card p-8 rounded-2xl text-center">
-            <div className="flex items-center justify-center mb-6">
-              <Gift className="w-8 h-8 text-purple-400 mr-3" />
-              <Star className="w-8 h-8 text-cyan-400 mr-3" />
-              <Gift className="w-8 h-8 text-green-400" />
+              <ul className="mt-4 space-y-2 text-left text-sm md:text-base text-gray-300 pl-4 list-disc">
+                {prize.benefits.map((benefit, i) => (
+                  <li key={i}>{benefit}</li>
+                ))}
+              </ul>
             </div>
+          ))}
+        </div>
 
-            <div className="grid md:grid-cols-2 gap-6 text-justify">
-              <div className="p-4 bg-purple-500/10 rounded-lg border border-purple-500/30">
-                <div className="text-lg font-semibold text-purple-400 mb-2">Certificates</div>
-                <p className="text-gray-400 text-sm">
-                  Official participation certificates for everyone who competes.
-                </p>
-              </div>
-
-              <div className="p-4 bg-green-500/10 rounded-lg border border-green-500/30">
-                <div className="text-lg font-semibold text-green-400 mb-2">Consolation Prize</div>
-                <p className="text-gray-400 text-sm">
-                  A token of appreciation and recognition for outstanding effort beyond the top winners.
-                </p>
-              </div>
-            </div>
-          </div>
+        {/* Certificate Info */}
+        <div className="glass-card p-6 md:p-8 rounded-2xl text-center max-w-4xl mx-auto border border-white/10 bg-white/5">
+          <p className="text-white text-base md:text-lg font-medium tracking-wide">
+            <span className="text-purple-400 font-semibold">CERTIFICATE OF PARTICIPATION</span> WILL BE PROVIDED FOR EVERYONE
+          </p>
         </div>
       </div>
     </section>
@@ -241,5 +342,3 @@ const PrizePool = () => {
 };
 
 export default PrizePool;
-
-
