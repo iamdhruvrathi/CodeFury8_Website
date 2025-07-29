@@ -35,7 +35,7 @@ const pastWinners = [
 
 const PastWinners = () => {
   return (
-    <section className="py-10">
+    <section id="past" className="py-10">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-5xl font-audiowide text-center mb-12">
           <span className="text-purple-400 glow-text">Past</span> Winners
