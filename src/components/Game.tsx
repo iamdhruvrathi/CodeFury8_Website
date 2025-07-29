@@ -15,8 +15,8 @@ const BASE_HEIGHT = 400;
 const STUDENT_SIZE = 30;
 const STUDENT_X_POSITION = 80; 
 
-const BASE_SPEED = 3;
-const BASE_GRAVITY = 0.4  ;
+const BASE_SPEED = 4;
+const BASE_GRAVITY = 0.4;
 const BASE_GAP = 150;
 const OBSTACLE_WIDTH = 60;
 const OBSTACLE_SPAWN_DISTANCE = 250;
