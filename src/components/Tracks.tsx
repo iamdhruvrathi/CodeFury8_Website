@@ -1,8 +1,10 @@
 // Tracks.tsx
-import React from 'react';
-import { Globe } from 'lucide-react';
+import React, { useState } from 'react';
+import { Globe, ChevronDown } from 'lucide-react';
 
 const Tracks = () => {
+  const [expanded, setExpanded] = useState(false);
+
   return (
     <section id="tracks" className="py-20 relative">
       <div className="container mx-auto px-6">
@@ -16,17 +18,46 @@ const Tracks = () => {
               <Globe className="w-12 h-12 text-cyan-400" />
             </div>
 
-            <p className="text-gray-300 text-lg sm:text-xl leading-relaxed text-justify font-nunito">
-              Participants will be presented with <span className="text-purple-400 font-semibold">three distinct themes</span>, each accompanied by a unique problem statement. These themes and their respective challenges will be officially announced on the <span className="text-yellow-300 font-semibold">first day of the event</span>.
+            {/* Desktop: show full content | Mobile: collapsible */}
+            <div className="relative">
+              <p
+                className={`text-gray-300 text-lg sm:text-xl leading-relaxed text-justify font-nunito transition-all duration-500 ease-in-out 
+                  ${expanded ? '' : 'max-h-[7.5rem] overflow-hidden'} 
+                  md:max-h-full md:overflow-visible`}
+              >
+                Participants will be presented with{' '}
+                <span className="text-purple-400 font-semibold">three distinct themes</span>, each accompanied by a unique problem statement.
+                These themes and their respective challenges will be officially announced on the{' '}
+                <span className="text-yellow-300 font-semibold">first day of the event</span>.
 
-              <br /><br />
+                <br />
+                <br />
 
-              Teams are required to select one theme and develop a solution based on the provided problem statement. Participants may opt to build either a <span className="text-green-400 font-semibold">web application</span> or a <span className="text-blue-400 font-semibold">mobile application</span>, depending on their area of expertise and preference. There are no restrictions on the technology stack — teams are free to use tools and platforms of their choice.
+                Teams are required to select one theme and develop a solution based on the provided problem statement.
+                Participants may opt to build either a{' '}
+                <span className="text-green-400 font-semibold">web application</span> or a{' '}
+                <span className="text-blue-400 font-semibold">mobile application</span>, depending on their area of expertise and preference.
+                There are no restrictions on the technology stack — teams are free to use tools and platforms of their choice.
 
-              <br /><br />
+                <br />
+                <br />
 
-              The primary objective is to address the given problem with an innovative and practical solution that demonstrates strong technical execution and thoughtful design. Participants are encouraged to think critically, collaborate effectively, and create impactful technology-driven outcomes.
-            </p>
+                The primary objective is to address the given problem with an innovative and practical solution that demonstrates strong technical execution and thoughtful design.
+                Participants are encouraged to think critically, collaborate effectively, and create impactful technology-driven outcomes.
+              </p>
+
+              {/* Mobile-only Read More */}
+              <div className="md:hidden mt-4 flex justify-center">
+                {!expanded && (
+                  <button
+                    onClick={() => setExpanded(true)}
+                    className="flex items-center gap-1 text-cyan-300 hover:text-cyan-400 text-sm font-medium"
+                  >
+                    Read More <ChevronDown className="w-4 h-4" />
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-6">
