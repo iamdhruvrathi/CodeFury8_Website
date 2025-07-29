@@ -48,32 +48,41 @@ const Hero = () => {
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative pt-32 px-4">
       <div className="container mx-auto text-center">
-        {/* Title */}
-        <div className="mb-10 animate-fade-in">
-          <div className="relative inline-block w-full">
-            <h1 className="mt-6 text-[2rem] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[9rem] font-orbitron font-extrabold tracking-tight leading-tight text-center">
-              <span className="text-cyan-400 glow-text">Code</span>
-              <span className="text-fuchsia-500 glow-text">Fury</span>
-              <span className="text-white ml-2">8.0</span>
-            </h1>
-            <p className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-[80%] sm:w-[60%] text-xs sm:text-sm md:text-lg italic text-purple-300 font-poppins text-center">
-              Fury in Code, Ready to Explode
-            </p>
-          </div>
+        
+        {/* Heading */}
+        <p className="text-sm sm:text-lg md:text-xl text-fuchsia-300 font-extrabold tracking-widest mb-2 font-[Orbitron] uppercase">
+          IEEE UVCE Computer Society Presents
+        </p>
 
-          {/* Tagline */}
-          <p className="font-semibold text-base sm:text-xl lg:text-2xl text-purple-100 font-poppins mt-20">
-            Annual National-Level Hackathon
+        {/* Main Title */}
+        <div className="mb-6 animate-fade-in">
+          <h1 className="mt-2 text-[2rem] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[9rem] font-orbitron font-extrabold tracking-tight leading-tight text-center">
+            <span className="text-cyan-400 glow-text">Code</span>
+            <span className="text-fuchsia-500 glow-text">Fury</span>
+            <span className="text-white ml-2">8.0</span>
+          </h1>
+          <p className="mt-4 text-sm sm:text-lg md:text-xl italic text-purple-300 font-poppins text-center w-[85%] mx-auto">
+            Fury in Code, Ready to Explode
           </p>
-
-          {/* Event Date */}
-          <div className="flex items-center justify-center space-x-2 mt-4 text-cyan-400 font-poppins">
-            <Calendar className="w-5 h-5 sm:w-6 sm:h-6" />
-            <span className="text-sm sm:text-lg md:text-xl font-medium">
-              22nd, 23rd & 24th August 2025
-            </span>
-          </div>
         </div>
+
+        {/* Description */}
+        <p className="font-bold text-lg sm:text-2xl lg:text-3xl text-purple-100 font-poppins mt-6 tracking-wide">
+           Annual National Level Hackathon
+        </p>
+
+        {/* Event Date */}
+        <div className="flex items-center justify-center space-x-2 mt-4 text-cyan-400 font-poppins">
+          <Calendar className="w-5 h-5 sm:w-6 sm:h-6" />
+          <span className="text-sm sm:text-lg md:text-xl font-medium">
+            22nd, 23rd & 24th August 2025
+          </span>
+        </div>
+
+        {/* Timer Label */}
+        <p className="text-lg sm:text-xl font-semibold mt-10 mb-4 text-pink-300 font-poppins tracking-wide">
+          It Begins In
+        </p>
 
         {/* Countdown */}
         <div className="grid grid-cols-4 md:grid-cols-4 gap-2 sm:gap-4 max-w-2xl mx-auto mb-8 sm:mb-12">
@@ -103,13 +112,16 @@ const Hero = () => {
             </button>
           ) : (
             <button
-              className="glow-button bg-gradient-to-r from-neonCyan to-neonPurple text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:bg-cyan-400"
+              className="glow-button bg-gradient-to-r from-[#d946ef] to-[#7c3aed] text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:from-[#c084fc] hover:to-[#9333ea]"
             >
               <Zap className="w-5 h-5 inline mr-2" />
               Register Now
             </button>
           )}
         </div>
+
+        {/* Presented By */}
+        <p className="text-sm text-purple-300 mb-4 font-semibold tracking-wider uppercase">Presented By</p>
 
         {/* Logos */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
@@ -131,4 +143,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
