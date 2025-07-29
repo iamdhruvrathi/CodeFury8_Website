@@ -1,18 +1,16 @@
-// CodeFuryWall.tsx
-import  { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-const highlightImages = [
-  'https://images.pexels.com/photos/3184300/pexels-photo-3184300.jpeg',
-  'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg',
-  'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg',
-  'https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg',
-  'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg',
-  'https://images.pexels.com/photos/1181353/pexels-photo-1181353.jpeg',
-  'https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg',
-  'https://images.pexels.com/photos/3184433/pexels-photo-3184433.jpeg',
-  'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg',
-  'https://images.pexels.com/photos/1181289/pexels-photo-1181289.jpeg',
-];
+// Import local images
+import img1 from '../assets/img1.png';
+import img2 from '../assets/img2.png';
+import img3 from '../assets/img3.png';
+import img4 from '../assets/img4.png';
+import img5 from '../assets/img5.png';
+import img6 from '../assets/img6.png';
+import img7 from '../assets/img7.png';
+import img8 from '../assets/img8.png';
+
+const highlightImages = [img1, img2, img3, img4, img5, img6, img7, img8];
 
 const CodeFuryWall = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
