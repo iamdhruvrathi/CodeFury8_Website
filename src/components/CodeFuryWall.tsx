@@ -34,12 +34,12 @@ const CodeFuryWall = () => {
   return (
     <section id="wall" className="py-20 relative">
       <div className="container mx-auto px-4 sm:px-6">
-        <h2 className="text-3xl md:text-5xl font-audiowide text-center mb-12">
-          <span className="text-purple-400 glow-text">CodeFury</span> Wall
+        <h2 className="text-3xl md:text-5xl font-audiowide text-center mb-3">
+          <span className="text-cyan-400 glow-text">CodeFury</span> Wall
         </h2>
 
         {/* Sliding Gallery */}
-        <div className="relative h-56 sm:h-72 md:h-96 w-full mb-20 overflow-hidden">
+        <div className="relative h-56 sm:h-72 md:h-96 w-full mb-3 overflow-hidden">
           <div className="flex justify-center items-center h-full relative transition-all duration-1000 ease-in-out">
             <img
               src={highlightImages[left]}

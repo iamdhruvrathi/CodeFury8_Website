@@ -88,7 +88,7 @@ const Header = () => {
             {/* Menu icon (always visible) */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-gray-300 hover:text-cyan-400 transition-colors"
+              className="p-2 text-cyan-300 hover:text-cyan-400 transition-colors"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
