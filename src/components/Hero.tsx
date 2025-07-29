@@ -53,7 +53,7 @@ const Hero = () => {
           IEEE UVCE Computer Society Presents
         </p>
 
-        <div className="mb-6 animate-fade-in px-4"> {/* Added horizontal padding here */}
+        <div className="drop-shadow-[0_0_85px_cyan] mb-6 animate-fade-in px-4"> {/* Added horizontal padding here */}
   <h1 className="mt-6 font-orbitron font-extrabold tracking-tight leading-tight text-center text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[9rem]">
     {/* Wrapped "Code Fury" to prevent it from breaking across lines on small screens */}
     <span className="inline-block">
