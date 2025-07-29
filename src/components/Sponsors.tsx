@@ -41,7 +41,7 @@ const Sponsors = () => {
       id="sponsors"
       className="relative py-28 text-white text-center font-nunito z-10"
     >
-      <h2 className="text-5xl md:text-6xl font-audiowide mb-20">
+      <h2 className="text-4xl md:text-5xl font-audiowide mb-20">
         <span className="text-cyan-400 glow-text">Our</span> Sponsors
       </h2>
 

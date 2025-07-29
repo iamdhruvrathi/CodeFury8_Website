@@ -298,16 +298,16 @@ const Game = () => {
     <section id="game" className="py-8 sm:py-16 relative">
       <div className="container mx-auto px-4 max-w-screen-md">
         <h2 className="text-3xl md:text-5xl font-audiowide text-center mb-12">
-          <span className="text-purple-400 glow-text">CodeFury</span> MiniGame
+          <span className="text-fuchsia-500 glow-text">CodeFury</span> MiniGame
         </h2>
 
         <div className="text-sm sm:text-base text-gray-300 text-center max-w-2xl mx-auto mb-8 font-nunito leading-relaxed px-2 sm:px-4">
-  <p className="mb-2 text-fuchsia-400 font-bold uppercase font-pop ">🔥 Flappy Dev Challenge — CodeFury 8.0 Special!</p>
+  <p className="mb-2 text-cyan-400 font-bold uppercase font-pop ">🔥 Flappy Dev Challenge</p>
   <p className="mb-4">
     Flappy Dev is a web-based mini-game where you, as a pixel developer, navigate through blocks. Jump, dodge, and prove your reflexes like a true techie!
   </p>
 
-  <p className="mb-4 font-semibold text-cyan-400">🏆 INDIVIDUAL OFFER – Rules to avail:</p>
+  <p className="mb-4 font-semibold text-fuchsia-400">🏆 INDIVIDUAL OFFER – Rules to avail:</p>
   <ul className="list-disc text-left pl-6 space-y-2 text-sm sm:text-base">
     <li>Avail this offer before <b>19th August 2025</b>.</li>
     <li>

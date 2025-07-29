@@ -75,7 +75,7 @@ const FAQ = () => {
   return (
     <section id="faq" className="pt-10 pb-8 relative">
       <div className="container mx-auto px-6 font-nunito">
-        <h2 className="text-4xl md:text-5xl font-audiowide text-center mb-16">
+        <h2 className="text-3xl md:text-4xl font-audiowide text-center mb-16">
           <span className="text-cyan-400 glow-text">Frequently</span> Asked Questions
         </h2>
 

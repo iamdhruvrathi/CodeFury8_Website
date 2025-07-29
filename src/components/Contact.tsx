@@ -368,8 +368,8 @@ const Contact = () => {
   return (
     <section id="contact" className="pt-8 pb-20 relative">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-audiowide text-center mb-16">
-          <span className="text-cyan-400 glow-text">For More Queries,</span> Contact
+        <h2 className="text-3xl md:text-4xl font-audiowide text-center mb-16 mt-10">
+          <span className="text-fuchsia-500 glow-text">For More Queries,</span> Contact
         </h2>
 
         <div className="max-w-4xl mx-auto">

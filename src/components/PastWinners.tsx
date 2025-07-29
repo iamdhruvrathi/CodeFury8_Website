@@ -55,7 +55,7 @@ const PastWinners = () => {
               key={index}
               className="glass-card p-4 sm:p-6 rounded-2xl transform hover:scale-105 transition-all duration-300 group relative"
             >
-              <div className="mb-4 flex justify-between items-start">
+              <div className="mb-4 flex justify-between items-start font-poppins">
                 <h4 className="text-lg sm:text-xl font-semibold text-cyan-400">
                   {winner.track}
                 </h4>
