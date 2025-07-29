@@ -1,75 +1,78 @@
-import { Globe, Smartphone, Code } from 'lucide-react';
+// Tracks.tsx
+import React, { useState } from 'react';
+import { Globe, ChevronDown } from 'lucide-react';
 
 const Tracks = () => {
-  const tracks = [
-    {
-      title: 'Web Development',
-      description:
-        'Build modern, scalable websites and web applications for real-world problems. Use cutting-edge technologies like React, Vue, Angular, or explore emerging frameworks.',
-      icon: Globe,
-      color: 'text-cyan-400',
-      bg: 'from-cyan-500/20 to-blue-500/20',
-      border: 'border-cyan-500/50',
-      technologies: ['React', 'Next.js', 'Vue', 'Angular', 'Node.js', 'Express'],
-    },
-    // Uncomment below to add more tracks:
-    // {
-    //   title: 'App Development',
-    //   description: 'Create innovative mobile applications using Flutter or Android Studio. Develop cross-platform or native apps that solve everyday challenges.',
-    //   icon: Smartphone,
-    //   color: 'text-purple-400',
-    //   bg: 'from-purple-500/20 to-pink-500/20',
-    //   border: 'border-purple-500/50',
-    //   technologies: ['Flutter', 'Dart', 'Android Studio', 'Java', 'Kotlin', 'Firebase'],
-    // },
-  ];
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <section id="tracks" className="py-20 relative">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-          <span className="text-purple-400">Tracks</span>
+        <h2 className="text-4xl md:text-5xl text-center mb-16 font-audiowide">
+          <span className="text-purple-400 glow-text">Tracks</span>
         </h2>
 
-        <div className="grid md:grid-cols-1 gap-12 max-w-6xl mx-auto">
-          {tracks.map((track, index) => (
-            <div
-              key={index}
-              className={`glass-card p-8 rounded-2xl bg-gradient-to-br ${track.bg} border ${track.border} transform hover:scale-105 transition-all duration-300 group cursor-pointer`}
-            >
-              <div className="text-center mb-6">
-                <div
-                  className={`inline-flex p-4 rounded-full bg-gray-800/50 mb-4 group-hover:scale-110 transition-transform duration-300`}
-                >
-                  <track.icon className={`w-12 h-12 ${track.color}`} />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-4">{track.title}</h3>
-                <p className="text-gray-300 leading-relaxed text-justify">{track.description}</p>
-              </div>
+        <div className="glass-card bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/50 p-8 rounded-2xl max-w-5xl mx-auto transform hover:scale-105 transition-all duration-300 group cursor-pointer">
+          <div className="text-center mb-6">
+            <div className="inline-flex p-4 rounded-full bg-gray-800/50 mb-4 group-hover:scale-110 transition-transform duration-300">
+              <Globe className="w-12 h-12 text-cyan-400" />
+            </div>
 
-              <div className="space-y-4">
-                <div className="flex items-center justify-center">
-                  <Code className={`w-5 h-5 ${track.color} mr-2`} />
-                  <span className="text-white font-semibold">Popular Technologies</span>
-                </div>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  {track.technologies.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className={`px-3 py-1 rounded-full text-sm bg-gray-800/50 ${track.color} border border-gray-700 hover:border-current transition-colors duration-300`}
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+            {/* Desktop: show full content | Mobile: collapsible */}
+            <div className="relative">
+              <p
+                className={`text-gray-300 text-lg sm:text-xl leading-relaxed text-justify font-nunito transition-all duration-500 ease-in-out 
+                  ${expanded ? '' : 'max-h-[7.5rem] overflow-hidden'} 
+                  md:max-h-full md:overflow-visible`}
+              >
+                Participants will be presented with{' '}
+                <span className="text-purple-400 font-semibold">three distinct themes</span>, each accompanied by a unique problem statement.
+                These themes and their respective challenges will be officially announced on the{' '}
+                <span className="text-yellow-300 font-semibold">first day of the event</span>.
+
+                <br />
+                <br />
+
+                Teams are required to select one theme and develop a solution based on the provided problem statement.
+                Participants may opt to build either a{' '}
+                <span className="text-green-400 font-semibold">web application</span> or a{' '}
+                <span className="text-blue-400 font-semibold">mobile application</span>, depending on their area of expertise and preference.
+                There are no restrictions on the technology stack — teams are free to use tools and platforms of their choice.
+
+                <br />
+                <br />
+
+                The primary objective is to address the given problem with an innovative and practical solution that demonstrates strong technical execution and thoughtful design.
+                Participants are encouraged to think critically, collaborate effectively, and create impactful technology-driven outcomes.
+              </p>
+
+              {/* Mobile-only Read More */}
+              <div className="md:hidden mt-4 flex justify-center">
+                {!expanded && (
+                  <button
+                    onClick={() => setExpanded(true)}
+                    className="flex items-center gap-1 text-cyan-300 hover:text-cyan-400 text-sm font-medium"
+                  >
+                    Read More <ChevronDown className="w-4 h-4" />
+                  </button>
+                )}
               </div>
             </div>
-          ))}
+          </div>
+
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-6">
+            <div className="px-4 py-2 bg-gray-800/50 border border-gray-700 text-cyan-400 rounded-full text-sm font-medium">
+              Team Size: 1 - 4 Members
+            </div>
+            <div className="px-4 py-2 bg-gray-800/50 border border-gray-700 text-green-400 rounded-full text-sm font-medium">
+              Registration Fee: ₹50 per Head
+            </div>
+          </div>
         </div>
 
-        <div className="text-center mt-12 ">
-          <p className="text-xl text-gray-400 mb-4 text-center max-w-3xl mx-auto">
-            Choose your track and start building the future!
+        <div className="text-center mt-12">
+          <p className="text-xl text-gray-400 mb-4 text-center max-w-3xl mx-auto font-nunito">
+            Select your theme, assemble your team, and start building impactful solutions!
           </p>
         </div>
       </div>

@@ -317,15 +317,12 @@ export default Contact;
 // };
 
 // export default Contact; 
-import React from 'react';
+
 import {
   Phone,
   Mail,
-  MessageCircle,
   Instagram,
   Facebook,
-  Linkedin,
-  Github,
   Users
 } from 'lucide-react';
 
@@ -335,7 +332,7 @@ const Contact = () => {
       name: 'Namratha Sridhar',
       role: 'Chairperson, Computer Society, IEEE UVCE',
       phone: '+91 90084 16648',
-      email: 'NamrathaSridhar29@ieee.org',
+      email: 'namrathasridhar29@ieee.org',
       whatsapp: 'https://wa.me/917406543569'
     },
     {
@@ -371,7 +368,7 @@ const Contact = () => {
   return (
     <section id="contact" className="pt-8 pb-20 relative">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+        <h2 className="text-4xl md:text-5xl font-audiowide text-center mb-16">
           <span className="text-cyan-400 glow-text">For More Queries,</span> Contact
         </h2>
 
@@ -387,7 +384,7 @@ const Contact = () => {
                   <Users className="w-8 h-8 text-white" />
                 </div>
 
-                <h3 className="text-xl font-bold text-white mb-1">{contact.name}</h3>
+                <h3 className="text-xl font-bold text-white mb-1 font-poppins">{contact.name}</h3>
                 <p className="text-cyan-400 font-medium mb-4">{contact.role}</p>
 
                 <div className="space-y-3">
@@ -424,7 +421,7 @@ const Contact = () => {
 
           {/* Social Media Section */}
           <div className="glass-card p-8 rounded-2xl text-center">
-            <h3 className="text-2xl font-bold text-white mb-6">Follow Us</h3>
+            <h3 className="text-2xl font-bold text-white mb-6 font-poppins">Follow Us</h3>
             <div className="flex justify-center space-x-8">
               {socialLinks.map((social, index) => (
                 <a

@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Calendar,
   Users,
@@ -23,8 +22,8 @@ const Timeline = () => {
       date: 'August 8, 2025',
       description: 'Offline hands-on workshop to get you hackathon-ready.',
       icon: Lightbulb,
-      color: 'text-green-400',
-      bg: 'bg-green-500/20'
+      color: 'text-purple-400',
+      bg: 'bg-purple-500/20'
     },
     {
       title: 'Mini Challenge',
@@ -63,11 +62,11 @@ const Timeline = () => {
   return (
     <section id="timeline" className="py-20 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-20">
+        <h2 className="text-4xl md:text-5xl font-audiowide text-center mb-20">
           <span className="text-cyan-400 glow-text">Event</span> Timeline
         </h2>
 
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative max-w-6xl mx-auto font-nunito">
           <div className="grid gap-20">
             {timelineEvents.map((event, index) => {
               const Icon = event.icon;
@@ -90,8 +89,8 @@ const Timeline = () => {
 
                   {/* Card */}
                   <div className={`w-full md:w-[48%] max-w-xl glass-card bg-white/5 backdrop-blur-md border border-gray-700/40 p-5 sm:p-6 rounded-2xl ${isEven ? 'md:mr-6' : 'md:ml-6'}`}>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{event.title}</h3>
-                    <p className={`text-sm sm:text-md font-semibold ${event.color} mb-2`}>{event.date}</p>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 ">{event.title}</h3>
+                    <p className={`text-sm sm:text-md font-semibold ${event.color} mb-2 `}>{event.date}</p>
                     <p className="text-gray-400 text-sm sm:text-base">{event.description}</p>
                   </div>
                 </div>
