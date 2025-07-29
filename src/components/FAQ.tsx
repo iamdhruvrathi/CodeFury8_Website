@@ -31,8 +31,11 @@ const FAQ = () => {
     },
     {
       question: 'What are the available tracks?',
-      answer:
-        'We have two main tracks: Web Development (build modern websites and web applications) and App Development (create mobile apps using Flutter or Android Studio).'
+      answer:(
+        <>
+          We have two main tracks:<span className="text-purple-400 font-semibold"> Web Development (build modern websites and web applications) and App Development (create mobile apps using Flutter or Android Studio).</span>
+        </>
+      )
     },
     {
       question: 'Are first-year students allowed to participate?',
