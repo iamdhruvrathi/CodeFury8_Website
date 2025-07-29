@@ -16,16 +16,16 @@ const Header = () => {
 
   // For the dropdown menu in your specified order
   const dropdownNav = [
-    //{ name: 'About Us', href: '#about' },
-    //{ name: 'Tracks', href: '#tracks' },
+    { name: 'About Us', href: '#about' },
+    { name: 'Tracks', href: '#tracks' },
     { name: 'Prize Pool', href: '#prizes' },
-    //{ name: 'Timeline', href: '#timeline' },
+    { name: 'Timeline', href: '#timeline' },
     { name: 'CodeFury Wall', href: '#wall' },
     { name: 'Past Winners', href: '#past' },
     { name: 'Our Sponsors', href: '#sponsors' },
     { name: 'MiniGame', href: '#game' },
     { name: 'FAQs', href: '#faq' },
-    //{ name: 'Contact', href: '#contact' }
+    { name: 'Contact', href: '#contact' }
   ];
 
   // Effect for handling scroll behavior
