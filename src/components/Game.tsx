@@ -15,8 +15,8 @@ const BASE_HEIGHT = 400;
 const STUDENT_SIZE = 30;
 const STUDENT_X_POSITION = 80;
 
-const BASE_SPEED = 5;
-const BASE_GRAVITY = 0.50;
+const BASE_SPEED = 3;
+const BASE_GRAVITY = 0.4  ;
 const BASE_GAP = 150;
 const OBSTACLE_WIDTH = 60;
 const OBSTACLE_SPAWN_DISTANCE = 250;
@@ -297,11 +297,11 @@ const Game = () => {
   return (
     <section id="game" className="py-8 sm:py-16 relative">
       <div className="container mx-auto px-4 max-w-screen-md">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-7 mt-6">
-          <span className="text-green-400">CodeFury</span> MiniGame
+        <h2 className="text-3xl md:text-5xl font-audiowide text-center mb-12">
+          <span className="text-purple-400 glow-text">CodeFury</span> MiniGame
         </h2>
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center font-nunito">
           {/* Responsive Board */}
 <div
   className="glass-card relative overflow-hidden rounded-xl shadow-lg mx-auto p-[4px] bg-gradient-to-r from-cyan-400 to-fuchsia-500"
@@ -310,14 +310,14 @@ const Game = () => {
     maxWidth: `${containerWidth}px`, // containerWidth is max width, can vary by window size
     aspectRatio: `${BASE_WIDTH} / ${BASE_HEIGHT}`, // Maintains correct ratio responsively
     background: "linear-gradient(135deg, #1e293b 0%, #6366f1 100%)",
-    boxShadow: "0 8px 40px 0 rgba(80,30,180,0.3)",
+    boxShadow: "0 8px 40px 0 rgba(80,30,180,0.6)",
     borderRadius: "1rem",
     overflow: "hidden",
     transition: "width 150ms, height 150ms",
     touchAction: "manipulation",
     margin: "0 auto", // center horizontally
     position: "relative",
-  }}
+  }}  
   onClick={gameState === 'playing' ? jump : resetGame}
   role="button"
   tabIndex={0}

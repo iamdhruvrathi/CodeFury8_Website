@@ -5,6 +5,7 @@ import PrizePool from './components/PrizePool';
 import Tracks from './components/Tracks';
 import Timeline from './components/Timeline';
 import CodeFuryWall from './components/CodeFuryWall';
+import PastWinners from './components/PastWinners';
 import Game from './components/Game';
 import Sponsors from './components/Sponsors';
 import FAQ from './components/FAQ';
@@ -21,12 +22,13 @@ function App() {
       <main>
         <Hero />
         <About />
-        <PrizePool />
         <Tracks />
+        <PrizePool />
         <Timeline />
         <CodeFuryWall />
-        <Game />
+        <PastWinners />
         <Sponsors />
+        <Game />
         <FAQ />
         <Contact />
       </main>

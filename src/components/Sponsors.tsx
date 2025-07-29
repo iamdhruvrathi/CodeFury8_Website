@@ -37,11 +37,11 @@ const Sponsors = () => {
   return (
     <section id="sponsors" className="pt-12 pb-6 relative text-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
+        <h2 className="text-3xl md:text-5xl font-audiowide text-center mb-12">
           <span className="text-cyan-400 glow-text">Our</span> Sponsors
         </h2>
 
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="flex flex-wrap justify-center gap-6 font-nunito">
           {sponsors.map((sponsor, index) => (
             <div key={index} className="w-[260px] space-y-2">
               <h3 className={`text-xl md:text-2xl font-bold ${sponsor.tierColor} text-center`}>
@@ -60,7 +60,7 @@ const Sponsors = () => {
                       className="w-9 h-9 object-contain"
                     />
                   </div>
-                  <p className="text-base font-semibold text-white">{sponsor.name}</p>
+                  <p className="text-base font-semibold text-white font-poppins font-bold">{sponsor.name}</p>
                 </div>
 
                 {/* Link below the row */}

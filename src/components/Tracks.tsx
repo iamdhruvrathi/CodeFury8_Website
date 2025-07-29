@@ -27,11 +27,11 @@ const Tracks = () => {
   return (
     <section id="tracks" className="py-20 relative">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-          <span className="text-purple-400">Tracks</span>
+        <h2 className="text-4xl md:text-5xl text-center mb-16 font-audiowide">
+          <span className="text-purple-400 glow-text">Tracks</span>
         </h2>
 
-        <div className="grid md:grid-cols-1 gap-12 max-w-6xl mx-auto">
+        <div className="font-nunito grid md:grid-cols-1 gap-12 max-w-6xl mx-auto">
           {tracks.map((track, index) => (
             <div
               key={index}
@@ -43,7 +43,7 @@ const Tracks = () => {
                 >
                   <track.icon className={`w-12 h-12 ${track.color}`} />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">{track.title}</h3>
+                <h3 className="text-2xl font-bold text-white mb-4 font-poppins">{track.title}</h3>
                 <p className="text-gray-300 leading-relaxed text-justify">{track.description}</p>
               </div>
 
@@ -68,7 +68,7 @@ const Tracks = () => {
         </div>
 
         <div className="text-center mt-12 ">
-          <p className="text-xl text-gray-400 mb-4 text-center max-w-3xl mx-auto">
+          <p className="text-xl text-gray-400 mb-4 text-center max-w-3xl mx-auto font-nunito">
             Choose your track and start building the future!
           </p>
         </div>
