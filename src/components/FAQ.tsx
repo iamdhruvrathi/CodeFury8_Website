@@ -25,7 +25,7 @@ const FAQ = () => {
       question: 'Is there any registration fee?',
       answer: (
         <>
-          <span className="text-purple-400 font-semibold">Yes, the registration fee for CodeFury 8.0 is ₹50 per head.</span>
+          <span className="text-purple-400 font-semibold">Yes, the registration fee for CodeFury 8.0 is ₹120.</span>
         </>
       )
     },

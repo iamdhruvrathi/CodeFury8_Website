@@ -1,96 +1,96 @@
-import { Trophy, Medal, BadgeDollarSign } from 'lucide-react';
+// import { Trophy, Medal, BadgeDollarSign } from 'lucide-react';
 
-const PrizePool = () => {
-  const prizes = [
-    {
-      position: 'WINNERS',
-      amount: '₹25,000',
-      icon: Trophy,
-      color: 'text-cyan-400 drop-shadow-[0_0_35px_#00f6ff]',
-      bg: 'from-cyan-500/20 to-blue-500/20',
-      border: 'border-cyan-500/50',
-    },
-    {
-      position: 'RUNNERS',
-      amount: '₹15,000',
-      icon: Medal,
-      color: 'text-yellow-300 drop-shadow-[0_0_35px_#facc15]',
-      bg: 'from-gray-400/20 to-gray-600/20',
-      border: 'border-gray-500/50',
-    },
-  ];
+// const PrizePool = () => {
+//   const prizes = [
+//     {
+//       position: 'WINNERS',
+//       amount: '₹25,000',
+//       icon: Trophy,
+//       color: 'text-cyan-400 drop-shadow-[0_0_35px_#00f6ff]',
+//       bg: 'from-cyan-500/20 to-blue-500/20',
+//       border: 'border-cyan-500/50',
+//     },
+//     {
+//       position: 'RUNNERS',
+//       amount: '₹15,000',
+//       icon: Medal,
+//       color: 'text-yellow-300 drop-shadow-[0_0_35px_#facc15]',
+//       bg: 'from-gray-400/20 to-gray-600/20',
+//       border: 'border-gray-500/50',
+//     },
+//   ];
 
-  const consolation = {
-    position: 'CONSOLATION PRIZE',
-    amount: '₹2,000',
-    icon: BadgeDollarSign,
-    color: 'text-green-400 drop-shadow-[0_0_35px_#4ade80]',
-    bg: 'from-green-500/20 to-lime-500/20',
-    border: 'border-green-500/50',
-  };
+//   const consolation = {
+//     position: 'CONSOLATION PRIZE',
+//     amount: '₹2,000',
+//     icon: BadgeDollarSign,
+//     color: 'text-green-400 drop-shadow-[0_0_35px_#4ade80]',
+//     bg: 'from-green-500/20 to-lime-500/20',
+//     border: 'border-green-500/50',
+//   };
 
-  return (
-    <section id="prizes" className="pt-12 pb-20 relative font-[Poppins]">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl text-center mb-12 font-audiowide">
-          <span className="text-cyan-400 glow-text">Prize</span> Pool
-        </h2>
+//   return (
+//     <section id="prizes" className="pt-12 pb-20 relative font-[Poppins]">
+//       <div className="container mx-auto px-6">
+//         <h2 className="text-4xl md:text-5xl text-center mb-12 font-audiowide">
+//           <span className="text-cyan-400 glow-text">Prize</span> Pool
+//         </h2>
 
-        {/* Highlight ₹60,000+ */}
-        <div className="max-w-md mx-auto mb-12 glass-card bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/30 p-6 md:p-8 rounded-2xl text-center">
-          <h3 className="text-2xl md:text-3xl font-bold text-green-400 drop-shadow-[0_0_35px_#4ade80]">
-            ₹60,000+ TOTAL PRIZE POOL
-          </h3>
-          <p className="text-gray-300 text-sm md:text-base mt-2">
-            Compete for cash prizes, tech gadgets, internship opportunities, and more!
-          </p>
-        </div>
+//         {/* Highlight ₹60,000+ */}
+//         <div className="max-w-md mx-auto mb-12 glass-card bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/30 p-6 md:p-8 rounded-2xl text-center">
+//           <h3 className="text-2xl md:text-3xl font-bold text-green-400 drop-shadow-[0_0_35px_#4ade80]">
+//             ₹60,000+ TOTAL PRIZE POOL
+//           </h3>
+//           <p className="text-gray-300 text-sm md:text-base mt-2">
+//             Compete for cash prizes, tech gadgets, internship opportunities, and more!
+//           </p>
+//         </div>
 
-        {/* Main Prizes */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
-          {prizes.map((prize, index) => (
-            <div
-              key={index}
-              className={`glass-card p-8 rounded-2xl bg-gradient-to-br ${prize.bg} border ${prize.border} hover:scale-105 transform transition-all duration-300`}
-            >
-              <div className="text-center mb-4">
-                <prize.icon className={`w-12 h-12 mx-auto mb-3 ${prize.color}`} />
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-1 tracking-wide">
-                  {prize.position}
-                </h3>
-                <div className={`text-3xl md:text-4xl font-extrabold ${prize.color}`}>
-                  {prize.amount}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+//         {/* Main Prizes */}
+//         <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
+//           {prizes.map((prize, index) => (
+//             <div
+//               key={index}
+//               className={`glass-card p-8 rounded-2xl bg-gradient-to-br ${prize.bg} border ${prize.border} hover:scale-105 transform transition-all duration-300`}
+//             >
+//               <div className="text-center mb-4">
+//                 <prize.icon className={`w-12 h-12 mx-auto mb-3 ${prize.color}`} />
+//                 <h3 className="text-xl md:text-2xl font-bold text-white mb-1 tracking-wide">
+//                   {prize.position}
+//                 </h3>
+//                 <div className={`text-3xl md:text-4xl font-extrabold ${prize.color}`}>
+//                   {prize.amount}
+//                 </div>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
 
-        {/* Consolation Prize (separate box) */}
-        <div className={`glass-card p-8 rounded-2xl bg-gradient-to-br ${consolation.bg} border ${consolation.border} hover:scale-[1.02] transition duration-300 mb-10 max-w-2xl mx-auto`}>
-          <div className="text-center">
-            <consolation.icon className={`w-12 h-12 mx-auto mb-3 ${consolation.color}`} />
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-1 tracking-wide">
-              {consolation.position}
-            </h3>
-            <div className={`text-3xl md:text-4xl font-extrabold ${consolation.color}`}>
-              {consolation.amount}
-            </div>
-          </div>
-        </div>
+//         {/* Consolation Prize (separate box) */}
+//         <div className={`glass-card p-8 rounded-2xl bg-gradient-to-br ${consolation.bg} border ${consolation.border} hover:scale-[1.02] transition duration-300 mb-10 max-w-2xl mx-auto`}>
+//           <div className="text-center">
+//             <consolation.icon className={`w-12 h-12 mx-auto mb-3 ${consolation.color}`} />
+//             <h3 className="text-xl md:text-2xl font-bold text-white mb-1 tracking-wide">
+//               {consolation.position}
+//             </h3>
+//             <div className={`text-3xl md:text-4xl font-extrabold ${consolation.color}`}>
+//               {consolation.amount}
+//             </div>
+//           </div>
+//         </div>
 
-        {/* Certificate Info */}
-        <div className="glass-card p-6 md:p-8 rounded-2xl text-center max-w-4xl mx-auto border border-white/10 bg-white/5">
-          <p className="text-white text-base md:text-lg font-medium tracking-wide">
-            <span className="text-purple-400 font-semibold drop-shadow-[0_0_20px_#a855f7]">CERTIFICATE OF PARTICIPATION</span> WILL BE PROVIDED FOR EVERYONE
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-};
+//         {/* Certificate Info */}
+//         <div className="glass-card p-6 md:p-8 rounded-2xl text-center max-w-4xl mx-auto border border-white/10 bg-white/5">
+//           <p className="text-white text-base md:text-lg font-medium tracking-wide">
+//             <span className="text-purple-400 font-semibold drop-shadow-[0_0_20px_#a855f7]">CERTIFICATE OF PARTICIPATION</span> WILL BE PROVIDED FOR EVERYONE
+//           </p>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
 
-export default PrizePool;
+// export default PrizePool;
 
 
 
@@ -351,10 +351,10 @@ export default PrizePool;
 //       bg: 'from-yellow-500/20 to-orange-500/20',
 //       border: 'border-yellow-500/50',
 //       benefits: [
-//         'Cash prize',
-//         'Internship opportunities',
-//         'Premium tech gadgets',
-//         'Fast-track job interviews',
+//         // 'Cash prize',
+//         // 'Internship opportunities',
+//         // 'Premium tech gadgets',
+//         // 'Fast-track job interviews',
 //       ],
 //     },
 //     {
@@ -365,24 +365,38 @@ export default PrizePool;
 //       bg: 'from-gray-400/20 to-gray-600/20',
 //       border: 'border-gray-500/50',
 //       benefits: [
-//         'Cash prize',
-//         'Tech workshop access',
-//         'Development kits',
-//         'Mentorship sessions',
+//         // 'Cash prize',
+//         // 'Tech workshop access',
+//         // 'Development kits',
+//         // 'Mentorship sessions',
 //       ],
 //     },
 //     {
-//       position: 'CONSOLATION PRIZE',
-//       amount: '₹2,000',
+//       position: '3rd PRIZE',
+//       amount: '₹10,000',
 //       icon: BadgeDollarSign,
 //       color: 'text-orange-400',
 //       bg: 'from-orange-500/20 to-red-500/20',
 //       border: 'border-orange-500/50',
 //       benefits: [
-//         'Cash prize',
-//         'Software licenses',
-//         'Development tools',
-//         'Cloud credits',
+//         // 'Cash prize',
+//         // 'Software licenses',
+//         // 'Development tools',
+//         // 'Cloud credits',
+//       ],
+//     },
+//      {
+//       position: 'CONSOLATION PRIZE',
+//       amount: '₹20,000',
+//       icon: BadgeDollarSign,
+//       color: 'text-gray-300',
+//       bg: 'from-gray-400/20 to-gray-600/20',
+//       border: 'border-gray-500/50',
+//       benefits: [
+//         // 'Cash prize',
+//         // 'Software licenses',
+//         // 'Development tools',
+//         // 'Cloud credits',
 //       ],
 //     },
 //   ];
@@ -398,9 +412,9 @@ export default PrizePool;
 //           <h3 className="text-pink-400 text-2xl md:text-3xl font-bold mb-2">
 //             ₹50,000+ TOTAL PRIZE POOL
 //           </h3>
-//           <p className="text-gray-400 text-sm md:text-base">
+//           {/* <p className="text-gray-400 text-sm md:text-base">
 //             Compete for cash prizes, tech gadgets, internship opportunities, and more!
-//           </p>
+//           </p> */}
 //         </div>
 
 //         <div className="grid md:grid-cols-3 gap-8 mb-8 max-w-6xl mx-auto">
@@ -421,6 +435,7 @@ export default PrizePool;
 //               <ul className="mt-4 space-y-2 text-left text-sm md:text-base text-gray-300 pl-4 list-disc">
 //                 {prize.benefits.map((benefit, i) => (
 //                   <li key={i}>{benefit}</li>
+
 //                 ))}
 //               </ul>
 //             </div>
@@ -439,3 +454,118 @@ export default PrizePool;
 // };
 
 // export default PrizePool;
+
+import { Trophy, Medal, BadgeDollarSign } from 'lucide-react';
+
+const PrizePool = () => {
+  const prizes = [
+    {
+      position: '1st PRIZE',
+      amount: '₹20,000',
+      icon: Trophy,
+      color: 'text-yellow-400',
+      bg: 'from-yellow-500/20 to-orange-500/20',
+      border: 'border-yellow-500/50',
+      benefits: [],
+    },
+    {
+      position: '2nd PRIZE',
+      amount: '₹15,000',
+      icon: Medal,
+      color: 'text-gray-300',
+      bg: 'from-gray-400/20 to-gray-600/20',
+      border: 'border-gray-500/50',
+      benefits: [],
+    },
+    {
+      position: '3rd PRIZE',
+      amount: '₹10,000',
+      icon: BadgeDollarSign,
+      color: 'text-orange-400',
+      bg: 'from-orange-500/20 to-red-500/20',
+      border: 'border-orange-500/50',
+      benefits: [],
+    },
+  ];
+
+  const consolationPrize = {
+    position: 'CONSOLATION PRIZE',
+    amount: '₹3,000',
+    icon: BadgeDollarSign,
+    color: 'text-gray-300',
+    bg: 'from-gray-400/20 to-gray-600/20',
+    border: 'border-gray-500/50',
+    benefits: [],
+  };
+
+  return (
+    <section id="prizes" className="pt-12 pb-20 relative font-[Poppins]">
+      <div className="container mx-auto px-6">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-4 tracking-wide text-white">
+          PRIZE POOL
+        </h2>
+
+        <div className="text-center mb-8">
+          <h3 className="text-pink-400 text-2xl md:text-3xl font-bold mb-2">
+            ₹50,000+ TOTAL PRIZE POOL
+          </h3>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8 mb-8 max-w-6xl mx-auto">
+          {prizes.map((prize, index) => (
+            <div
+              key={index}
+              className={`glass-card p-8 rounded-2xl bg-gradient-to-br ${prize.bg} border ${prize.border} hover:scale-105 transform transition-all duration-300`}
+            >
+              <div className="text-center mb-4">
+                <prize.icon className={`w-12 h-12 mx-auto mb-3 ${prize.color}`} />
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-1 tracking-wide">
+                  {prize.position}
+                </h3>
+                <div className={`text-3xl md:text-4xl font-extrabold ${prize.color}`}>
+                  {prize.amount}
+                </div>
+              </div>
+              <ul className="mt-4 space-y-2 text-left text-sm md:text-base text-gray-300 pl-4 list-disc">
+                {prize.benefits.map((benefit, i) => (
+                  <li key={i}>{benefit}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+      <div className="md:col-span-2 md:ml-32 md:col-start-1 mt-6">
+        <div
+              className={`md:ml-[16.75rem] md:mr-0 glass-card p-8 rounded-2xl bg-gradient-to-br ${consolationPrize.bg} border ${consolationPrize.border} hover:scale-105 transform transition-all duration-300`}
+            >
+          <div className=" text-center mb-4">
+            <consolationPrize.icon className={`w-12 h-12 mx-auto mb-3 ${consolationPrize.color}`} />
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-1 tracking-wide">
+              {consolationPrize.position}
+            </h3>
+            <div className={`text-3xl md:text-4xl font-extrabold ${consolationPrize.color}`}>
+              {consolationPrize.amount}
+            </div>
+          </div>
+          <ul className="mt-4 space-y-2 text-left text-sm md:text-base text-gray-300 pl-4 list-disc">
+            {consolationPrize.benefits.map((benefit, i) => (
+              <li key={i}>{benefit}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+        </div>
+
+        {/* Certificate Info */}
+        <div className="glass-card p-6 md:p-8 rounded-2xl text-center max-w-4xl mx-auto border border-white/10 bg-white/5">
+          <p className="text-white text-base md:text-lg font-medium tracking-wide">
+            <span className="text-purple-400 font-semibold">CERTIFICATE OF PARTICIPATION</span> WILL BE PROVIDED FOR EVERYONE
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default PrizePool;
+
