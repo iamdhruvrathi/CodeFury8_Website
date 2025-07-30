@@ -463,7 +463,7 @@ const PrizePool = () => {
       position: '1st PRIZE',
       amount: '₹20,000',
       icon: Trophy,
-      color: 'text-yellow-400',
+      color: 'text-yellow-400 drop-shadow-[0_0_35px_#00f6ff]',
       bg: 'from-yellow-500/20 to-orange-500/20',
       border: 'border-yellow-500/50',
       benefits: [],
@@ -472,7 +472,7 @@ const PrizePool = () => {
       position: '2nd PRIZE',
       amount: '₹15,000',
       icon: Medal,
-      color: 'text-gray-300',
+      color: 'text-cyan-400 drop-shadow-[0_0_35px_#00f6ff]',
       bg: 'from-gray-400/20 to-gray-600/20',
       border: 'border-gray-500/50',
       benefits: [],
@@ -481,7 +481,7 @@ const PrizePool = () => {
       position: '3rd PRIZE',
       amount: '₹10,000',
       icon: BadgeDollarSign,
-      color: 'text-orange-400',
+      color: 'text-fuchsia-500 drop-shadow-[0_0_35px_#00f6ff]',
       bg: 'from-orange-500/20 to-red-500/20',
       border: 'border-orange-500/50',
       benefits: [],
@@ -492,7 +492,7 @@ const PrizePool = () => {
     position: 'CONSOLATION PRIZE',
     amount: '₹3,000',
     icon: BadgeDollarSign,
-    color: 'text-gray-300',
+    color: 'text-green-400 drop-shadow-[0_0_35px_#00f6ff]',
     bg: 'from-gray-400/20 to-gray-600/20',
     border: 'border-gray-500/50',
     benefits: [],
@@ -501,12 +501,12 @@ const PrizePool = () => {
   return (
     <section id="prizes" className="pt-12 pb-20 relative font-[Poppins]">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-4 tracking-wide text-white">
-          PRIZE POOL
+        <h2 className=" font-audiowide text-4xl md:text-5xl font-extrabold text-center mb-4 tracking-wide text-white">
+         <span className='text-yellow-400'>PRIZE</span> POOL
         </h2>
 
         <div className="text-center mb-8">
-          <h3 className="text-pink-400 text-2xl md:text-3xl font-bold mb-2">
+          <h3 className="text-white text-2xl md:text-3xl font-nunito font-bold mb-2">
             ₹50,000+ TOTAL PRIZE POOL
           </h3>
         </div>
@@ -515,7 +515,7 @@ const PrizePool = () => {
           {prizes.map((prize, index) => (
             <div
               key={index}
-              className={`glass-card p-8 rounded-2xl bg-gradient-to-br ${prize.bg} border ${prize.border} hover:scale-105 transform transition-all duration-300`}
+              className={`glass-card p-8 font-nunito rounded-2xl bg-gradient-to-br ${prize.bg} border ${prize.border} hover:scale-105 transform transition-all duration-300`}
             >
               <div className="text-center mb-4">
                 <prize.icon className={`w-12 h-12 mx-auto mb-3 ${prize.color}`} />
@@ -535,14 +535,14 @@ const PrizePool = () => {
           ))}
       <div className="md:col-span-2 md:ml-32 md:col-start-1 mt-6">
         <div
-              className={`md:ml-[16.75rem] md:mr-0 glass-card p-8 rounded-2xl bg-gradient-to-br ${consolationPrize.bg} border ${consolationPrize.border} hover:scale-105 transform transition-all duration-300`}
+              className={`md:ml-[16.75rem] md:mr-0 font-nunito glass-card p-8 rounded-2xl bg-gradient-to-br ${consolationPrize.bg} border ${consolationPrize.border} hover:scale-105 transform transition-all duration-300`}
             >
           <div className=" text-center mb-4">
             <consolationPrize.icon className={`w-12 h-12 mx-auto mb-3 ${consolationPrize.color}`} />
             <h3 className="text-xl md:text-2xl font-bold text-white mb-1 tracking-wide">
               {consolationPrize.position}
             </h3>
-            <div className={`text-3xl md:text-4xl font-extrabold ${consolationPrize.color}`}>
+            <div className={`text-3xl md:text-4xl font-nunito font-extrabold ${consolationPrize.color}`}>
               {consolationPrize.amount}
             </div>
           </div>
