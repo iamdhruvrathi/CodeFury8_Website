@@ -45,6 +45,12 @@ const Sponsors = () => {
         <span className="text-cyan-400 glow-text">Our</span> Sponsors
       </h2>
 
+      {/* TEMPORARY MESSAGE - Remove when sponsors are ready */}
+      <p className="text-2xl md:text-3xl font-semibold text-gray-300 px-6">
+        🎉 Our sponsors will be revealed soon. Stay tuned for exciting updates!
+      </p>
+
+      {/* 
       <div className="flex flex-wrap justify-center gap-x-24 gap-y-20 px-8">
         {sponsors.map((sponsor, index) => (
           <div
@@ -79,6 +85,7 @@ const Sponsors = () => {
           </div>
         ))}
       </div>
+      */}
     </section>
   );
 };
