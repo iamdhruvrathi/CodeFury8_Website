@@ -36,6 +36,7 @@ function App() {
       </main>
       <BackToTopButton />
       <Footer />
+      <Analytics/>
     </div>
   );
 }
