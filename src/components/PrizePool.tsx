@@ -34,7 +34,7 @@ const PrizePool = () => {
   ];
 
   const consolationPrize = {
-    position: 'CONSOLATION PRIZES WORTH',
+    position: 'CONSOLATION PRIZES       WORTH',
     amount: '₹15,000',
     icon: BadgeDollarSign,
     color: 'text-green-400 drop-shadow-[0_0_35px_#00f6ff]',
