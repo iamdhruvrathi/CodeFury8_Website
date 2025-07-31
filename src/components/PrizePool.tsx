@@ -4,34 +4,34 @@ import { Trophy, Medal, BadgeDollarSign } from 'lucide-react';
 
 const PrizePool = () => {
   const prizes = [
-    {
-      position: '1st PRIZE',
-      amount: '₹20,000',
-      icon: Trophy,
-      color: 'text-yellow-400 drop-shadow-[0_0_35px_#00f6ff]',
-      bg: 'from-yellow-500/20 to-orange-500/20',
-      border: 'border-yellow-500/50',
-      benefits: [],
-    },
-    {
-      position: '2nd PRIZE',
-      amount: '₹15,000',
-      icon: Medal,
-      color: 'text-cyan-400 drop-shadow-[0_0_35px_#00f6ff]',
-      bg: 'from-gray-400/20 to-gray-600/20',
-      border: 'border-gray-500/50',
-      benefits: [],
-    },
-    {
-      position: '3rd PRIZE',
-      amount: '₹10,000',
-      icon: BadgeDollarSign,
-      color: 'text-fuchsia-500 drop-shadow-[0_0_35px_#00f6ff]',
-      bg: 'from-orange-500/20 to-red-500/20',
-      border: 'border-orange-500/50',
-      benefits: [],
-    },
-  ];
+  {
+    position: '1st PRIZE',
+    amount: '₹20,000',
+    icon: Trophy,
+    color: 'text-yellow-400 drop-shadow-[0_0_35px_#fde047]', // yellow-400
+    bg: 'from-yellow-500/20 to-orange-500/20',
+    border: 'border-yellow-500/50',
+    benefits: [],
+  },
+  {
+    position: '2nd PRIZE',
+    amount: '₹15,000',
+    icon: Medal,
+    color: 'text-cyan-400 drop-shadow-[0_0_35px_#22d3ee]', // cyan-400
+    bg: 'from-gray-400/20 to-gray-600/20',
+    border: 'border-gray-500/50',
+    benefits: [],
+  },
+  {
+    position: '3rd PRIZE',
+    amount: '₹10,000',
+    icon: BadgeDollarSign,
+    color: 'text-fuchsia-500 drop-shadow-[0_0_35px_#d946ef]', // fuchsia-500
+    bg: 'from-orange-500/20 to-red-500/20',
+    border: 'border-orange-500/50',
+    benefits: [],
+  },
+];
 
   const consolationPrize = {
     position: 'CONSOLATION PRIZES WORTH',
@@ -46,15 +46,19 @@ const PrizePool = () => {
   return (
     <section id="prizes" className="pt-12 pb-20 relative font-[Poppins]">
       <div className="container mx-auto px-6">
-        <h2 className=" font-audiowide text-4xl md:text-5xl font-extrabold text-center mb-4 tracking-wide text-white">
-         <span className='text-cyan-400 glow-text'>PRIZE</span> POOL
+        <h2 className="text-4xl md:text-5xl font-audiowide text-center mb-10">
+          <span className="text-cyan-500 glow-text">Prize</span> Pool
         </h2>
 
-        <div className="text-center mb-8">
-          <h3 className="text-white text-2xl md:text-3xl font-nunito font-bold mb-2">
-             TOTAL PRIZE POOL OF ₹60,000
+        <div className="text-center mb-11">
+          <h3 className="text-white text-2xl md:text-3xl font-audiowide mb-2">
+            Total Prize Pool Of {' '}
+            <span className="text-white-400 drop-shadow-[0_0_45px_#22d3ee]">
+              ₹60,000
+            </span>
           </h3>
         </div>
+
 
         <div className="grid md:grid-cols-3 gap-8 mb-8 max-w-6xl mx-auto">
           {prizes.map((prize, index) => (
@@ -78,7 +82,7 @@ const PrizePool = () => {
               </ul>
             </div>
           ))}
-      <div className="md:col-span-2 md:ml-32 md:col-start-1 mt-6">
+      <div className="md:col-span-2 md:col-span-2 md:col-start-1 mt-6">
         <div
               className={`md:ml-[16.75rem] md:mr-0 font-nunito glass-card p-8 rounded-2xl bg-gradient-to-br ${consolationPrize.bg} border ${consolationPrize.border} hover:scale-105 transform transition-all duration-300`}
             >

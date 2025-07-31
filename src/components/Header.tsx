@@ -22,8 +22,8 @@ const Header = () => {
     { name: 'Timeline', href: '#timeline' },
     { name: 'CodeFury Wall', href: '#wall' },
     { name: 'Past Winners', href: '#past' },
-    { name: 'Our Sponsors', href: '#sponsors' },
-    { name: 'MiniGame', href: '#game' },
+    //{ name: 'Our Sponsors', href: '#sponsors' },
+    //{ name: 'MiniGame', href: '#game' },
     { name: 'FAQs', href: '#faq' },
     { name: 'Contact', href: '#contact' }
   ];

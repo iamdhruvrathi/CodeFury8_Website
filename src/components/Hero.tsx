@@ -53,7 +53,7 @@ const Hero = () => {
           IEEE UVCE Computer Society Presents
         </p>
 
-        <div className="drop-shadow-[0_0_60px_cyan] mb-6 animate-fade-in px-4"> {/* Added horizontal padding here */}
+        <div className="drop-shadow-[0_0_67px_cyan] mb-6 animate-fade-in px-4"> {/* Added horizontal padding here */}
   <h1 className="mt-6 font-orbitron font-extrabold tracking-tight leading-tight text-center text-2xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[9rem]">
     {/* Wrapped "Code Fury" to prevent it from breaking across lines on small screens */}
     <span className="inline-block">
@@ -73,9 +73,9 @@ const Hero = () => {
           Annual National Level Hackathon
         </p>
 
-        <div className="flex items-center justify-center space-x-2 mt-4 text-cyan-400 font-poppins">
+        <div className="flex items-center justify-center space-x-2 mt-7 text-cyan-400 font-poppins">
           <Calendar className="w-5 h-5 sm:w-6 sm:h-6" />
-          <span className="text-sm sm:text-lg md:text-xl font-medium font-nunito">
+          <span className="text-md sm:text-lg md:text-xl font-medium font-nunito">
             22nd, 23rd & 24th August 2025
           </span>
         </div>
@@ -123,7 +123,7 @@ const Hero = () => {
             >
               Register Now
             </button>*/
-            <p className="mt-4 mb-12 text-white font-bold font-orbitron text-2xl">
+            <p className="mt-7 mb-8 text-white font-bold font-orbitron text-2xl">
    Registrations will open soon. Stay tuned!🚀
 </p>
           )}

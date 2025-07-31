@@ -12,14 +12,14 @@ const Timeline = () => {
     {
       title: 'Registration Opens',
       date: 'August 1, 2025',
-      description: 'Kickstart your CodeFury journey – form your dream team and register!',
+      description: 'Kickstart your CodeFury journey form your dream team and register!',
       icon: Users,
       color: 'text-green-400',
       bg: 'bg-green-500/20'
     },
     {
       title: 'Workshop',
-      date: 'August 8, 2025',
+      date: 'TBA',
       description: 'Offline hands-on workshop to get you hackathon-ready.',
       icon: Lightbulb,
       color: 'text-yellow-400',

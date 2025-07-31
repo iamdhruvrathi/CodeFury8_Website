@@ -47,7 +47,7 @@ const Sponsors = () => {
 
       {/* TEMPORARY MESSAGE - Remove when sponsors are ready */}
       <p className="text-2xl md:text-3xl font-semibold text-gray-300 px-6">
-        🎉 Our sponsors will be revealed soon!
+        🎉 Sponsors dropping soon. Watch this space!
       </p>
 
       {/* 

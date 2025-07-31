@@ -354,7 +354,7 @@ const Contact = () => {
     {
       name: 'Facebook',
       icon: Facebook,
-      url: 'https://www.facebook.com/share/16xsPUSmT3/',
+      url: 'https://www.facebook.com/Ieee.uvce.cs',
       color: 'text-blue-400 hover:text-blue-300'
     },
     {
