@@ -14,6 +14,8 @@ import Footer from './components/Footer';
 import ParticleBackground from './components/ParticleBackground';
 import BackToTopButton from './components/BackToTopButton';
 
+import { Analytics } from "@vercel/analytics/next"
+
 function App() {
   return (
     <div className="min-h-screen bg-gray-950 text-white relative overflow-x-hidden">
