@@ -135,7 +135,7 @@ const Hero = () => {
           </p>
 
           {/* Logos Container */}
-          <div className="mb-6 flex flex-col sm:flex-row items-center justify-center 
+          <div className="mb-6 flex flex-col sm:flex-row items-center justify-center md:ml-[8rem]
                         divide-y-2 sm:divide-y-0 sm:divide-x-2 divide-fuchsia-800/30">
             
             {/* IEEE Logo Link */}
