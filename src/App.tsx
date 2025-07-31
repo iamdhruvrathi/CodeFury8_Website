@@ -30,7 +30,7 @@ function App() {
         <CodeFuryWall />
         <PastWinners />
         <Sponsors />
-        
+        {/* <Game/> */}
         <FAQ />
         <Contact />
       </main>
