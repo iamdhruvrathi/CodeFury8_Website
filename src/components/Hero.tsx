@@ -14,7 +14,7 @@ const Hero = () => {
   const [isClosed, setIsClosed] = useState(false);
 
   useEffect(() => {
-    const targetDate = new Date('2025-08-21T12:00:00').getTime();
+    const targetDate = new Date('2025-08-22T10:00:00').getTime();
 
     const updateCountdown = () => {
       const now = new Date().getTime();
@@ -53,8 +53,8 @@ const Hero = () => {
           IEEE UVCE Computer Society Presents
         </p>
 
-        <div className="drop-shadow-[0_0_85px_cyan] mb-6 animate-fade-in px-4"> {/* Added horizontal padding here */}
-  <h1 className="mt-6 font-orbitron font-extrabold tracking-tight leading-tight text-center text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[9rem]">
+        <div className="drop-shadow-[0_0_60px_cyan] mb-6 animate-fade-in px-4"> {/* Added horizontal padding here */}
+  <h1 className="mt-6 font-orbitron font-extrabold tracking-tight leading-tight text-center text-2xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[9rem]">
     {/* Wrapped "Code Fury" to prevent it from breaking across lines on small screens */}
     <span className="inline-block">
       <span className="text-cyan-400 glow-text">Code</span>

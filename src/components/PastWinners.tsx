@@ -49,7 +49,7 @@ const PastWinners = () => {
     <section id="past" className="py-16">
       <div className="container font-nunito mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-audiowide text-center mb-16">
-          <span className="text-cyan-400 glow-text">Past</span> Winners
+          <span className="text-fuchsia-500 glow-text">Past</span> Winners
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto px-2">

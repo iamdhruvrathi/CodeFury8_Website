@@ -34,7 +34,7 @@ const PrizePool = () => {
   ];
 
   const consolationPrize = {
-    position: 'CONSOLATION PRIZES       WORTH',
+    position: 'CONSOLATION PRIZES WORTH',
     amount: '₹15,000',
     icon: BadgeDollarSign,
     color: 'text-green-400 drop-shadow-[0_0_35px_#00f6ff]',
@@ -47,12 +47,12 @@ const PrizePool = () => {
     <section id="prizes" className="pt-12 pb-20 relative font-[Poppins]">
       <div className="container mx-auto px-6">
         <h2 className=" font-audiowide text-4xl md:text-5xl font-extrabold text-center mb-4 tracking-wide text-white">
-         <span className='text-yellow-400'>PRIZE</span> POOL
+         <span className='text-cyan-400 glow-text'>PRIZE</span> POOL
         </h2>
 
         <div className="text-center mb-8">
           <h3 className="text-white text-2xl md:text-3xl font-nunito font-bold mb-2">
-            ₹60,000 TOTAL PRIZE POOL
+             TOTAL PRIZE POOL OF ₹60,000
           </h3>
         </div>
 
@@ -104,7 +104,7 @@ const PrizePool = () => {
         {/* Certificate Info */}
         <div className="glass-card p-6 md:p-8 rounded-2xl text-center max-w-4xl mx-auto border border-white/10 bg-white/5">
           <p className="text-white text-base md:text-lg font-medium tracking-wide">
-            <span className="text-purple-400 font-semibold">CERTIFICATE OF PARTICIPATION</span> WILL BE PROVIDED FOR EVERYONE
+            <span className="text-purple-400 font-semibold">Certificate of Participation</span> will Be Provided For Everyone!
           </p>
         </div>
       </div>
