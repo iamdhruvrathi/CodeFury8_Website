@@ -70,7 +70,7 @@ const Hero = () => {
 
 
         <p className="font-bold text-lg sm:text-2xl lg:text-3xl text-grey-100 font-audiowide mt-8 mb-8 tracking-wide uppercase">
-          Annual National Level Hackathon
+          Annual National-Level Hackathon
         </p>
 
         <div className="flex items-center justify-center space-x-2 mt-7 text-cyan-400 font-poppins">
