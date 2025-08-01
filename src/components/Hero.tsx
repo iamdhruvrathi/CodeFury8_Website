@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Calendar } from 'lucide-react';
 import cslogo from '../assets/cs-logo.png';
 import ieeelogo from '../assets/ieee-logo.png';
-import bng from '../assets/bng.png';
 
 const Hero = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -132,78 +131,49 @@ const Hero = () => {
           )}
         </div>
 
-                 
-          <div className="w-full flex justify-center">
-  <div className="mb-6 flex flex-col sm:flex-row items-center justify-center 
-                  md:ml-0 max-w-screen-xl w-full px-4">
-    
-    {/* IEEE Computer Society */}
-    <a 
-      href="https://www.instagram.com/ieee.uvce.cs" 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      title="Visit IEEE Computer Society"
-      className="py-6 sm:px-8 md:px-12 transition-transform duration-300 hover:scale-105"
-    >
-      <img
-        src={cslogo}
-        alt="IEEE Computer Society Logo"
-        className="w-48 md:w-56 h-auto object-contain"
-      />
-    </a>
+                  {/* Section Title */}
+          <p className="text-lg sm:text-xl font-bold mt-10 mb-4 text-fuchsia-300 font-nunito tracking-wide text-center">
+            Presented By
+          </p>
 
-    {/* Vertical divider on larger screens */}
-    <div className="hidden sm:block h-24 w-[2px] bg-fuchsia-800/30"></div>
+          {/* Logos Container */}
+          <div className="mb-6 flex flex-col sm:flex-row items-center justify-center md:ml-[8rem]
+                        divide-y-2 sm:divide-y-0 sm:divide-x-2 divide-fuchsia-800/30">
+            
+            {/* IEEE Logo Link */}
+            <a 
+              href="https://www.instagram.com/ieeeuvce" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              title="Visit IEEE"
+              className="py-6 sm:px-8 md:px-12 transition-transform duration-300 hover:scale-105"
+            >
+              <img
+                src={ieeelogo}
+                alt="IEEE Logo"
+                className="w-20 md:w-24 h-auto object-contain"
+              />
+            </a>
+            
+            {/* IEEE CS Logo Link */}
+            <a 
+              href="https://www.instagram.com/ieee.uvce.cs" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              title="Visit IEEE Computer Society"
+              className="py-6 sm:px-8 md:px-12 transition-transform duration-300 hover:scale-105"
+            >
+              <img
+                src={cslogo}
+                alt="IEEE Computer Society Logo"
+                className="w-48 md:w-56 h-auto object-contain"
+              />
+            </a>
 
-    {/* Horizontal divider on small screens */}
-    <div className="block sm:hidden w-24 h-[2px] bg-fuchsia-800/30 my-2"></div>
-
-    {/* IEEE */}
-    <a 
-      href="https://www.instagram.com/ieeeuvce" 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      title="Visit IEEE"
-      className="py-6 sm:px-8 md:px-12 transition-transform duration-300 hover:scale-105"
-    >
-      <img
-        src={ieeelogo}
-        alt="IEEE Logo"
-        className="w-20 md:w-24 h-auto object-contain"
-      />
-    </a>
-
-    {/* Vertical divider on larger screens */}
-    <div className="hidden sm:block h-24 w-[2px] bg-fuchsia-800/30"></div>
-
-    {/* Horizontal divider on small screens */}
-    <div className="block sm:hidden w-24 h-[2px] bg-fuchsia-800/30 my-2"></div>
-
-    {/* IEEE Bangalore Section */}
-    <a 
-      href="https://www.instagram.com/ieeebangalore" 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      title="Visit IEEE Bangalore Section"
-      className="py-6 sm:px-8 md:px-12 transition-transform duration-300 hover:scale-105"
-    >
-      <img
-        src={bng}
-        alt="IEEE Bangalore Section Logo"
-        className="w-52 md:w-60 h-auto object-contain"
-      />
-    </a>
-
-  </div>
-</div>
-
-
-
+          </div>
                 </div>
               </section>
             );
           };
 
 export default Hero;
-
-
