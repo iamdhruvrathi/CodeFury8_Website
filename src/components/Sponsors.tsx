@@ -23,13 +23,13 @@ const sponsors = [
   // },
   {
     tier: 'General Sponsor',
-    name: 'IEEE Bangalore Section',
+    name: '',
     logo: bng,
-    link: 'https://ieeebangalore.org/',
+    link: 'https://ieeecsbangalore.org/',
     color: 'text-green-400',
     glow: 'drop-shadow-none', // Clean look
-    width: 'w-[200px]',
-    height: 'h-[40px]',
+    width: 'w-[500px]',
+    height: 'h-[80px]',
   },
 ];
 
