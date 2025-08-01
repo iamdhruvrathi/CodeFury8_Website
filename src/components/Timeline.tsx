@@ -19,16 +19,16 @@ const Timeline = () => {
     },
     {
       title: 'Workshop',
-      date: 'TBA',
+      date: '11th and 12th August 2025',
       description: 'Offline hands-on workshop to get you hackathon-ready.',
       icon: Lightbulb,
       color: 'text-yellow-400',
       bg: 'bg-yellow-500/20'
     },
     {
-      title: 'Mini Challenge',
+      title: 'Mini Game and Mini Challenge',
       date: '',
-      description: 'A surprise mini challenge to stir up the excitement!',
+      description: 'Participate in our surprise mini game & challenge to win exciting discounts on registration fees!',
       icon: ListTodo,
       color: 'text-green-400',
       bg: 'bg-green-500/20'
@@ -44,7 +44,7 @@ const Timeline = () => {
     {
       title: 'CodeFury Round 1',
       date: 'August 22-23, 2025',
-      description: 'The 24-hour coding showdown begins!',
+      description: 'The 24-hour coding showdown begins.  [22nd 6pm to 23rd 6pm]',
       icon: Trophy,
       color: 'text-fuchsia-500',
       bg: 'bg-fuchsia-500/20'
@@ -52,7 +52,7 @@ const Timeline = () => {
     {
       title: 'CodeFury Round 2',
       date: 'August 24, 2025',
-      description: 'Top teams present their innovations to the jury.',
+      description: 'Top teams present their innovations to the jury. [24th 10am onwards]',
       icon: Flag,
       color: 'text-fuchsia-500',
       bg: 'bg-fuchsia-500/20'
