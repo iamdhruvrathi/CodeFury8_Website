@@ -84,7 +84,7 @@ const PrizePool = () => {
           ))}
       <div className="md:col-span-2 md:col-span-2 md:col-start-1 mt-6">
         <div
-              className={`md:ml-[16.75rem] md:mr-0 font-nunito glass-card p-8 rounded-2xl bg-gradient-to-br ${consolationPrize.bg} border ${consolationPrize.border} hover:scale-105 transform transition-all duration-300`}
+              className={`md:ml-[24.75rem] md:mr-0 font-nunito glass-card p-8 rounded-2xl bg-gradient-to-br ${consolationPrize.bg} border ${consolationPrize.border} hover:scale-105 transform transition-all duration-300`}
             >
           <div className=" text-center mb-4">
             <consolationPrize.icon className={`w-12 h-12 mx-auto mb-3 ${consolationPrize.color}`} />
