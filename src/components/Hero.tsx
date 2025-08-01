@@ -118,16 +118,16 @@ const Hero = () => {
               </span>
             </div>
           ) : (
-          // <button
-          //       onClick={() => window.open("https://unstop.com/o/eyWD58I?lb=qyWQPa8&utm_medium=Share&utm_source=ieeecom4643&utm_campaign=Online_coding_challenge", "_blank")}
-          //       className="mt-4 mb-12 glow-button bg-gradient-to-r from-fuchsia-500 to-cyan-400 text-white font-bold font-orbitron py-5 px-10 rounded-full text-2xl transition-all duration-300 transform hover:scale-105 hover:from-cyan-400 hover:to-fuchsia-500"
-          // >
-          //       Register Now
-          // </button>
+           <button
+                 onClick={() => window.open("https://unstop.com/o/eyWD58I?lb=qyWQPa8&utm_medium=Share&utm_source=ieeecom4643&utm_campaign=Online_coding_challenge", "_blank")}
+                 className="mt-4 mb-12 glow-button bg-gradient-to-r from-fuchsia-500 to-cyan-400 text-white font-bold font-orbitron py-5 px-10 rounded-full text-2xl transition-all duration-300 transform hover:scale-105 hover:from-cyan-400 hover:to-fuchsia-500"
+           >
+                 Register Now
+          </button>
 
-            <p className="mt-7 mb-8 text-white font-bold font-orbitron text-2xl">
-                   Registrations will open soon. Stay tuned!🚀
-            </p>
+            // <p className="mt-7 mb-8 text-white font-bold font-orbitron text-2xl">
+            //        Registrations will open soon. Stay tuned!🚀
+            // </p>
           )}
         </div>
 

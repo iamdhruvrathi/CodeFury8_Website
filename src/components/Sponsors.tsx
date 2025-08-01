@@ -1,4 +1,5 @@
 import bng from "../assets/bng.png";
+import unstop from "../assets/unstop.png";
 
 const sponsors = [
   // {
@@ -30,6 +31,16 @@ const sponsors = [
     glow: 'drop-shadow-none', // Clean look
     width: 'w-[500px]',
     height: 'h-[80px]',
+  },
+  {
+    tier: 'Platform Partner',
+    name: '',
+    logo: unstop,
+    link: 'https://unstop.com/',
+    color: 'text-green-400',
+    glow: 'drop-shadow-none', // Clean look
+    width: 'w-[350px]',
+    height: 'h-[65px]',
   },
 ];
 
