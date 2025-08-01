@@ -131,73 +131,6 @@ const Hero = () => {
           )}
         </div>
 
-<<<<<<< HEAD
-                 
-                            <div className="w-full flex justify-center">
-                    <div className="mb-6 flex flex-col sm:flex-row items-center justify-center 
-                                    md:ml-0 max-w-screen-xl w-full px-4">
-                      
-                      {/* IEEE Computer Society */}
-                      <a 
-                        href="https://www.instagram.com/ieee.uvce.cs" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        title="Visit IEEE Computer Society"
-                        className="py-6 sm:px-8 md:px-12 transition-transform duration-300 hover:scale-105"
-                      >
-                        <img
-                          src={cslogo}
-                          alt="IEEE Computer Society Logo"
-                          className="w-48 md:w-56 h-auto object-contain"
-                        />
-                      </a>
-
-                      {/* Vertical divider on larger screens */}
-                      <div className="hidden sm:block h-24 w-[2px] bg-fuchsia-800/30"></div>
-
-                      {/* Horizontal divider on small screens */}
-                      <div className="block sm:hidden w-24 h-[2px] bg-fuchsia-800/30 my-2"></div>
-
-                      {/* IEEE */}
-                      <a 
-                        href="https://www.instagram.com/ieeeuvce" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        title="Visit IEEE"
-                        className="py-6 sm:px-8 md:px-12 transition-transform duration-300 hover:scale-105"
-                      >
-                        <img
-                          src={ieeelogo}
-                          alt="IEEE Logo"
-                          className="w-20 md:w-24 h-auto object-contain"
-                        />
-                      </a>
-
-                      {/* Vertical divider on larger screens */}
-                      <div className="hidden sm:block h-24 w-[2px] bg-fuchsia-800/30"></div>
-
-                      {/* Horizontal divider on small screens */}
-                      <div className="block sm:hidden w-24 h-[2px] bg-fuchsia-800/30 my-2"></div>
-
-                      {/* IEEE Bangalore Section */}
-                      <a 
-                        href="https://www.instagram.com/ieeebangalore" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        title="Visit IEEE Bangalore Section"
-                        className="py-6 sm:px-8 md:px-12 transition-transform duration-300 hover:scale-105"
-                      >
-                        <img
-                          src={bng}
-                          alt="IEEE Bangalore Section Logo"
-                          className="w-52 md:w-60 h-auto object-contain"
-                        />
-                      </a>
-
-                    </div>
-                  </div>
-                  </div>
-=======
                   {/* Section Title */}
           <p className="text-lg sm:text-xl font-bold mt-10 mb-4 text-fuchsia-300 font-nunito tracking-wide text-center">
             Presented By
@@ -239,7 +172,6 @@ const Hero = () => {
 
           </div>
                 </div>
->>>>>>> 6f2511e51717021575cdac0f08729a68eed28fcf
               </section>
             );
           };
