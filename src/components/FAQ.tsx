@@ -33,7 +33,8 @@ const FAQ = () => {
       question: 'What are the available tracks?',
       answer:(
         <>
-          We have two main tracks:<span className="text-purple-400 font-semibold"> Web Development (build modern websites and web applications) and App Development (create mobile apps using Flutter or Android Studio).</span>
+          Participants will choose from <span className="text-purple-400 font-semibold">three themes</span>, each with its own problem statement. Participants may opt to build a <span className="text-purple-400 font-semibold">web or mobile application </span>depending on their area of expertise and preference.
+
         </>
       )
     },
