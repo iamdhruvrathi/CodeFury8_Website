@@ -14,7 +14,12 @@ import Footer from './components/Footer';
 import ParticleBackground from './components/ParticleBackground';
 import BackToTopButton from './components/BackToTopButton';
 
-import { Analytics } from "@vercel/analytics/next"
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("G-XXXXXXXXXX");
+
+ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+
 
 function App() {
   return (
