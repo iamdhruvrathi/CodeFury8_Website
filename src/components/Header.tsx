@@ -23,7 +23,7 @@ const Header = () => {
     { name: 'CodeFury Wall', href: '#wall' },
     { name: 'Past Winners', href: '#past' },
     { name: 'Our Sponsors', href: '#sponsors' },
-    //{ name: 'MiniGame', href: '#game' },
+    { name: 'FlappyDev (Mini Game)', href: '#game' },
     { name: 'FAQs', href: '#faq' },
     { name: 'Contact', href: '#contact' }
   ];

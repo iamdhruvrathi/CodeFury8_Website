@@ -301,26 +301,30 @@ const Game = () => {
           <span className="text-fuchsia-500 glow-text">CodeFury</span> MiniGame
         </h2>
 
-        <div className="text-sm sm:text-base text-gray-300 text-center max-w-2xl mx-auto mb-8 font-nunito leading-relaxed px-2 sm:px-4">
-  <p className="mb-2 text-cyan-400 font-bold uppercase font-pop ">🔥 Flappy Dev Challenge</p>
-  <p className="mb-4">
-    Flappy Dev is a web-based mini-game where you, as a pixel developer, navigate through blocks. Jump, dodge, and prove your reflexes like a true techie!
-  </p>
+              <div className="text-base sm:text-lg md:text-xl text-gray-300 text-center max-w-2xl mx-auto mb-10 font-nunito leading-relaxed px-4">
+                <p className="mb-3 text-cyan-400 font-bold uppercase font-pop text-lg sm:text-xl">🔥 Flappy Devs Challenge</p>
+                
+                <p className="mb-6 text-justify text-sm sm:text-base md:text-lg">
+                  Flappy Devs Challenge is a quirky and fast-paced browser game where you jump, dodge, and soar through blocks, testing your reflexes and aiming for sky-high scores as part of the electrifying <span className="text-cyan-500 font-bold">CodeFury 8.0</span> experience!
+                </p>
 
-  <p className="mb-4 font-semibold text-fuchsia-400">🏆 INDIVIDUAL OFFER – Rules to avail:</p>
-  <ul className="list-disc text-left pl-6 space-y-2 text-sm sm:text-base">
-    <li>Avail this offer before <b>19th August 2025</b>.</li>
-    <li>
-      Once you beat the Flappy Dev challenge, share your <b>high score on your Instagram story</b> and DM it to <code>@ieee.uvce.cs</code> (multiple attempts allowed).
-    </li>
-    <li>
-      Tag <code>@ieee.uvce.cs</code> and use hashtags <code>#FlappyDev</code> and <code>#CodeFury8.0</code> on your story.
-    </li>
-    <li>
-      Top 10 scorers will get a <b className="text-yellow-400">30% discount</b> on their CodeFury 8.0 hackathon ticket!
-    </li>
-  </ul>
-</div>
+                <p className="mb-3 text-base sm:text-lg font-semibold text-fuchsia-400">🏆 INDIVIDUAL OFFER – Rules to avail:</p>
+                
+                <ul className="list-disc text-left pl-6 space-y-2 text-sm sm:text-base">
+                  <li>
+                    Avail this offer between <b>5th August, 11:00 AM – 7th August, 11:00 AM</b>.
+                  </li>
+                  <li>
+                    Once you beat the Flappy Devs Challenge, share your <b>high score on your Instagram story</b> and DM it to <code>@ieee.uvce.cs</code> (multiple attempts allowed).
+                  </li>
+                  <li>
+                    Tag <code>@ieee.uvce.cs</code> and use hashtags <code>#FlappyDevsChallenge</code> and <code>#CodeFury8.0</code> on your story.
+                  </li>
+                  <li>
+                    Top 10 scorers will get a <b className="text-yellow-400">25% discount</b> on their CodeFury 8.0 hackathon ticket!
+                  </li>
+                </ul>
+              </div>
 
 
         <div className="flex flex-col items-center font-nunito">
