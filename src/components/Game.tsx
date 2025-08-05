@@ -310,7 +310,7 @@ const Game = () => {
 
                 <p className="mb-3 text-base sm:text-lg font-semibold text-fuchsia-400">🏆 INDIVIDUAL OFFER – Rules to avail:</p>
                 
-                <ul className="list-disc text-left pl-6 space-y-2 text-sm sm:text-base">
+                <ul className="list-disc text-justify pl-6 space-y-2 text-sm sm:text-base">
                   <li>
                     Avail this offer between <b>5th August, 11:00 AM – 7th August, 11:00 AM</b>.
                   </li>
