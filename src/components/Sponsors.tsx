@@ -1,5 +1,6 @@
 import bng from "../assets/bng.png";
 import unstop from "../assets/unstop.png";
+import wie from "../assets/wielogonew.png";
 
 const sponsors = [
   // {
@@ -27,6 +28,16 @@ const sponsors = [
     name: '',
     logo: bng,
     link: 'https://ieeecsbangalore.org/',
+    color: 'text-green-400',
+    glow: 'drop-shadow-none', // Clean look
+    width: 'w-[500px]',
+    height: 'h-[80px]',
+  },
+  {
+    tier: 'General Sponsor',
+    name: '',
+    logo: wie,
+    link: 'https://wie.ieee.org/',
     color: 'text-green-400',
     glow: 'drop-shadow-none', // Clean look
     width: 'w-[500px]',
