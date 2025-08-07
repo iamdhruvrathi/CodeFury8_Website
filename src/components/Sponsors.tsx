@@ -41,7 +41,7 @@ const sponsors = [
     color: 'text-green-400',
     glow: 'drop-shadow-none', // Clean look
     width: 'w-[500px]',
-    height: 'h-[80px]',
+    height: 'h-[110px]',
   },
   {
     tier: 'Platform Partner',
