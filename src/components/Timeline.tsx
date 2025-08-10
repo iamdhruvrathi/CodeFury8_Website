@@ -19,7 +19,7 @@ const Timeline = () => {
     },
     {
       title: 'Workshop',
-      date: '11th and 12th August 2025',
+      date: '12th and 13th August 2025',
       description: 'Offline hands-on workshop to get you hackathon-ready.',
       icon: Lightbulb,
       color: 'text-yellow-400',
