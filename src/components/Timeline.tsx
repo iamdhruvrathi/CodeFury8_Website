@@ -18,9 +18,13 @@ const Timeline = () => {
       bg: 'bg-green-500/20'
     },
     {
-      title: 'Workshop',
+      title: 'Workshop - "Git Ready, Set, Code"',
       date: '12th and 13th August 2025',
-      description: 'Offline hands-on workshop to get you hackathon-ready.',
+      description: 'A Pre-Codefury Web Dev Workshop',
+      //extraTitle: 'Git Ready, Set, Code',
+      //extraDesc: ' Web Dev Workshop',
+      buttonText: 'Register Now',
+      buttonLink: 'http://tinyurl.com/codefuryWeb', // Add registration link here
       icon: Lightbulb,
       color: 'text-yellow-400',
       bg: 'bg-yellow-500/20'
@@ -84,14 +88,28 @@ const Timeline = () => {
                     </div>
                   </div>
 
-                  {/* Optional line connector (desktop only) */}
+                  {/* Optional line connector */}
                   <div className="hidden md:block absolute top-8 w-full h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
 
                   {/* Card */}
                   <div className={`w-full md:w-[48%] max-w-xl glass-card bg-white/5 backdrop-blur-md border border-gray-700/40 p-5 sm:p-6 rounded-2xl ${isEven ? 'md:mr-6' : 'md:ml-6'}`}>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 ">{event.title}</h3>
-                    <p className={`text-sm sm:text-md font-semibold ${event.color} mb-2 `}>{event.date}</p>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{event.title}</h3>
+                    <p className={`text-sm sm:text-md font-semibold ${event.color} mb-2`}>{event.date}</p>
                     <p className="text-gray-400 text-sm sm:text-base">{event.description}</p>
+
+                    {/* Extra section for Workshop */}
+                    {event.buttonText && (
+  <div className="mt-2.5">
+    <a
+      href={event.buttonLink}
+      className="inline-block px-4 py-2 border-2 border-fuchsia-500 text-fuchsia-400 text-sm font-semibold rounded-lg shadow-md hover:bg-fuchsia-500 hover:text-white transition duration-300 hover:shadow-fuchsia-500/25 hover:shadow-lg"
+    >
+      {event.buttonText}
+    </a>
+  </div>
+)}
+
+
                   </div>
                 </div>
               );
