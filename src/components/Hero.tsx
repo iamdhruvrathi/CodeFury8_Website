@@ -53,21 +53,18 @@ const Hero = () => {
           IEEE UVCE Computer Society Presents
         </p>
 
-        <div className="drop-shadow-[0_0_67px_cyan] mb-6 animate-fade-in px-4"> {/* Added horizontal padding here */}
-  <h1 className="mt-6 font-orbitron font-extrabold tracking-tight leading-tight text-center text-2xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[9rem]">
-    {/* Wrapped "Code Fury" to prevent it from breaking across lines on small screens */}
-    <span className="inline-block">
-      <span className="text-cyan-400 glow-text">Code</span>
-      <span className="text-fuchsia-500 glow-text">Fury</span>
-    </span>
-    <span className="text-white ml-2">8.0</span>
-  </h1>
-  <p className="mt-4 text-base md:text-lg lg:text-xl italic text-purple-300 font-nunito text-center max-w-2xl mx-auto">
-    {/* Removed w-[85%] and used max-w-* for better control */}
-    Fury in Code, Ready to Explode
-  </p>
-</div>
-
+        <div className="drop-shadow-[0_0_67px_cyan] mb-6 animate-fade-in px-4">
+          <h1 className="mt-6 font-orbitron font-extrabold tracking-tight leading-tight text-center text-2xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[9rem]">
+            <span className="inline-block">
+              <span className="text-cyan-400 glow-text">Code</span>
+              <span className="text-fuchsia-500 glow-text">Fury</span>
+            </span>
+            <span className="text-white ml-2">8.0</span>
+          </h1>
+          <p className="mt-4 text-base md:text-lg lg:text-xl italic text-purple-300 font-nunito text-center max-w-2xl mx-auto">
+            Fury in Code, Ready to Explode
+          </p>
+        </div>
 
         <p className="font-bold text-lg sm:text-2xl lg:text-3xl text-grey-100 font-audiowide mt-8 mb-8 tracking-wide uppercase">
           Annual National - Level Hackathon
@@ -105,7 +102,7 @@ const Hero = () => {
         )}
 
         {/* Conditional Content */}
-        <div className="flex justify-center mb-12">
+        <div className="flex flex-col items-center mb-12">
           {isClosed ? (
             <div className="text-white text-xs sm:text-sm md:text-base px-4 py-2 rounded-md font-mono w-full text-center">
               <span className="text-gray-400 mr-2">&gt;&gt;&gt; REGISTRATIONS CLOSED</span>
@@ -118,62 +115,63 @@ const Hero = () => {
               </span>
             </div>
           ) : (
-           <button
-                 onClick={() => window.open("https://unstop.com/o/eyWD58I?lb=qyWQPa8&utm_medium=Share&utm_source=ieeecom4643&utm_campaign=Online_coding_challenge", "_blank")}
-                 className="mt-4 mb-12 glow-button bg-gradient-to-r from-fuchsia-500 to-cyan-400 text-white font-bold font-orbitron py-5 px-10 rounded-full text-2xl transition-all duration-300 transform hover:scale-105 hover:from-cyan-400 hover:to-fuchsia-500"
-           >
-                 Register Now
-          </button>
-
-            // <p className="mt-7 mb-8 text-white font-bold font-orbitron text-2xl">
-            //        Registrations will open soon. Stay tuned!🚀
-            // </p>
+            <>
+              <button
+                onClick={() => window.open("https://unstop.com/o/eyWD58I?lb=qyWQPa8&utm_medium=Share&utm_source=ieeecom4643&utm_campaign=Online_coding_challenge", "_blank")}
+                className="mt-4 glow-button bg-gradient-to-r from-fuchsia-500 to-cyan-400 text-white font-bold font-orbitron py-5 px-10 rounded-full text-2xl transition-all duration-300 transform hover:scale-105 hover:from-cyan-400 hover:to-fuchsia-500"
+              >
+                Register Now
+              </button>
+              <p className="mt-4 text-xs sm:text-sm md:text-base text-gray-300 font-nunito max-w-3xl text-center">
+                Participants can form teams of 1 to 4 members, but all members must register individually on Unstop; team details will be collected later.
+              </p>
+            </>
           )}
         </div>
 
-                  {/* Section Title */}
-          <p className="text-lg sm:text-xl font-bold mt-10 mb-4 text-fuchsia-300 font-nunito tracking-wide text-center">
-            Presented By
-          </p>
+        {/* Section Title */}
+        <p className="text-lg sm:text-xl font-bold mt-10 mb-4 text-fuchsia-300 font-nunito tracking-wide text-center">
+          Presented By
+        </p>
 
-          {/* Logos Container */}
-          <div className="mb-6 flex flex-col sm:flex-row items-center justify-center md:ml-[8rem]
+        {/* Logos Container */}
+        <div className="mb-6 flex flex-col sm:flex-row items-center justify-center md:ml-[8rem]
                         divide-y-2 sm:divide-y-0 sm:divide-x-2 divide-fuchsia-800/30">
-            
-            {/* IEEE Logo Link */}
-            <a 
-              href="https://www.instagram.com/ieeeuvce" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              title="Visit IEEE"
-              className="py-6 sm:px-8 md:px-12 transition-transform duration-300 hover:scale-105"
-            >
-              <img
-                src={ieeelogo}
-                alt="IEEE Logo"
-                className="w-20 md:w-24 h-auto object-contain"
-              />
-            </a>
-            
-            {/* IEEE CS Logo Link */}
-            <a 
-              href="https://www.instagram.com/ieee.uvce.cs" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              title="Visit IEEE Computer Society"
-              className="py-6 sm:px-8 md:px-12 transition-transform duration-300 hover:scale-105"
-            >
-              <img
-                src={cslogo}
-                alt="IEEE Computer Society Logo"
-                className="w-48 md:w-56 h-auto object-contain"
-              />
-            </a>
+          
+          {/* IEEE Logo Link */}
+          <a 
+            href="https://www.instagram.com/ieeeuvce" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            title="Visit IEEE"
+            className="py-6 sm:px-8 md:px-12 transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src={ieeelogo}
+              alt="IEEE Logo"
+              className="w-20 md:w-24 h-auto object-contain"
+            />
+          </a>
+          
+          {/* IEEE CS Logo Link */}
+          <a 
+            href="https://www.instagram.com/ieee.uvce.cs" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            title="Visit IEEE Computer Society"
+            className="py-6 sm:px-8 md:px-12 transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src={cslogo}
+              alt="IEEE Computer Society Logo"
+              className="w-48 md:w-56 h-auto object-contain"
+            />
+          </a>
 
-          </div>
-                </div>
-              </section>
-            );
-          };
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default Hero;
