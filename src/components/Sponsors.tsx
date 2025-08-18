@@ -1,8 +1,19 @@
 import bng from "../assets/bng.png";
 import unstop from "../assets/unstop.png";
 import wie from "../assets/wielogonew.png";
+import artpark from "../assets/ARTPARK primary logo.png";
 
 const sponsors = [
+  {
+  tier: 'Diamond Sponsor',
+  name: '',
+  logo: artpark, // replace with your actual image import
+  link: 'https://www.artpark.in/', 
+  color: 'text-cyan-400', 
+  glow: 'drop-shadow-[0_0_35px_#22d3ee]', // Cyan glow for diamond
+  width: 'w-[250px]', // a bit larger than gold
+  height: 'h-[80px]',
+},
   // {
   //   tier: 'Gold Sponsor',
   //   name: 'IEEE Bangalore Section',
@@ -44,6 +55,16 @@ const sponsors = [
     height: 'h-[110px]',
   },
   {
+    tier: 'General Sponsor',
+    name: 'MistyClimb LLP',
+    // logo: '',
+    link: 'https://tracxn.com/d/legal-entities/india/mistyclimb-llp/__IKhPP9H2P8LXL5e1EiNMGr3OCaWiJdUf9M_pVuIf3b8#about',
+    color: 'text-green-400',
+    glow: 'drop-shadow-none', // Clean look
+    width: 'w-[500px]',
+    height: 'h-[80px]',
+  },
+  {
     tier: 'Platform Partner',
     name: '',
     logo: unstop,
@@ -54,7 +75,6 @@ const sponsors = [
     height: 'h-[65px]',
   },
 ];
-
 
 const Sponsors = () => {
   return (
@@ -73,16 +93,20 @@ const Sponsors = () => {
             className="flex flex-col items-center transition-transform duration-300 hover:scale-110"
           >
             {/* Tier (with color based on sponsor.color) */}
-            <p className={`text-2xl md:text-3xl font-extrabold font-poppins mb-10 uppercase ${sponsor.color}`}>
+            <p
+              className={`text-2xl md:text-3xl font-extrabold font-poppins mb-10 uppercase ${sponsor.color}`}
+            >
               {sponsor.tier}
             </p>
 
-            {/* Logo with individual size and glow */}
-            <img
-              src={sponsor.logo}
-              alt={sponsor.name}
-              className={`${sponsor.width ?? 'w-32'} ${sponsor.height ?? 'h-24'} object-contain mb-4 transition-all duration-300 ${sponsor.glow}`}
-            />
+            {/* Render logo only if sponsor.logo exists */}
+            {sponsor.logo && (
+              <img
+                src={sponsor.logo}
+                alt={sponsor.name}
+                className={`${sponsor.width ?? "w-32"} ${sponsor.height ?? "h-24"} object-contain mb-4 transition-all duration-300 ${sponsor.glow}`}
+              />
+            )}
 
             {/* Sponsor Name (White + Highlight) */}
             <p className="text-lg md:text-xl font-nunito font-bold text-white mb-4 tracking-wider drop-shadow-[0_0_60px_#ffffff]">
@@ -110,3 +134,4 @@ const Sponsors = () => {
 };
 
 export default Sponsors;
+
