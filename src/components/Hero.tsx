@@ -56,12 +56,12 @@ const Hero = () => {
         <div className="drop-shadow-[0_0_67px_cyan] mb-6 animate-fade-in px-4">
           <h1 className="mt-6 font-orbitron font-extrabold tracking-tight leading-tight text-center text-2xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[9rem]">
             <span className="inline-block">
-              <span className="text-cyan-400 glow-text">Code</span>
-              <span className="text-fuchsia-500 glow-text">Fury</span>
+              <span className="text-cyan-500 glow-text">Code</span>
+              <span className="text-fuchsia-600 glow-text">Fury</span>
             </span>
             <span className="text-white ml-2">8.0</span>
           </h1>
-          <p className="mt-4 text-base md:text-lg lg:text-xl italic text-purple-300 font-nunito text-center max-w-2xl mx-auto">
+          <p className="mt-4 text-base md:text-lg lg:text-xl italic text-fuchsia-400 font-nunito text-center max-w-2xl mx-auto">
             Fury in Code, Ready to Explode
           </p>
         </div>
@@ -69,6 +69,12 @@ const Hero = () => {
         <p className="font-bold text-lg sm:text-2xl lg:text-3xl text-grey-100 font-audiowide mt-8 mb-8 tracking-wide uppercase">
           Annual National - Level Hackathon
         </p>
+
+        
+        <p className="text-md sm:text-lg text-gray-300 font-poppins tracking-wider">
+          Powered by <span className="font-bold text-fuchsia-500">ARTPARK I-Hub @ IISc</span>
+        </p>
+       
 
         <div className="flex items-center justify-center space-x-2 mt-7 text-cyan-400 font-poppins">
           <Calendar className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -106,7 +112,7 @@ const Hero = () => {
           {isClosed ? (
             <div className="text-white text-xs sm:text-sm md:text-base px-4 py-2 rounded-md font-mono w-full text-center">
               <span className="text-gray-400 mr-2">&gt;&gt;&gt; REGISTRATIONS CLOSED</span>
-              <br />      
+              <br />              
               <span className="font-bold">
                 THE REGISTRATIONS FOR CODEFURY 8.0 WERE CLOSED ON{" "}
                 <span className="text-cyan-400 font-bold">
@@ -136,7 +142,7 @@ const Hero = () => {
 
         {/* Logos Container */}
         <div className="mb-6 flex flex-col sm:flex-row items-center justify-center md:ml-[8rem]
-                        divide-y-2 sm:divide-y-0 sm:divide-x-2 divide-fuchsia-800/30">
+                          divide-y-2 sm:divide-y-0 sm:divide-x-2 divide-fuchsia-800/30">
           
           {/* IEEE Logo Link */}
           <a 
