@@ -72,40 +72,43 @@ const Hero = () => {
 
         
         <p className="text-md sm:text-lg text-gray-300 font-poppins tracking-wider">
-          Powered by <span className="font-bold text-fuchsia-500">ARTPARK I-Hub @ IISc</span>
+          Powered by <span className="font-bold text-fuchsia-500">ART PARK I-Hub @ IISc</span>
         </p>
        
 
-        <div className="flex items-center justify-center space-x-2 mt-7 text-cyan-400 font-poppins">
-          <Calendar className="w-5 h-5 sm:w-6 sm:h-6" />
-          <span className="text-md sm:text-lg md:text-xl font-medium font-nunito">
-            22nd, 23rd & 24th August 2025
-          </span>
+        {/* Date & Countdown Container */}
+        <div className="glass-card rounded-2xl p-6 mt-10 shadow-lg max-w-3xl mx-auto">
+          <div className="flex items-center justify-center space-x-2 text-cyan-400 font-poppins">
+            <Calendar className="w-5 h-5 sm:w-6 sm:h-6" />
+            <span className="text-md sm:text-lg md:text-xl font-medium font-nunito">
+              22nd, 23rd & 24th August 2025
+            </span>
+          </div>
+
+          {!isClosed && (
+            <>
+              <p className="text-lg sm:text-xl font-bold mt-10 mb-4 text-fuchsia-300 font-nunito tracking-wide">
+                It Begins In
+              </p>
+
+              <div className="grid grid-cols-4 md:grid-cols-4 gap-2 sm:gap-4 max-w-2xl mx-auto mb-4">
+                {Object.entries(timeLeft).map(([unit, value]) => (
+                  <div
+                    key={unit}
+                    className="p-2 sm:p-3 md:p-4 text-center hover:scale-105 transition rounded-lg sm:rounded-xl md:rounded-2xl glass-card shadow-lg"
+                  >
+                    <div className="text-xl sm:text-2xl md:text-2xl font-bold text-neonCyan">
+                      {value.toString().padStart(2, '0')}
+                    </div>
+                    <div className="text-[0.65rem] sm:text-xs md:text-sm uppercase text-gray-400 mt-1 tracking-wider">
+                      {unit}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
         </div>
-
-        {!isClosed && (
-          <>
-            <p className="text-lg sm:text-xl font-bold mt-10 mb-4 text-fuchsia-300 font-nunito tracking-wide">
-              It Begins In
-            </p>
-
-            <div className="grid grid-cols-4 md:grid-cols-4 gap-2 sm:gap-4 max-w-2xl mx-auto mb-8 sm:mb-12">
-              {Object.entries(timeLeft).map(([unit, value]) => (
-                <div
-                  key={unit}
-                  className="p-2 sm:p-3 md:p-4 text-center hover:scale-105 transition rounded-lg sm:rounded-xl md:rounded-2xl glass-card shadow-lg"
-                >
-                  <div className="text-xl sm:text-2xl md:text-2xl font-bold text-neonCyan">
-                    {value.toString().padStart(2, '0')}
-                  </div>
-                  <div className="text-[0.65rem] sm:text-xs md:text-sm uppercase text-gray-400 mt-1 tracking-wider">
-                    {unit}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </>
-        )}
 
         {/* Conditional Content */}
         <div className="flex flex-col items-center mb-12">
@@ -124,7 +127,7 @@ const Hero = () => {
             <>
               <button
                 onClick={() => window.open("https://unstop.com/o/eyWD58I?lb=qyWQPa8&utm_medium=Share&utm_source=ieeecom4643&utm_campaign=Online_coding_challenge", "_blank")}
-                className="mt-4 glow-button bg-gradient-to-r from-fuchsia-500 to-cyan-400 text-white font-bold font-orbitron py-5 px-10 rounded-full text-2xl transition-all duration-300 transform hover:scale-105 hover:from-cyan-400 hover:to-fuchsia-500"
+                className="mt-8 glow-button bg-gradient-to-r from-fuchsia-500 to-cyan-400 text-white font-bold font-orbitron py-5 px-10 rounded-full text-2xl transition-all duration-300 transform hover:scale-105 hover:from-cyan-400 hover:to-fuchsia-500"
               >
                 Register Now
               </button>
