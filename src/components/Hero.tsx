@@ -14,7 +14,7 @@ const Hero = () => {
   const [isClosed, setIsClosed] = useState(false);
 
   useEffect(() => {
-    const targetDate = new Date('2025-08-21T16:00:00').getTime();
+    const targetDate = new Date('2025-08-22T18:00:00').getTime();
 
     const updateCountdown = () => {
       const now = new Date().getTime();
