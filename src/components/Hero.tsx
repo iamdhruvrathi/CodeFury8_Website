@@ -14,7 +14,7 @@ const Hero = () => {
   const [isClosed, setIsClosed] = useState(false);
 
   useEffect(() => {
-    const targetDate = new Date('2025-08-22T10:00:00').getTime();
+    const targetDate = new Date('2025-08-21T16:00:00').getTime();
 
     const updateCountdown = () => {
       const now = new Date().getTime();
@@ -37,7 +37,7 @@ const Hero = () => {
 
   useEffect(() => {
     const now = new Date();
-    const closingTime = new Date('2025-08-22T10:00:00');
+    const closingTime = new Date('2025-08-21T16:00:00');
     if (now >= closingTime) setIsClosed(true);
     const interval = setInterval(() => {
       if (new Date() >= closingTime) setIsClosed(true);
@@ -119,7 +119,7 @@ const Hero = () => {
               <span className="font-bold">
                 THE REGISTRATIONS FOR CODEFURY 8.0 WERE CLOSED ON{" "}
                 <span className="text-cyan-400 font-bold">
-                  21<sup>st</sup> August 2025
+                  21<sup>st</sup> August 2025, 4:00 PM
                 </span>. SEE YOU FOR CODEFURY 9.0!
               </span>
             </div>
