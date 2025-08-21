@@ -11,9 +11,9 @@ const Hero = () => {
     seconds: 0
   });
 
-  const [isClosed, setIsClosed] = useState(false);
-
+  // This useEffect handles the countdown to the event start time.
   useEffect(() => {
+    // Target date is August 22, 2025, at 6:00 PM IST
     const targetDate = new Date('2025-08-22T18:00:00').getTime();
 
     const updateCountdown = () => {
@@ -27,22 +27,17 @@ const Hero = () => {
           minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
           seconds: Math.floor((difference % (1000 * 60)) / 1000)
         });
+      } else {
+        // Optional: Stop the countdown when the event starts
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       }
     };
 
-    updateCountdown();
+    updateCountdown(); // Initial call
     const timer = setInterval(updateCountdown, 1000);
+    
+    // Cleanup interval on component unmount
     return () => clearInterval(timer);
-  }, []);
-
-  useEffect(() => {
-    const now = new Date();
-    const closingTime = new Date('2025-08-21T16:00:00');
-    if (now >= closingTime) setIsClosed(true);
-    const interval = setInterval(() => {
-      if (new Date() >= closingTime) setIsClosed(true);
-    }, 60000);
-    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -70,12 +65,10 @@ const Hero = () => {
           Annual National - Level Hackathon
         </p>
 
-        
         <p className="text-md sm:text-lg text-gray-300 font-poppins tracking-wider">
           Powered by <span className="font-bold text-fuchsia-500">ART PARK I-Hub @ IISc</span>
         </p>
        
-
         {/* Date & Countdown Container */}
         <div className="glass-card rounded-2xl p-6 mt-10 shadow-lg max-w-3xl mx-auto">
           <div className="flex items-center justify-center space-x-2 text-cyan-400 font-poppins">
@@ -84,58 +77,40 @@ const Hero = () => {
               22nd, 23rd & 24th August 2025
             </span>
           </div>
+          
+          <p className="text-lg sm:text-xl font-bold mt-10 mb-4 text-fuchsia-300 font-nunito tracking-wide">
+            It Begins In
+          </p>
 
-          {!isClosed && (
-            <>
-              <p className="text-lg sm:text-xl font-bold mt-10 mb-4 text-fuchsia-300 font-nunito tracking-wide">
-                It Begins In
-              </p>
-
-              <div className="grid grid-cols-4 md:grid-cols-4 gap-2 sm:gap-4 max-w-2xl mx-auto mb-4">
-                {Object.entries(timeLeft).map(([unit, value]) => (
-                  <div
-                    key={unit}
-                    className="p-2 sm:p-3 md:p-4 text-center hover:scale-105 transition rounded-lg sm:rounded-xl md:rounded-2xl glass-card shadow-lg"
-                  >
-                    <div className="text-xl sm:text-2xl md:text-2xl font-bold text-neonCyan">
-                      {value.toString().padStart(2, '0')}
-                    </div>
-                    <div className="text-[0.65rem] sm:text-xs md:text-sm uppercase text-gray-400 mt-1 tracking-wider">
-                      {unit}
-                    </div>
-                  </div>
-                ))}
+          <div className="grid grid-cols-4 md:grid-cols-4 gap-2 sm:gap-4 max-w-2xl mx-auto mb-4">
+            {Object.entries(timeLeft).map(([unit, value]) => (
+              <div
+                key={unit}
+                className="p-2 sm:p-3 md:p-4 text-center hover:scale-105 transition rounded-lg sm:rounded-xl md:rounded-2xl glass-card shadow-lg"
+              >
+                <div className="text-xl sm:text-2xl md:text-2xl font-bold text-neonCyan">
+                  {value.toString().padStart(2, '0')}
+                </div>
+                <div className="text-[0.65rem] sm:text-xs md:text-sm uppercase text-gray-400 mt-1 tracking-wider">
+                  {unit}
+                </div>
               </div>
-            </>
-          )}
+            ))}
+          </div>
         </div>
 
-        {/* Conditional Content */}
-        <div className="flex flex-col items-center mb-12">
-          {isClosed ? (
-            <div className="text-white text-xs sm:text-sm md:text-base px-4 py-2 rounded-md font-mono w-full text-center">
-              <span className="text-gray-400 mr-2">&gt;&gt;&gt; REGISTRATIONS CLOSED</span>
-              <br />              
-              <span className="font-bold">
-                THE REGISTRATIONS FOR CODEFURY 8.0 WERE CLOSED ON{" "}
-                <span className="text-cyan-400 font-bold">
-                  21<sup>st</sup> August 2025, 4:00 PM
-                </span>. SEE YOU FOR CODEFURY 9.0!
-              </span>
-            </div>
-          ) : (
-            <>
-              <button
-                onClick={() => window.open("https://unstop.com/o/eyWD58I?lb=qyWQPa8&utm_medium=Share&utm_source=ieeecom4643&utm_campaign=Online_coding_challenge", "_blank")}
-                className="mt-8 glow-button bg-gradient-to-r from-fuchsia-500 to-cyan-400 text-white font-bold font-orbitron py-5 px-10 rounded-full text-2xl transition-all duration-300 transform hover:scale-105 hover:from-cyan-400 hover:to-fuchsia-500"
-              >
-                Register Now
-              </button>
-              <p className="mt-4 text-xs sm:text-sm md:text-base text-gray-300 font-nunito max-w-3xl text-center">
-                Participants can form teams of 1 to 4 members, but all members must register individually on Unstop; team details will be collected later.
-              </p>
-            </>
-          )}
+        {/* Registrations Closed Message */}
+        <div className="flex flex-col items-center my-12">
+          <div className="text-white text-xs sm:text-sm md:text-base px-4 py-2 rounded-md font-mono w-full text-center">
+            <span className="text-gray-400 mr-2">&gt;&gt;&gt; REGISTRATIONS CLOSED</span>
+            <br />              
+            <span className="font-bold">
+              Registrations for CodeFury 8.0 closed on{" "}
+              <span className="text-cyan-400 font-bold">
+                21<sup>st</sup> August 2025, 4:00 PM
+              </span>.
+            </span>
+          </div>
         </div>
 
         {/* Section Title */}
@@ -176,7 +151,6 @@ const Hero = () => {
               className="w-48 md:w-56 h-auto object-contain"
             />
           </a>
-
         </div>
       </div>
     </section>
