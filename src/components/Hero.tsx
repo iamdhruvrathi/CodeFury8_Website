@@ -108,7 +108,7 @@ const Hero = () => {
               Registrations for CodeFury 8.0 closed on{" "}
               <span className="text-cyan-400 font-bold">
                 21<sup>st</sup> August 2025, 4:00 PM
-              </span>.
+              </span>   SEE YOU FOR CODEFURY 9.0!
             </span>
           </div>
         </div>
